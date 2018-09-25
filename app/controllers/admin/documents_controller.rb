@@ -24,14 +24,7 @@ class Admin::DocumentsController < Admin::ApplicationController
 
     if @document.save
       respond_to do |format|
-        format.html {
-          render :json => [@document.to_jq_upload].to_json,
-          :content_type => 'text/html',
-          :layout => false
-        }
-        format.json {
-          render :json => [@document.to_jq_upload].to_json
-        }
+        format.html { redirect_to admin_documents_url, notice: 'Dokumentet ble lastet opp' }
       end
     else
       render :json => [{:error => "custom_failure"}], :status => 304

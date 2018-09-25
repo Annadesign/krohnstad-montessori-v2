@@ -1,0 +1,34 @@
+<div class="ibox">
+    <div class="ibox-content">
+        <div class="panel-body">	
+			<h3>Administratorer</h3>
+
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Fullt navn</th>
+						<th>Brukernavn</th>
+						
+						<th>Handlinger</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @moderators.each do |moderator| %>
+					<tr>
+						<td><%= moderator.fullname %></td>
+						<td><%= moderator.username %></td>
+						
+						<td><%= link_to 'Edit', edit_admin_moderator_path(moderator) %>|<%= link_to 'Show', "#" %>|<%= link_to 'Delete', "#" %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<br>
+			<%= link_to 'Ny administrator', new_admin_moderator_path, :class => 'btn btn-primary' %>
+		</div>
+	</div>
+</div>
+
+
+
+

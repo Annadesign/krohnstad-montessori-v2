@@ -1,0 +1,9 @@
+/*
+ * Manifest file for front styles, to be compiled into application.scss
+ *= require bootstrap.min
+ *= require simple_calendar
+ *= require theme
+ *= require custom
+ *= require_self
+ *= require_tree ./front
+ */

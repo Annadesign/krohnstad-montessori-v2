@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Krohnstad Montessori</title>
+     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
+   
+</head>
+
+<body>
+    <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
+    <% if session[:current_moderator_id] %>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> 
+                        <span></span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><%= @moderator.fullname %></strong>
+                             </span></span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><%= link_to 'Profil', edit_admin_moderator_path(session[:current_moderator_id]) %></li>
+                            <li class="divider"></li>
+                            <li><%= link_to 'Logg ut', logout_path %></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+
+                <li class="<%= is_active_controller('admin/dashboard') %>">
+                    <%= link_to admin_dashboard_index_path do %>
+                        <i class="zmdi zmdi-view-dashboard"></i> Dashboard
+                    <% end %>
+                </li>
+                <li class="<%= is_active_controller('admin/moderators') %>">
+                    <%= link_to admin_moderators_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Administratorer
+                    <% end %>
+                </li>
+               <li class="<%= is_active_controller('admin/articles') %>">
+                    <%= link_to admin_articles_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Sider
+                    <% end %>
+                </li>
+                <li class="<%= is_active_controller('admin/categories') %>">
+                    <%= link_to admin_categories_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Kategorier
+                    <% end %>
+                </li>                                       
+                <li class="<%= is_active_controller('admin/photos') %>">
+                    <%= link_to admin_photos_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Bilde bibliotek
+                    <% end %>                    
+                </li>
+                <li class="<%= is_active_controller('admin/employees') %>">
+                    <%= link_to admin_employees_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Ansatte
+                    <% end %>
+                </li>                
+                       
+          
+                <li class="<%= is_active_controller('admin/schools') %>">
+                    <%= link_to admin_schools_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Skoler
+                    <% end %>
+                </li>
+                  <li class="<%= is_active_controller('admin/departments') %>">
+                    <%= link_to admin_departments_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Avdelinger
+                    <% end %>
+                </li>      
+                  <li class="<%= is_active_controller('admin/parents') %>">
+                    <%= link_to admin_parents_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Foresatte
+                    <% end %>
+                </li>  
+                  <li class="<%= is_active_controller('admin/children') %>">
+                    <%= link_to admin_children_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Barn/elever
+                    <% end %>
+                </li>  
+                  <li class="<%= is_active_controller('admin/meetings') %>">
+                    <%= link_to admin_meetings_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Kalender
+                    <% end %>
+                </li>   
+                  <li class="<%= is_active_controller('admin/galleries') %>">
+                    <%= link_to admin_galleries_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Gallerier
+                    <% end %>
+                </li>  
+                 <li class="<%= is_active_controller('admin/documents') %>">
+                    <%= link_to admin_documents_path do %>
+                        <i class="zmdi zmdi-accounts"></i> Dokumenter
+                    <% end %>
+                </li>                                                           
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+<!--                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="zmdi zmdi-menu"></i></a>
+               <form role="search" class="navbar-form-custom" action="search_results.html">
+                    <div class="form-group">
+                        <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                    </div>
+                </form>
+-->
+            </div>
+            
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message"><%= @moderator.fullname %></span>
+                </li>
+
+                <li>						
+					<%= link_to 'Logg ut', logout_path %>	
+                </li>
+            </ul>      
+        </nav>
+        <% end %>
+        </div>
+ 
+        <div class="wrapper wrapper-content animated fadeIn">
+
+			<% if flash[:notice] %>
+				<div class="alert alert-success alert-dismissable">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                    <%= flash[:notice] %> 
+                   
+                </div>
+			<% end %>
+			<% if flash[:alert] %>
+				<div class="alert alert-danger alert-dismissable">
+                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                    <%= flash[:alert] %> 
+                   
+                </div>
+			<% end %>
+
+            <div class="row">
+
+            	<%= yield %>
+
+            </div>
+
+
+        </div>
+         <div id='modal-holder'></div>
+        <div class="footer">
+            <div class="pull-right">
+                <strong>AN|NA</strong> design.
+            </div>
+            <div>
+                <strong>Krohnstad Montessori</strong> &copy; 2018
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+ 
+</body>
+
+</html>

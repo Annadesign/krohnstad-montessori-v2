@@ -1,0 +1,36 @@
+<div class="avdeling">
+  <section class="section-nopadding">
+    <div id="gap" style="height: 100px" class=""></div>
+  </section>
+    <div style="margin-bottom: 20px;">
+        <center>
+            <h1>Logg inn til min side</h1>
+        </center>
+    </div>
+
+   <div class="row">
+      <div class="col-md-4 col-md-offset-4 text-block">
+        <%= form_tag sessions_path do %>
+          <div class="form-group">
+            <%= label_tag :email, 'Epost' %><br>
+            <%= text_field_tag :email, "", :class  => "form-control" %>
+          
+          </div>
+          <div class="form-group">
+           <%= label_tag :password, 'Passord' %><br>
+           <%= password_field_tag :password, "", :class  => "form-control" %>
+          </div>
+
+          <%= submit_tag 'Logg inn', :class => "btn btn-blue float-right" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 text-block">
+        <%= link_to 'Glemt passord?', '#' %>
+      </div>
+    </div>
+  <section class="section-nopadding">
+    <div id="gap" style="height: 100px" class=""></div>
+  </section>
+</div>

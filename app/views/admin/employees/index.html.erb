@@ -1,0 +1,36 @@
+<div class="ibox">
+  <div class="ibox-content">
+    <div class="panel-body">  
+      <p id="notice"><%= notice %></p>
+
+
+      <table class="table table-bordered table-hover" >
+        <thead>
+          <tr>
+            <th>Navn</th>
+            <th>Avdeling</th>
+            <th colspan="2">Handlinger</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @employees.each do |employee| %>
+            <tr>
+              <td><%= employee.lastname %>, <%= employee.firstname %></td>
+
+              <td><%= employee.department.name %></td>
+              
+              <td><%= link_to 'Redigere', edit_admin_employee_path(employee) %></td>
+              <td><%= link_to 'Slette', admin_employee_url(employee), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'Ny ansatt', new_admin_employee_path, :class => 'btn btn-primary' %>
+  
+    </div>
+  </div>
+</div>

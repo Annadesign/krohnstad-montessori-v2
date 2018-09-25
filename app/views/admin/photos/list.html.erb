@@ -1,0 +1,12 @@
+
+<div class="row">
+<% @listimages.each do |img| %>
+
+	<div class="col-md-2 img-item">
+		<%= image_tag img.image_url(:large), :class => "col-md-12 thumbnail" %>
+	    <i class="zmdi zmdi-check"></i>
+	</div>
+
+
+<% end %>
+</div>

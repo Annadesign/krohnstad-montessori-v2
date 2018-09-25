@@ -1,0 +1,26 @@
+ 
+      <div class="container">
+        <div class="image"><img class="" src="assets/om-montessori.jpg" alt=""></div>
+      </div>
+
+
+      <div class="demo-gap" id="informasjon">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3 text-block">
+                <% @informasjon.each do |art| %>
+                  <h1><%= art.title %></h1>
+                  <div>
+                    <%= art.content.html_safe %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <section class="section-nopadding">
+      <div id="map" style="height: 500px" class=""></div>
+    </section>

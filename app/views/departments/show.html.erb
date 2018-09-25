@@ -1,0 +1,170 @@
+	 
+
+<div class="avdeling-<%= @department.backgroundcolor %>">
+	<div class="jarallax jarallax-avd">        
+	    <div class="demo-table">
+	        <div class="demo-table-cell">
+	            <h1 style="color:<%= @department.titlecolor %>"><%= @department.name %></h1>
+	            <h2 class="telefonnummer" style="color:<%= @department.titlecolor %>">
+	            	 <%= @department.telephone %>
+	            </h2>
+	            <h3 class="epost" style="color:<%= @department.titlecolor %>">
+	            	<i class="fa fa-email"></i> <%= @department.email %>
+	            </h3>
+	        </div>
+	    </div>
+	    <div>
+	    	<%= image_tag(@department.image, :class => "jarallax-img") %>
+	    </div>
+	</div>  
+
+	<section class="section-nopadding">
+	  <div id="gap" style="height: 100px" class=""></div>
+	</section>
+
+	<div class="container">
+
+		<div class="col-md-4">
+			<div class="bs-list">
+			    <div class="list-group">
+			        <a href="/parents" class="list-group-item">
+			           Min side <span class="badge"><i class="fa fa-angle-right"></i></span>
+			        </a>
+			        <% @parent.children.by_name_and_age.each do |d| %>
+			        	<a href="/avdeling/<%=d.department.id%>" class="list-group-item <%= is_active_action(d.department.id.to_s) %>">
+			            	<%= d.name %> <span class="badge"><i class="fa fa-angle-right"></i></span>
+			        	</a>
+			        <% end %>
+			        <a href="/parents/<%= session[:current_parent_id] %>/edit" class="list-group-item">
+			           Redigere kontaktinfo<span class="badge"><i class="fa fa-angle-right"></i></span>
+			        </a>			        
+			        <a href="/loggut" class="list-group-item">
+			            Logg ut <span class="badge"><i class="fa fa-angle-right"></i></span>
+			        </a>
+			    </div>
+			</div>		
+		</div>
+
+		<div class="col-md-8">
+			<% if @department.messages.present? %>
+			<section class="messages">	
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="" style="margin:20px 0 10px 0;list-style-type: none;padding:0;">
+							<% @department.messages.each do |m| %>
+							<li>
+								<div class="viktig <%= m.color %>">
+									<h2><%= m.title  %></h2>
+									<p><%= m.content.html_safe %></p>
+								</div>
+							</li>
+							<% end %>
+						</ul>						
+					</div>
+				</div>
+			</section>
+			<div id="gap" style="height: 60px" class=""></div>
+			<% end %>
+
+			<% if @department.description.present? %>
+			<section class="text">
+				<div class="row">
+					<div class="col-md-12">
+						<%= @department.description.html_safe %>		
+					</div>
+				</div>
+				<div id="gap" style="height: 60px" class=""></div>
+			</section>
+			<% end %>
+							
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Ukeplan</h2>
+					<%= week_calendar events: @department.meetings do |date, meetings| %>
+						<%= date.day %>
+						<% meetings.each do |meeting| %>
+							<div>
+								<%= meeting.name %>
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+				
+			</div>
+			<div id="gap" style="height: 60px" class=""></div>
+			
+
+			<section id="documents">
+			<div class="container-fluid">
+				<% if @department.documents.present? %>
+				<h2>Dokumenter</h2>
+				<% @department.documents.each do |doc| %>
+					<%= link_to doc.title, doc.document.url, :title => doc.document , :target => 'blank' %>
+						<p><%= doc.description %></p>
+					<% end %>
+				<% end %>
+			</div>
+			</section>	
+
+			<% if @department.galleries.present? %>
+			<section class="gallery">
+				<div class="mb-2">			
+					<h2>Bilder fra hverdagen</h2>
+				</div>
+		
+				<div class="row">
+				<% @department.galleries.each do |gallery| %>
+					<% unless gallery.images.empty? %>
+
+					 <div class="col-md-4 col-sm-6 col-xs-6"> 
+						<% if gallery.images.first %>             
+		                	<%= link_to gallery_path(gallery.id), :class=> 'thumbnail' do %>
+		                		<div class="image-square">
+		            				<%= image_tag gallery.images.first.image.url :thumb, :class => "img img-responsive full-width"  %> 
+		            			</div> 
+		            			<div class="bottom-left"><%= gallery.name %></div>
+		          			<% end %>  
+			              	
+						<% else %>
+							N/A
+						<% end %>
+					</div>
+
+			
+					<% end %>
+				<% end %>
+				</div>
+				<div id="gap" style="height: 60px" class=""></div>
+			</section>
+			<% end %>
+
+
+			<section class="employees">
+				<div class="" style="padding-bottom:25px;">
+					<h2>Ansatte på avdelingen</h2>
+				</div>
+				<div class="row">
+				 <% @department.employees.each do |emp| %>
+				  <div class="col-md-2 col-sm-3 col-xs-6">
+					<div class="card" style="width:100%;">
+						<%= image_tag(emp.image, :class => "card-img-top rounded-circle") if emp.image? %>	
+					  
+					  <div class="card-body">
+					    <div class="card-title"><%= emp.firstname %></div>
+					    <div class="card-text"><%= emp.position %></div>
+					    
+					  </div>
+					</div>	
+				  </div>
+				 <% end %>				
+				</div>
+			</section>
+
+		</div>
+	</div>
+
+
+	<section class="section-nopadding">
+	  <div id="gap" style="height: 100px" class=""></div>
+	</section>
+</div>

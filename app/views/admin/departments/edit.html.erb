@@ -1,0 +1,157 @@
+		<div class="col-sm-12">
+			<p>
+				<%= link_to 'Ny beskjed (post-It)', new_admin_message_url(:department_id => @department.id), :class => 'btn btn-sm btn-warning' %>
+				<%= link_to 'Ny hendelse i kalender', new_admin_meeting_url(:department_id => @department.id), :class => 'btn btn-sm btn-info'%>
+				<%= link_to 'Nytt dokument', new_admin_document_url(:department_id => @department.id)  , :class => 'btn btn-sm btn-danger' %>
+				<%= link_to 'Nytt galleri', new_admin_gallery_url(:department_id => @department.id) , :class => 'btn btn-sm btn-success' %>
+				
+			</p>
+			<div class="ibox">
+        		<div class="ibox-content">
+        			<div class="panel-body">	
+
+						<%= render 'formedit' %>
+
+					</div>
+				</div>
+			</div>
+			<div class="ibox">
+        		<div class="ibox-content">
+        			<div class="panel-body">	
+        				<h3>Ukeplan / kalender</h3>
+
+						<%= week_calendar events: @department.meetings do |date, meetings| %>
+						  <strong><%= date.day %></strong>
+
+						  <% meetings.each do |meeting| %>
+						    <div>
+						      <%= meeting.name %>
+						    </div>
+						  <% end %>
+						<% end %>
+						<div class="row col-sm-12">
+							<%= link_to '+', new_admin_meeting_url(:department_id => @department.id), :class => 'btn btn-sm btn-circle btn-info', :data => {:toggle => 'tooltip', :placement => 'bottom', :original_title => 'Ny kalender'} %>
+						</div>
+					</div>
+				</div>
+			</div>			
+			<div class="ibox">
+        		<div class="ibox-content">
+        			<div class="panel-body">	
+        				<h3>Beskjeder</h3>
+        				<div>
+        				<ul class="" style="margin:20px 0 10px 0;list-style-type: none;padding:0;">
+						<% @department.messages.each do |mes| %>
+							<li>
+								<div class="viktig <%= mes.color %>">
+									<h4><%= mes.title %></h4>
+									<p><%= mes.content.html_safe%></p>
+									<a href="#"></a>
+									<%= link_to admin_message_path(mes.id), method: :delete do %>
+    									<i class="zmdi zmdi-delete"></i> Slette
+									<% end %>
+								</div>
+							</li>
+						<% end %>
+						</ul>
+						</div>
+						<div class="row col-sm-12">												
+							<%= link_to '+', new_admin_message_url(:department_id => @department.id), :class => 'btn btn-sm btn-circle btn-warning' %>
+						</div>
+					</div>
+				</div>
+			</div>		
+
+
+			<div class="ibox">
+        		<div class="ibox-content">
+        			<div class="panel-body">	
+						<h3>Dokumenter</h3>
+						<% @department.documents.each do |doc| %>
+						<div class="file-box">
+                            <div class="file">        
+                                <span class="corner"></span>
+                                <div class="icon">
+                                    <i class="zmdi zmdi-hc-3x zmdi-file"></i>
+                                </div>
+                                <div class="file-name">
+                                    <%= link_to doc.title, doc.document.url, :title => doc.document , :target => 'blank' %>
+                                    <br>
+                                    <small><%= doc.description %></small>
+
+ 									<%= link_to admin_document_url(doc), :data => { :confirm => "Er du sikker?" }, method: :delete do %>
+    									<i class="zmdi zmdi-delete"></i>
+									<% end %>                                           
+                                </div>
+                                  
+                                </div>
+                            </div>
+						<% end %>
+						<div class="row col-sm-12">
+							<%= link_to '+', new_admin_document_url(:department_id => @department.id)  , :class => 'btn btn-sm btn-circle btn-danger' %>
+						</div>
+					</div>
+				</div>
+			</div>	
+
+			<div class="ibox">
+        		<div class="ibox-content">
+        			<div class="panel-body">	
+        				<h3>Bildegalleri</h3>
+						<% @department.galleries.each do |gallery| %>
+							<% unless gallery.images.empty? %>
+							    <div class="file-box">
+							    	<h4><%= gallery.name %></h4>
+							        <div class="file">
+							            <a href="#">
+							                <span class="corner"></span>
+
+							                <div class="image">
+							                    <% if gallery.images.first %>
+                									<%= link_to image_tag(gallery.images.first.image.url :thumb), admin_gallery_path(gallery) %>
+								                <% else %>
+								                  	N/A
+								                <% end %>
+							                </div>
+							                <div class="file-name">
+							                    <small><%= gallery.description.truncate(38).html_safe %></small>
+							                </div>
+							            </a>
+
+							        </div>
+							    </div> 
+							 
+							<% end %>
+						<% end %>  
+						<div class="row col-sm-12">
+							<%= link_to '+', new_admin_gallery_url(:department_id => @department.id) , :class => 'btn btn-sm btn-circle btn-success' %>
+						</div>
+				         
+					</div>
+				</div>
+			</div>										
+
+			<div class="ibox">
+        		<div class="ibox-content">
+        			<div class="panel-body">	
+        				<h3>Barn på avdelingen</h3>
+
+				          <% @department.children.each do |cat| %>
+				          
+				              <p><%= cat.firstname + ' ' + cat.lastname %>, <%= cat.birthdate %></p>
+				              <p></p>
+
+				              
+
+				          <% end %>
+
+					</div>
+				</div>
+			</div>						
+		</div>
+
+
+
+
+
+ 

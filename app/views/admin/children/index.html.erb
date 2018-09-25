@@ -1,0 +1,38 @@
+<div class="ibox">
+  <div class="ibox-content">
+    <div class="panel-body">  
+      <p id="notice"><%= notice %></p>
+
+
+      <table class="table table-bordered table-hover" >
+        <thead>
+          <tr>
+            <th>Navn</th>
+            <th>Fødselsdato</th>
+             <th>Avdeling</th>
+          
+            <th colspan="2">Handlinger</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @children.by_name_and_age.each do |cat| %>
+            <tr>
+              <td><%= cat.lastname %>, <%= cat.firstname %></td>
+              <td><%= cat.birthdate %></td>
+              <td><%= cat.department.name %></td>
+              
+              <td><%= link_to 'Redigere', edit_admin_child_path(cat) %></td>
+              <td><%= link_to 'Slette', admin_child_path(cat), method: :delete, data: { confirm: 'Er du sikker?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'Registrere nytt barn', new_admin_child_path, :class => 'btn btn-primary' %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,132 @@
+	<input type="hidden" id="galleryID" value="<%= @gallery.id %>">
+
+	<%= render 'validation_errors', object: @gallery %>
+	<%= form_for [:admin, @gallery ], html: { multipart: true } do |f| %>
+	    <div class="form-group">
+	      <%= f.label :department_id, 'Avdeling', :class => "" %>
+	      <%= f.select :department_id, Department.all.collect {|c| [c.name, c.id]}, {prompt: 'Velg avdeling'}, :class => "form-control" %>
+	    </div>
+		<div class="form-group">
+			<%= f.label :name, 'Galleri tittel', :class => "" %>
+			<%= f.text_field :name, :class => 'form-control', :placeholder => "Tittel" %>
+		</div>	
+		<div class="form-group">
+			<%= f.label :description, 'Beskrivelse', :class => "" %>
+			<%= f.text_area :description, :class => "summernote" %>
+		</div>
+		<div class="control-group">
+			<%= f.label :images, :class => 'control-label' %>
+			<div class="controls">
+		  		<%= file_field_tag "images[]", type: :file, multiple: true, :class => 'btn btn-xs btn-info' %>
+			</div>
+		</div>
+		<p></p>
+		<div class="form-actions">
+			<%= f.submit nil, :class => 'btn btn-xs btn-primary' %>
+			<%= link_to t('.cancel', :default => t("helpers.links.cancel")), admin_galleries_path, :class => 'btn btn-xs btn-default' %>
+		</div>
+
+	
+
+	<p></p>
+	<div class="row">
+
+		<div class="table-responsive">
+		    <table class="table table-bordered table-stripped">
+		        <thead>
+		        <tr>
+		            <th>Forhåndsvisning</th>
+		            <th>Beskrivelse</th>
+		            <th>Bilde url</th>
+		            <th>Sortering</th>
+		            <th>Handlinger</th>
+		        </tr>
+		        </thead>
+		        <tbody>
+
+				<% unless @gallery.images.empty? %>
+				<% @gallery.images.each do |pic| %>
+
+		        <tr>
+		            <td>
+		                <%= image_tag pic.image.url :thumb %>
+		            </td>
+		            <td>
+						<div class="form-group">
+							<%= text_area pic.description, :class => 'form-control' %>
+						</div>			
+		            </td>	            
+		            <td>
+		                <input type="text" class="form-control" value="<%= pic.image.url :thumb %>">
+		            </td>
+		            <td>
+		                <input type="text" class="form-control" value="1">
+		            </td>
+		            <td>
+		            	<%= link_to "Update picture", :class => 'btn btn-default' do %>
+		            		<i class="fa fa-save"></i>
+		            	<% end %>		            	
+		            	<%= link_to "Delete picture", :class => 'btn btn-default', :data => { :confirm => "Are you sure?" }, :method => :delete do %>
+		            		<i class="fa fa-trash"></i>
+		            	<% end %>            	
+		            </td>
+		        </tr>
+		 		<% end %>
+		 		<% end %>
+		        </tbody>
+		    </table>
+		</div>
+	
+	</div>
+	<% end %>
+
+	<script type="text/javascript">
+  $(function() {
+    $('.summernote').summernote({
+      height: 250,
+      tabsize: 4,
+      toolbar: [
+                 ["style", ["style"]],
+                 ["style", ["bold", "italic", "underline", "clear"]],
+                 ["table", ["table"]],
+ 
+                 ["color", ["color"]],
+                 ["para", ["ul", "ol", "paragraph"]],
+                 ['insert', ['link', 'picture', 'videoAttributes']],  
+                 ['insert', ['hr', 'fullscreen']]
+             ]
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#article_image").on('change', function() {
+        var countFiles = $(this)[0].files.length;
+        var imgPath = $(this)[0].value;
+        var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
+        var image_holder = $("#image-holder");
+        image_holder.empty();
+        if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+          if (typeof(FileReader) != "undefined") {
+            //loop for each file selected for uploaded.
+            for (var i = 0; i < countFiles; i++) 
+            {
+              var reader = new FileReader();
+              reader.onload = function(e) {
+                $("<img />", {
+                  "src": e.target.result,
+                  "class": "thumb-image"
+                }).appendTo(image_holder);
+              }
+              image_holder.show();
+              reader.readAsDataURL($(this)[0].files[i]);
+            }
+          } else {
+            alert("This browser does not support FileReader.");
+          }
+        } else {
+          alert("Pls select only images");
+        }
+      });
+    });
+  </script>

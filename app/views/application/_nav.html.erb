@@ -1,0 +1,61 @@
+    <nav class="navbar">
+      <div class="container text-center">
+        <a href="/."><%= image_tag('logo.png', :class => "logo") %></a>
+        <a data-toggle="collapse" data-target="#side-menu" class="toggle-menu menu-right pull-right nav-icon">
+        <div id="nav-icon3" class="">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        </a>
+
+        <div class="collapse navbar-collapse center-block" style="margin-top:10px">
+          <ul class="navbar-nav navigation-symbol">
+            <li> <a href="/barnehagen">Barnehage</a></li>
+            <li> <a href="/skole">Skole</a></li>
+            <li> 
+              <%= link_to 'Om Montessori', ommontessori_index_path, :class => 'bg-hover-color' %>
+            </li>
+            <li> <a href="/omoss">Om oss</a></li>
+            
+            <li> <a href="/informasjon">Kontakt</a></li>
+            <% if session[:current_parent_id] %>
+              <%=  link_to parents_path, :class => "btn btn-md btn-blue" do %>
+                <%= @parent.name %>
+              <% end %>               
+            <% else %>  
+              <%=  link_to logginn_path, :class => "btn btn-md btn-blue" do %>
+                Min side
+              <% end %>
+            <% end %>       
+          </ul>                       
+        </div>
+        <div id="side-menu" class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right text-left">
+ 
+          <ul class="nav">
+             <li><a href="/barnehagen">Barnehage</a></li>
+            <li><a href="/skole">Skole</a></li>
+            <li> 
+              <%= link_to 'Om Montessori', ommontessori_index_path, :class => 'bg-hover-color' %>
+            </li>
+            <li> <a href="/omoss">Om oss</a></li>
+            
+            <li> <a href="/informasjon">Kontakt</a></li>
+            <li>
+            <% if session[:current_parent_id] %>
+              <%=  link_to parents_path, :class => "btn btn-md btn-blue" do %>
+                <%= @parent.name %>
+              <% end %>               
+            <% else %>  
+              <%=  link_to logginn_path, :class => "btn btn-md btn-blue" do %>
+                Min side
+              <% end %>
+            <% end %>   
+               </li>
+              </ul>
+            </li>                      
+          </ul>
+        </div>
+      </div>
+    </nav>

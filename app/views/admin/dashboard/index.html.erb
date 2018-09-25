@@ -1,0 +1,43 @@
+<div class="ibox">
+  <div class="ibox-content">
+    <div class="panel-body">  
+      <p id="notice"><%= notice %></p>
+
+      <h3>Dashboard</h3>
+
+        
+          
+          <% @schools.each do |cat| %>
+          <div class="row">
+          <div>
+            <h4><%= cat.name %></h4>
+            <% cat.departments.each do |dep| %>
+              
+            <div class="col-md-3">
+              <div class="contact-box">
+                <%= link_to edit_admin_department_path(dep.id) do %>
+
+                    
+                          <p><%= dep.name %></p>
+                        
+                     
+                     
+                <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div> 
+         </div>
+          <% end %>
+        
+
+        <section class="container"> 
+          <h4>Siste artikler</h4>
+          <div class="row">
+
+
+          </div>
+        </section>
+    </div>
+  </div>
+</div>

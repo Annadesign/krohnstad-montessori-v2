@@ -1,0 +1,39 @@
+<div class="ibox">
+  <div class="ibox-content">
+    <div class="panel-body">  
+      <p id="notice"><%= notice %></p>
+
+      <table class="table table-bordered table-hover" >
+        <thead>
+          <tr>
+            <th>Hendelse</th>
+            <th>Start tid</th>
+            <th>Avdeling</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @meetings.each do |meeting| %>
+            <tr>
+              <td><%= meeting.name %></td>
+              <td><%= meeting.start_time %></td>
+              <td><%= meeting.department.name %></td>
+              
+              <td>
+                <%= link_to 'Redigere', edit_admin_meeting_path(meeting) %> | 
+                <%= link_to "Slette", admin_meeting_path(meeting),
+                :data => { :confirm => "Er du sikker på at du vil slette denne hendelsen?" },
+                :method => :delete%>
+                </td>
+            </tr> 
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'Ny hendlese', new_admin_meeting_path, :class => 'btn btn-info' %>
+   </div>
+  </div>
+</div>

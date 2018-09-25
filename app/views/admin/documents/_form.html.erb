@@ -1,0 +1,32 @@
+<%= form_for [:admin, @document ], html: { :class => 'form-horizontal', multipart: true } do |f| %>
+  <% if @document.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@document.errors.count, "error") %> prohibited this admin_document from being saved:</h2>
+
+      <ul>
+      <% @document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :department_id, 'Avdeling', :class => "" %>
+    <%= f.select :department_id, Department.all.collect {|c| [c.name, c.id]}, {prompt: 'Velg avdeling'}, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, 'Tittel', :class => "" %>
+    <%= f.text_field :title, :class => 'form-control', :placeholder => "Gi dokumentet en passende tittel..." %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, 'Beskrivelse' %><br>
+     <%= f.text_field :description, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :document, 'Velg dokument', :class => '' %><br>
+    <%= f.file_field :document, :class => "form-control"%>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Lagre dokument', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,36 @@
+<div class="ibox">
+  <div class="ibox-content">
+    <div class="panel-body">  
+      <p id="notice"><%= notice %></p>
+
+
+      <table class="table table-bordered table-hover" >
+        <thead>
+          <tr>
+            <th>Avdeling</th>
+            <th>Barnehage / skole</th>
+          
+            <th colspan="2">Handlinger</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @departments.each do |cat| %>
+            <tr>
+              <td><%= cat.name %></td>
+              <td><%= cat.school.name %></td>
+              
+              <td><%= link_to 'Redigere', edit_admin_department_path(cat) %></td>
+              <td><%= link_to 'Slette', admin_department_path(cat), method: :delete, data: { confirm: 'Er du sikker?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'Opprette en ny avdeling', new_admin_department_path, :class => 'btn btn-primary' %>
+
+    </div>
+  </div>
+</div>

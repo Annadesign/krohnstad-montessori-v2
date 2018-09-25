@@ -1,0 +1,36 @@
+<div class="ibox">
+  <div class="ibox-content">
+    <div class="panel-body">  
+      <p id="notice"><%= notice %></p>
+
+
+      <table class="table table-bordered table-hover" >
+        <thead>
+          <tr>
+            <th>Foresatt</th>
+            <th>Telefon</th>
+          
+            <th colspan="2">Handlinger</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @parents.each do |cat| %>
+            <tr>
+              <td><%= cat.name %></td>
+              <td><%= cat.telephone %></td>
+              
+              <td><%= link_to 'Redigere', edit_admin_parent_path(cat) %></td>
+              <td><%= link_to 'Slette', admin_parent_path(cat), method: :delete, data: { confirm: 'Er du sikker?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'Registrere ny foresatt', new_admin_parent_path, :class => 'btn btn-primary' %>
+
+    </div>
+  </div>
+</div>

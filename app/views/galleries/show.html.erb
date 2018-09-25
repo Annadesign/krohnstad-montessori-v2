@@ -1,0 +1,35 @@
+ 
+
+
+<div class="container">
+
+
+    <div class="row bilder col-md-8 col-md-offset-2">
+       <a href="javascript:history.back()"><i class="fa fa-angle-left"></i> Tilbake</a>
+      <h2><%= @gallery.name%></h2>
+      <p><%= @gallery.description.html_safe %></p>       
+    <% unless @images.empty? %>
+      <% @images.each do |pic| %>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+          <%= link_to pic.image.url(:large), :class => "thumbnail" do %>
+            <div class="image-square">
+              <%= image_tag pic.image.url(:medium), :class => "img img-responsive full-width" if pic.image? %>  
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= @gallery.images.length %>
+
+
+</div>
+
+<script>
+  window.onload = function() {
+    baguetteBox.run('.bilder');
+  };
+</script>
+
+

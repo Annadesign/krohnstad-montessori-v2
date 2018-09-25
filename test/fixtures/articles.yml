@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  summary: MyText
+  content: MyText
+  image: MyString
+  imagetext: MyText
+  imagestyle: MyString
+  publish: false
+  category: one
+  moderator: one
+
+two:
+  title: MyString
+  summary: MyText
+  content: MyText
+  image: MyString
+  imagetext: MyText
+  imagestyle: MyString
+  publish: false
+  category: two
+  moderator: two

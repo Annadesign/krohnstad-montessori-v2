@@ -1,0 +1,123 @@
+<%= form_for [:admin, @employee ], html: { multipart: true } do |form| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :lastname, 'Etternavn' %>
+            <%= form.text_field :lastname, id: :employee_lastname, :class => 'form-control' %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= form.label :firstname, 'Fornavn' %>
+            <%= form.text_field :firstname, id: :employee_firstname, :class => 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">      
+          <div class="form-group">
+            <%= form.label :email, 'Epost' %>
+            <%= form.text_field :email, id: :employee_email, :class => 'form-control' %>
+          </div>
+        </div>
+        <div class="col-md-6"> 
+          <div class="form-group">
+            <%= form.label :telephone, 'Telefon' %>
+            <%= form.text_field :telephone, id: :employee_telephone, :class => 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">      
+          <div class="form-group">
+            <%= form.label :department_id, 'Min avdeling', :class => "" %>
+            <%= form.select :department_id, Department.all.collect {|c| [c.name, c.id]}, {prompt: 'Velg avdeling'}, :class => "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6"> 
+          <div class="form-group">
+            <%= form.label :position, 'Stilling' %>
+            <%= form.text_field :position, id: :employee_position, :class => 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= form.label :description, 'Om meg' %>
+        <%= form.text_area :description, id: :employee_description, :class => 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit 'Lagre ansatt', :class => 'btn btn-primary' %>
+      </div>
+    </div>
+    <div class="col-md-4">
+
+      <div class="panel">
+        <div class="panel-header">Profilbilde</div>
+        <div class="panel-body">
+          <div class="img-responsive" id="image-holder">
+            <%= image_tag @employee.image_url(:thumb) if @employee.image? %>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <%= form.label :image, :class => "btn btn-info btn-sm btn-block" do %>
+            <%= form.file_field :image, :class => 'hide'%>Velg bilde
+          <% end %>
+        </div>
+      </div>              
+ 
+    </div>
+  </div>
+ 
+<% end %>
+
+<script type="text/javascript">
+//  var elem = document.querySelector('.js-switch');
+//    var switchery = new Switchery(elem, { color: '#1AB394' });  
+
+
+$(document).ready(function() {
+  $("#post_image").on('change', function() {
+    //Get count of selected files
+    var countFiles = $(this)[0].files.length;
+    var imgPath = $(this)[0].value;
+    var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
+    var image_holder = $("#image-holder");
+    image_holder.empty();
+    if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+      if (typeof(FileReader) != "undefined") {
+        //loop for each file selected for uploaded.
+        for (var i = 0; i < countFiles; i++) 
+        {
+          var reader = new FileReader();
+          reader.onload = function(e) {
+            $("<img />", {
+              "src": e.target.result,
+              "class": "thumb-image"
+            }).appendTo(image_holder);
+          }
+          image_holder.show();
+          reader.readAsDataURL($(this)[0].files[i]);
+        }
+      } else {
+        alert("This browser does not support FileReader.");
+      }
+    } else {
+      alert("Pls select only images");
+    }
+  });
+});
+</script>

@@ -1,0 +1,41 @@
+
+  <div class="ibox">
+    <div class="ibox-content">
+      <div class="panel-body">  
+
+        <p id="notice"><%= notice %></p>
+
+        <table class="table table-bordered table-hover" >
+          <thead>
+            <tr>
+              <th></th>
+              <th>Navn</th>
+              <th>Beskrivelse</th>
+              <th colspan="2">Handlinger</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @galleries.each do |gallery| %>
+            <tr> 
+              <td>  
+                <% if gallery.images.first %>
+                  <%= link_to image_tag(gallery.images.first.image.url :thumb), admin_gallery_path(gallery) %>
+                <% else %>
+                  <%= link_to gallery.name, admin_gallery_path(gallery) %>
+                <% end %>
+              </td>
+            
+              <td><%= gallery.name.truncate(14) %></td>
+              <td><%= gallery.description.html_safe %></td>
+              <td>
+                <%= link_to "Redigere", edit_admin_gallery_path(gallery) %>
+                <%= link_to "Slette", admin_gallery_path(gallery),
+                :data => { :confirm => "Er du sikker på at du vil slette dette galleriet?" },
+                :method => :delete%>
+              </td>
+            </tr>
+          <% end %>  
+        </div>
+      </div>
+    </div>
+

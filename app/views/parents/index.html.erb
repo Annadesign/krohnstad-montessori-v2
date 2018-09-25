@@ -1,0 +1,54 @@
+
+<div class="avdeling-blue">
+
+	<div class="container">
+
+		<div class="row" style="padding-top: 80px;">
+			<h1 style="text-align: center;">velkommen, <%= @parent.name %>!</h1>
+		</div>
+		<section class="section-nopadding">
+		  <div id="gap" style="height: 100px" class=""></div>
+		</section>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+			
+				<% if @parent.children.present? %>
+					<% @parent.children.by_name_and_age.each do |d| %>
+					<div class="col-md-4 col-sm-6 col-xs-6">
+						<div class="contact-box">
+		                    <a href="/avdeling/<%=d.department.id%>">
+		                        <p><%= d.name %></p>
+		                        <p class="avd2"><%= d.department.name %></p>
+		                   
+		                    </a>
+		           	 	</div>
+		           	 </div>
+					<% end %>
+				<% end %>
+			
+				<div class="col-md-4 col-sm-6 col-xs-6">
+					<div class="contact-box">
+		                <a href="/parents/<%= session[:current_parent_id] %>/edit">
+		                    <p>Rediger</p>
+		                    <p class="avd2">Kontaktinfo</p>      
+		                </a>
+		           	 </div>
+		        </div>						
+			</div>
+		</div>
+		<section class="section-nopadding">
+		  <div id="gap" style="height: 60px" class=""></div>
+		</section>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			<p>Dette er din side. Her kan du følge med på hva som skjer på avdelingen til barnet ditt. Du kan også endre kontaktinformasjon som e-postadresse, telefonnummer, passord og lignende.</p>
+			</div>
+		</div>
+
+		<section class="section-nopadding">
+		  <div id="gap" style="height: 100px" class=""></div>
+		</section>
+
+	</div>
+
+</div>

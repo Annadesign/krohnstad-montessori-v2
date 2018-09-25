@@ -25,7 +25,7 @@ class Admin::ChildrenController < Admin::ApplicationController
 
     respond_to do |format|
       if @child.save
-        format.html { redirect_to admin_child_url(@child), notice: 'Barnet er registrert' }
+        format.html { redirect_to admin_children_url, notice: 'Barnet er registrert' }
         format.json { render :show, status: :created, location: @child }
       else
         format.html { render :new }

@@ -12,14 +12,14 @@
 
         <div class="collapse navbar-collapse center-block" style="margin-top:10px">
           <ul class="navbar-nav navigation-symbol">
-            <li> <a href="/barnehagen">Barnehage</a></li>
+            <li> <a href="/barnehage">Barnehage</a></li>
             <li> <a href="/skole">Skole</a></li>
             <li> 
               <%= link_to 'Om Montessori', ommontessori_index_path, :class => 'bg-hover-color' %>
             </li>
             <li> <a href="/omoss">Om oss</a></li>
             
-            <li> <a href="/informasjon">Kontakt</a></li>
+            <li> <a href="/kontakt">Kontakt</a></li>
             <% if session[:current_parent_id] %>
               <%=  link_to parents_path, :class => "btn btn-md btn-blue" do %>
                 <%= @parent.name %>
@@ -34,14 +34,14 @@
         <div id="side-menu" class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right text-left">
  
           <ul class="nav">
-             <li><a href="/barnehagen">Barnehage</a></li>
+             <li><a href="/barnehage">Barnehage</a></li>
             <li><a href="/skole">Skole</a></li>
             <li> 
               <%= link_to 'Om Montessori', ommontessori_index_path, :class => 'bg-hover-color' %>
             </li>
             <li> <a href="/omoss">Om oss</a></li>
             
-            <li> <a href="/informasjon">Kontakt</a></li>
+            <li> <a href="/kontakt">Kontakt</a></li>
             <li>
             <% if session[:current_parent_id] %>
               <%=  link_to parents_path, :class => "btn btn-md btn-blue" do %>

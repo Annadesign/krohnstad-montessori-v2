@@ -32,7 +32,7 @@
 			        </a>
 			        <% @parent.children.by_name_and_age.each do |d| %>
 			        	<a href="/avdeling/<%=d.department.id%>" class="list-group-item <%= is_active_action(d.department.id.to_s) %>">
-			            	<%= d.name %> <span class="badge"><i class="fa fa-angle-right"></i></span>
+			            	<%= d.firstname %> <span class="badge"><i class="fa fa-angle-right"></i></span>
 			        	</a>
 			        <% end %>
 			        <a href="/parents/<%= session[:current_parent_id] %>/edit" class="list-group-item">
@@ -76,7 +76,8 @@
 				<div id="gap" style="height: 60px" class=""></div>
 			</section>
 			<% end %>
-							
+						
+			<section class="kalender">
 			<div class="row">
 				<div class="col-md-12">
 					<h2>Ukeplan</h2>
@@ -89,22 +90,25 @@
 						<% end %>
 					<% end %>
 				</div>
-				
 			</div>
 			<div id="gap" style="height: 60px" class=""></div>
-			
+			</section>
 
+			<% if @department.documents.present? %>
 			<section id="documents">
-			<div class="container-fluid">
-				<% if @department.documents.present? %>
-				<h2>Dokumenter</h2>
-				<% @department.documents.each do |doc| %>
-					<%= link_to doc.title, doc.document.url, :title => doc.document , :target => 'blank' %>
-						<p><%= doc.description %></p>
+				<div class="row">
+					<h2>Dokumenter</h2>
+					<% @department.documents.each do |doc| %>
+						<div class="col-md-4 col-sm-6 col-xs-6"> 
+							<%= link_to doc.title, doc.document.url, :title => doc.document , :target => 'blank' %>
+							<p><%= doc.description %></p>
+						</div>
 					<% end %>
-				<% end %>
-			</div>
+				</div>
+				<div id="gap" style="height: 60px" class=""></div>
 			</section>	
+			<% end %>
+
 
 			<% if @department.galleries.present? %>
 			<section class="gallery">
@@ -112,7 +116,7 @@
 					<h2>Bilder fra hverdagen</h2>
 				</div>
 		
-				<div class="row">
+				<div class="row bilder">
 				<% @department.galleries.each do |gallery| %>
 					<% unless gallery.images.empty? %>
 

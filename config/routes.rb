@@ -42,11 +42,11 @@ Rails.application.routes.draw do
 
   resources :avdeling, controller: 'departments'
 
-  resources :barnehagen, controller: 'barnehagen'
+  resources :barnehage, controller: 'barnehagen'
   resources :ommontessori, controller: 'ommontessori'
   resources :omoss, controller: 'satsingsomrade'
   resources :skole, controller: 'skole'
-  resources :informasjon, controller: 'informasjon'
+  resources :kontakt, controller: 'informasjon'
     
   resources :galleries, only: [:show]
 

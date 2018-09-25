@@ -11,7 +11,7 @@ class Admin::SessionsController < Admin::ApplicationController
   end
 
   def create
-    @moderator = Moderator.find_by(username: params[:usename]).try(:authenticate, params[:password])
+    @moderator = Moderator.find_by(username: params[:username]).try(:authenticate, params[:password])
     if @moderator
       
       session[:current_moderator_id] = @moderator.id

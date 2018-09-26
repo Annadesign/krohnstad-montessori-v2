@@ -50,6 +50,10 @@
     box-sizing: border-box;
 }
 
+.ibox-tools a {
+  color: #fff;
+}
+
 /* VIKTIGE BESKJEDER */
 
 .viktig { 
@@ -84,6 +88,18 @@
     background-color: #e7bbd5;
 }
 
+/* AVDELINGER */
+.contact-box.avdeling-yellow{
+    background-color: rgba(255,256,173,.5);
+}
+
+.contact-box.avdeling-blue{
+    background-color: rgba(168,212,243,.5);
+}
+
+.contact-box.avdeling-pink {
+    background-color: rgba(231,187,213,.5);
+}
 
 /* RADIO/CHECKBOX */
 

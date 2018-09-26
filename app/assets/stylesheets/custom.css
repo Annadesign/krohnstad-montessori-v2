@@ -86,6 +86,19 @@
 }
 
 /*******************************/
+/* 2 kolonner */
+
+.cols-two {
+  -webkit-columns: 2 350px;
+  -moz-columns: 2 350px;
+  columns: 3 100%;
+  -webkit-column-gap: 2em;
+  -moz-column-gap: 2em;
+  column-gap: 2em;
+  text-align: justify;
+}
+
+
 
 .half-page h2{
     font-family: brandon-grotesque;
@@ -95,6 +108,50 @@
     letter-spacing: .075em;
     line-height: 1.4em;
     text-transform: uppercase;
+}
+
+.px {
+    border: 0px solid #ccc;
+    padding: 5px;
+    list-style: none;
+    -moz-column-count: 2;
+    -moz-column-gap: 40px;
+    -moz-column-rule-width: 1px;
+    -moz-column-rule-style: outset;
+    -moz-column-rule-color: #ccc;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 40px;
+    -webkit-column-rule-width: 1px;
+    -webkit-column-rule-style: outset;
+    -webkit-column-rule-color: #ccc;
+    column-count: 2;
+    column-gap: 40px;
+    column-rule-width: 1px;
+    column-rule-style: outset;
+    column-rule-color: #ccc;
+}
+user agent stylesheet
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+.two-columns {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count:    2; /* Firefox */
+    column-count:         2;
+    -webkit-column-gap:   20px; /* Chrome, Safari, Opera */ 
+    -moz-column-gap:      20px; /* Firefox */
+    column-gap:           20px;
+    column-rule-color: #ccc; /* Optional */
+    column-rule-style:solid; /* Optional */
+    column-rule-width: 1px; /* Optional */
+    text-align: justify; /* Optional */
 }
 
 

@@ -523,7 +523,7 @@ input[type="submit"]{}
 
 
 html{height:100%}p{margin:0;line-height:28px;position:relative;z-index:1}
-h1,h3,h4,h5,h6{margin:0;position:relative;z-index:1;font-family: brandon-grotesque!important}
+h1,h3,h4,h5,h6{margin:0;position:relative;z-index:1;font-family: brandon-grotesque,sans-serif!important}
 h1 {
     font-weight: 400;
     font-style: normal;
@@ -538,7 +538,7 @@ h1 small{font-size:24px}
 h2{font-size:1.4em;line-height:24px}
 h2 small{font-size:18px}
 h2 {
-    font-family: brandon-grotesque;
+    font-family: brandon-grotesque,sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.4em;

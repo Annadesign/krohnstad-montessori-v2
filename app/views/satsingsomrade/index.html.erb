@@ -7,23 +7,18 @@
 </div> 
 
 <div class="container">
-  <div class="demo-gap" id="informasjon">
-    <div class="container">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 text-block">
-           
-              <h1><%= art.title %></h1>
-              <div class="article-text">
-                <%= art.content.html_safe %>
-              </div>
-            
-          </div>
+  <div class="ROW" id="informasjon">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12">
+          <h2><%= art.title %></h2>
+          <div class="article-text">
+              <%= art.content.html_safe %>
+          </div>  
         </div>
       </div>
     </div>
   </div>
-
 </div>
 <% end %>
 <div id="map" style="height: 500px" class=""></div>

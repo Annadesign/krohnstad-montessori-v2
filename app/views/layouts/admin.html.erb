@@ -5,6 +5,7 @@
     <title>Krohnstad Montessori</title>
      <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
    
 </head>
@@ -34,69 +35,69 @@
 
                 <li class="<%= is_active_controller('admin/dashboard') %>">
                     <%= link_to admin_dashboard_index_path do %>
-                        <i class="zmdi zmdi-view-dashboard"></i> Dashboard
+                        <i class="fa fa-th"></i> Dashboard
                     <% end %>
                 </li>
                 <li class="<%= is_active_controller('admin/moderators') %>">
                     <%= link_to admin_moderators_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Administratorer
+                        <i class="fa fa-user-lock"></i> Administratorer
                     <% end %>
                 </li>
                <li class="<%= is_active_controller('admin/articles') %>">
                     <%= link_to admin_articles_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Sider
+                        <i class="fa fa-file"></i> Sider
                     <% end %>
                 </li>
                 <li class="<%= is_active_controller('admin/categories') %>">
                     <%= link_to admin_categories_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Kategorier
+                        <i class="fa fa-list"></i> Kategorier
                     <% end %>
                 </li>                                       
                 <li class="<%= is_active_controller('admin/photos') %>">
                     <%= link_to admin_photos_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Bilde bibliotek
+                        <i class="fa fa-images"></i> Bilde bibliotek
                     <% end %>                    
                 </li>
                 <li class="<%= is_active_controller('admin/employees') %>">
                     <%= link_to admin_employees_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Ansatte
+                        <i class="fa fa-id-card"></i> Ansatte
                     <% end %>
                 </li>                
                        
           
                 <li class="<%= is_active_controller('admin/schools') %>">
                     <%= link_to admin_schools_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Skoler
+                        <i class="fa fa-school"></i> Skoler
                     <% end %>
                 </li>
                   <li class="<%= is_active_controller('admin/departments') %>">
                     <%= link_to admin_departments_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Avdelinger
+                        <i class="fa fa-list"></i> Avdelinger
                     <% end %>
                 </li>      
                   <li class="<%= is_active_controller('admin/parents') %>">
                     <%= link_to admin_parents_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Foresatte
+                        <i class="fa fa-user"></i> Foresatte
                     <% end %>
                 </li>  
                   <li class="<%= is_active_controller('admin/children') %>">
                     <%= link_to admin_children_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Barn/elever
+                        <i class="fa fa-child"></i> Barn/elever
                     <% end %>
                 </li>  
                   <li class="<%= is_active_controller('admin/meetings') %>">
                     <%= link_to admin_meetings_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Kalender
+                        <i class="fa fa-calendar-alt"></i> Avd. kalender
                     <% end %>
                 </li>   
                   <li class="<%= is_active_controller('admin/galleries') %>">
                     <%= link_to admin_galleries_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Gallerier
+                        <i class="fa fa-images"></i> Avd. gallerier
                     <% end %>
                 </li>  
                  <li class="<%= is_active_controller('admin/documents') %>">
                     <%= link_to admin_documents_path do %>
-                        <i class="zmdi zmdi-accounts"></i> Dokumenter
+                        <i class="fa fa-file"></i> Avd. dokumenter
                     <% end %>
                 </li>                                                           
             </ul>

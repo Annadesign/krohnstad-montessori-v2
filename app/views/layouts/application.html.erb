@@ -8,6 +8,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'front', media: 'all', 'data-turbolinks-track' => true %>
+
     <%= javascript_include_tag 'front', 'data-turbolinks-track' => true %>
   </head>
   <body>
@@ -36,18 +37,25 @@
     <div class="text-center container">
       <div class="row">
         <div class="col-md-12">
-          <h2>KROHNSTAD</h2>
+          <h2>KROHNSTAD MONTESSORI</h2>
+          <p>ÅPNINGSTIDER: 7.30- 16.30</p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
+          <div style="height: 60px" class=""></div>
+          <ul class="list-inline text-center footer-menu">
+            <li><a href="/betingelse">Betingelse</a></li>
+            <li><a href="/personvern">Personvern</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
           <p class="footer-message">OPPHAVSRETT © 2018 KROHNSTAD MONTESSORI AS</p>
         </div>
       </div>
       <div class="clear"></div>
     </div>
   </footer>
-    
+
   <script type="text/javascript">
       objectFitImages();
       jarallax(document.querySelectorAll('.jarallax'));

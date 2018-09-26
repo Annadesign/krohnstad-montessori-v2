@@ -1,43 +1,34 @@
+<p>
+<%= link_to new_admin_parent_path, :class => "btn btn-sm btn-primary" do %>
+  <i class="fa fa-user"></i> Registrere ny foresatt 
+<% end %>&nbsp;
+<%= link_to new_admin_child_path, :class => "btn btn-sm btn-info" do %>
+  <i class="fa fa-child"></i> Registrere nytt barn
+<% end %>
+</p>
 <div class="ibox">
   <div class="ibox-content">
-    <div class="panel-body">  
-      <p id="notice"><%= notice %></p>
-
-      <h3>Dashboard</h3>
-
-        
-          
-          <% @schools.each do |cat| %>
+    <p id="notice"><%= notice %></p>
+    <div class="panel">
+      <div class="panel-head"><h3>Dashboard</h3></div>
+      <div class="panel-body">  
+     
+        <% @schools.each do |cat| %>
           <div class="row">
-          <div>
+ 
             <h4><%= cat.name %></h4>
             <% cat.departments.each do |dep| %>
               
             <div class="col-md-3">
               <div class="contact-box">
                 <%= link_to edit_admin_department_path(dep.id) do %>
-
-                    
-                          <p><%= dep.name %></p>
-                        
-                     
-                     
+                   <p><%= dep.name %></p>
                 <% end %>
-                </div>
               </div>
+            </div>
             <% end %>
           </div> 
-         </div>
-          <% end %>
-        
-
-        <section class="container"> 
-          <h4>Siste artikler</h4>
-          <div class="row">
-
-
-          </div>
-        </section>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>

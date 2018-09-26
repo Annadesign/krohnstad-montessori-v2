@@ -7,7 +7,7 @@ body {
 	/*font-family: brandon-grotesque;*/
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.5em;
     letter-spacing: .02em;
     line-height: 2.2em;
     text-transform: none;
@@ -534,13 +534,14 @@ h1 {
 }
 h1.headings-caps,h2.headings-caps,h3.headings-caps,h4.headings-caps,h5.headings-caps,h6.headings-caps{text-transform:uppercase}
 h1,.headline{font-size:36px;line-height:48px}
-h1 small{font-size:24px}h2{font-size:24px;line-height:24px}
+h1 small{font-size:24px}
+h2{font-size:1.4em;line-height:24px}
 h2 small{font-size:18px}
 h2 {
     font-family: brandon-grotesque;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
-    font-size: 24px;
+    font-size: 1.4em;
     letter-spacing: .075em;
     line-height: 1.4em;
     text-transform: uppercase;
@@ -594,9 +595,10 @@ pre,code,var,kbd,samp,tt,dir,listing,plaintext,xmp,abbr,acronym,q{font-size:14px
 .text-lowercase{text-transform:none!important}
 
 @media (max-width: 767px){
+	body {font-size:1.5em;}
 	h1,.headline{font-size:24px;line-height:36px}
 	h1 small{font-size:16px}
-	h2{font-size:21px;line-height:36px}
+	h2{font-size:1	em;line-height:36px}
 	h2 small{font-size:14px}
 	h3{font-size:18px;line-height:36px}
 	h3 small{font-size:14px}
@@ -833,7 +835,7 @@ ul.social-icons-dark{list-style:none;display:inline-block;margin-top:0}
 ul.social-icons-dark li{display:inline-block;font-size:24px;cursor:pointer;vertical-align:middle}
 ul.social-icons-dark li a i{font-size:22px;color:#131313}
 ul.social-icons-dark li{margin-right:24px}ul.social-icons-dark li:first-child{margin-left:0!important}
-.footer-message{font-size:12px;margin:0;margin-top:14px;margin-bottom:10px;display:block;opacity:.9;color:#fff}
+.footer-message{font-size:12px;margin:0;margin-top:14px;margin-bottom:10px;display:block;opacity:.9;color:#000}
 .footer-message a{opacity:.9!important;color:#fff!important}
 .footer-message a:hover{color:#2ecc71!important}
 .footer-message i{color:red}

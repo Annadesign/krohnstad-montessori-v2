@@ -87,6 +87,18 @@
 
 /*******************************/
 
+.half-page h2{
+    font-family: brandon-grotesque;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    letter-spacing: .075em;
+    line-height: 1.4em;
+    text-transform: uppercase;
+}
+
+
+
 label {
     font-weight: 400;
 }
@@ -677,6 +689,7 @@ p.avd2 {
     text-transform: uppercase;
 }
 
+
 .yellow {
     background-color: #fff6ad;
 }
@@ -689,7 +702,7 @@ p.avd2 {
     background-color: #e7bbd5;
 }
 
-/* MENYLISTE */
+/* MINSIDE-MENY */
 
 a.list-group-item {
 
@@ -890,6 +903,7 @@ ximg {
     font-weight: 600;
     color:#fff;    
 }
+
 
 /**********************************/
     /* ARTICLE GALLERY */

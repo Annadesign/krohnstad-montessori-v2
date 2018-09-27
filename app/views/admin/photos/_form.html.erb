@@ -12,23 +12,15 @@
       </ul>
     </div>
   <% end %>
-  <div class="col-md-8">
-      <div class="ibox">
-        <div class="ibox-content">
-          <div class="panel-body">  
 
-          </div>
-        </div>
-      </div>
-  </div>
   <div class="col-md-4">
 
 <div class="ibox ">
   <div class="ibox-title">
-      <h5>Profilbilde</h5>
+      <h5></h5>
   </div>
   <div>
-    <div class="ibox-content no-padding border-left-right">
+    <div class="img-responsive" id="image-holder">
         <%= image_tag @photo.image_url(:thumb) if @photo.image? %>
     </div>
     <div class="panel-footer">
@@ -44,7 +36,9 @@
             <div class="row">
                 <div class="col-md-6">
                     
-                    <%= form.submit 'Lagre bilde', :class => 'btn btn-primary btn-sm btn-block' %>
+                    <%= form.submit 'Lagre bilde', :class => 'btn btn-primary btn-sm' %>
+                    <%= link_to 'Avbryt', admin_photos_path, :class => 'btn btn-primary btn-sm' %>
+
                 </div>
 
             </div>
@@ -67,7 +61,7 @@
 
 
 $(document).ready(function() {
-  $("#post_image").on('change', function() {
+  $("#photo_image").on('change', function() {
     //Get count of selected files
     var countFiles = $(this)[0].files.length;
     var imgPath = $(this)[0].value;

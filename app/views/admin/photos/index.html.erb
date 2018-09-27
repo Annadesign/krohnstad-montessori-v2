@@ -1,35 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-lg-12">
+      <div class="wrapper wrapper-content animated fadeInUp">
 
-<h1>Bilder</h1>
+          <div class="ibox">
+              <div class="ibox-title">
+                <h2>Bildegalleri</h2>
+                <div class="ibox-tools">
 
-<%= link_to 'Last opp', new_admin_photo_path, :class => 'btn btn-sm btn-success'  %>
+                </div>
+              </div>
+              <div class="ibox-content">
 
 
-            <div class="panel-body">  
-                <h3>Bildegalleri</h3>
-            <% @photos.each do |photo| %>
-              
-                  <div class="file-box">
 
-                      <div class="file">
-                          <a href="#">
-                              <span class="corner"></span>
 
-                              <div class="image">
-                                 
-                                  <%= link_to image_tag(photo.image.url :thumb), admin_photo_path(photo) %>
+                <div class="panel-body">  
+                    
+                  <% @photos.each do |photo| %>
+                  
+                    <div class="file-box">
 
-                              </div>
-                              <div class="file-name">
-                                  
-                              </div>
-                          </a>
+                        <div class="file">
+                            <a href="#">
+                                <span class="corner"></span>
 
-                      </div>
-                      <%= link_to 'Slett', admin_photo_path(photo), method: :delete, data: { confirm: 'Are you sure?' } %>
-                  </div> 
-               
-            
-            <% end %>  
-                 
-          </div>
+                                <div class="image">
+                                   
+                                    <%= link_to image_tag(photo.image.url :thumb), admin_photo_path(photo) %>
+
+                                </div>
+                                <div class="file-name">
+                                    
+                                </div>
+                            </a>
+
+                        </div>
+                        <%= link_to 'Slett', admin_photo_path(photo), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </div> 
+                   
+                
+                <% end %>  
+                     
+              </div>
+              <%= link_to 'Last opp nytt bilde', new_admin_photo_path, :class => 'btn btn-sm btn-success'  %>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,7 +5,8 @@
         <div class="col-md-12">
           <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12">
-              <div class="team-single-member"> <%= image_tag('barnehagen-1.jpg', :class => "", :alt => "barnehagen") %>
+              <div class="team-single-member"> 
+                <%= image_tag(@info1.image, :class => "", :alt => "barnehagen") %>
 
                 <div class="team-single-member-details margin-top">
                   <h2><%= @info1.title %></h2>
@@ -16,7 +17,7 @@
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
               <div class="team-single-member">
-                <%= image_tag('barnehagen-2.jpg', :class => "", :alt => "barnehagen") %>
+                <%= image_tag(@info2.image, :class => "", :alt => "barnehagen") %>
                 <div class="team-single-member-details margin-top">
                     <h2><%= @info2.title %></h2>
                   <p class="margin-top"><%= @info2.content.html_safe %></p>

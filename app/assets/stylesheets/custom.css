@@ -838,6 +838,10 @@ ximg {
   opacity: .75;
 }
 
+.image img {
+    width:100%;
+}
+
 @media only screen and (min-width: 1024px) {
 
   .gall {
@@ -946,10 +950,10 @@ ximg {
 
 .top-right {
     position: absolute;
-    top: 8px;
+    top: 5px;
     right: 26px;
-    font-weight: 600;
-    color:#fff;
+    font-weight: 200;
+    color:#f0f0f0;
 }
 
 .bottom-left {

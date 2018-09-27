@@ -3,7 +3,7 @@
 }
 
 .navbar-nav li a{ 
-       font-family: "brandon-grotesque";
+       font-family: "brandon-grotesque", sans-serif;
 }
 
 .nav {
@@ -101,7 +101,7 @@
 
 
 .half-page h2{
-    font-family: brandon-grotesque;
+    font-family: brandon-grotesque, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
@@ -162,7 +162,7 @@ label {
 
 .text-block p {
     margin:20px auto;
-    font-family: "proxima-nova", Arial;
+    font-family: "proxima-nova", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -176,7 +176,7 @@ blockquote {
     margin:40px 0 10px 0;
     color:#000;
     padding-bottom: .5em;
-    font-family: "brandon-grotesque";
+    font-family: "brandon-grotesque", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 38px;
@@ -193,7 +193,7 @@ figcaption {
 
 figcaption .source {
  
-    font-family: proxima-nova;
+    font-family: proxima-nova, sans-serif;
     font-weight: 600;
     font-style: normal;
     font-size: 10px;
@@ -346,7 +346,7 @@ h5 {
     padding:0;
     display:block;
     text-align: center;
-    font-family: proxima-nova;
+    font-family: proxima-nova, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -456,7 +456,7 @@ h5 {
 }
 
 .btn-pink {
-    font-family: brandon-grotesque;
+    font-family: "brandon-grotesque", sans-serif;
     font-weight: 400;
     background-color: #e7bbd5;
     padding: 7px 14px;
@@ -490,7 +490,7 @@ a.btn-pink:hover{text-decoration:none!important;color:#e7bbd5!important}
 
 
 .btn-blue {
-    font-family: brandon-grotesque;
+    font-family: "brandon-grotesque", sans-serif;
     font-weight: 400;
     font-size: 16px !important;
     font-style: normal;
@@ -737,7 +737,7 @@ p.avd2 {
 
 .viktig h2 {
 
-    font-family: brandon-grotesque;
+    font-family: "brandon-grotesque", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-size: 24px;
@@ -763,7 +763,7 @@ p.avd2 {
 
 a.list-group-item {
 
-    font-family: proxima-nova;
+    font-family: proxima-nova, sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -882,7 +882,7 @@ ximg {
     position: absolute;
     top: 0px;
     right: 16px;
-    font-family: brandon-grotesque;
+    font-family: "brandon-grotesque", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-size: 16px;
@@ -900,7 +900,7 @@ ximg {
     letter-spacing: 0em;
     line-height: 1em;
     text-transform: none;
-    font-family: brandon-grotesque;
+    font-family: "brandon-grotesque", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-size: 16px;

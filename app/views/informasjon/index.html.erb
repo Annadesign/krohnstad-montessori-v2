@@ -1,24 +1,75 @@
-<% @informasjon.each do |art| %>
+   
 
-<div class="<%= art.imagestyle %>">
-  <div class="image">
-    <%= image_tag(art.image, :class => "#{art.imagestyle}-img" ) %>
-  </div>
-</div> 
+      <div class="container">
 
-<div class="container">
-  <div class="ROW" id="informasjon">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12">
-          <h2><%= art.title %></h2>
-          <div class="article-text">
-              <%= art.content.html_safe %>
-          </div>  
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="team-single-member"> <%= image_tag('barnehagen-1.jpg', :class => "", :alt => "barnehagen") %>
+
+                <div class="team-single-member-details margin-top">
+                  <h2><%= @info1.title %></h2>
+                  <p class="margin-top"><%= @info1.content.html_safe %></p>
+                  <a href="https://www.google.no/maps/place/Krohnsvingen+6,+6421+Molde/@62.7472689,7.2478658,14z/data=!4m7!3m6!1s0x461156139aef2d3b:0xd5e667a21ed997e1!5m1!1s2018-09-16!8m2!3d62.7498611!4d7.2646081" class="btn btn-md btn-outline-black margin-top" target="_blank">SE KART</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="team-single-member">
+                <%= image_tag('barnehagen-2.jpg', :class => "", :alt => "barnehagen") %>
+                <div class="team-single-member-details margin-top">
+                    <h2><%= @info2.title %></h2>
+                  <p class="margin-top"><%= @info2.content.html_safe %></p>
+                  <a href="https://www.google.no/maps/place/Eventyrlige+Skaret+-+Skarstua/@62.801074,7.3292383,17z/data=!3m1!4b1!4m7!3m6!1s0x4613fd5d6dbf9059:0xdb411aefae86299f!5m1!1s2018-09-16!8m2!3d62.801074!4d7.331427" class="btn btn-md btn-outline-black margin-top" target="_blank">SE KART</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+   
+
+        <div class="container">
+          <div id="map" style="height: 200px" class=""></div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="team-single-member"> 
+
+
+                <div class="team-single-member-details margin-top">
+                  <h2>Eier</h2>
+                  <p class="margin-top">
+                    <p>Edith Krohnstad Marleau</p>
+
+                    <p>Telefon: 71 21 86 92</p>
+
+                    <p>E-post: edith@krohnstad.no</p>
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="team-single-member">
+               
+                <div class="team-single-member-details margin-top">
+                    <h2>Dokumenter</h2>
+                  <p class="margin-top">
+                      <p><a href="#">Vedtekter</a></p>
+                      <p><a href="#">Årsplan 2018-2019</a></p>
+                  </p>
+               
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-    </div>
-  </div>
-</div>
-<% end %>
-<div id="map" style="height: 500px" class=""></div>
+
+      <div class="container">
+        <div id="map" style="height: 200px" class=""></div>
+      </div>

@@ -9,7 +9,7 @@
 						<th>Fullt navn</th>
 						<th>Brukernavn</th>
 						
-						<th>Handlinger</th>
+						<th colspan="2">Handlinger</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -18,7 +18,13 @@
 						<td><%= moderator.fullname %></td>
 						<td><%= moderator.username %></td>
 						
-						<td><%= link_to 'Edit', edit_admin_moderator_path(moderator) %>|<%= link_to 'Show', "#" %>|<%= link_to 'Delete', "#" %></td>
+						<td>
+							<%= link_to 'Endre', edit_admin_moderator_path(moderator), :class => 'btn btn-info btn-xs' %>
+						</td>
+						<td>
+							<%= link_to 'Slette', "#", :class => 'btn btn-danger btn-xs' %>
+								
+							</td>
 					</tr>
 					<% end %>
 				</tbody>

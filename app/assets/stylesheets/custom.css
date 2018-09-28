@@ -572,7 +572,6 @@ a.btn-outline-black:hover{text-decoration:none!important;color:#fff!important}
 
     height: 400px;
 
-    paddi
 
     /*background-color: rgba(39, 35, 51, 0.6);*/
 
@@ -599,20 +598,41 @@ a.btn-outline-black:hover{text-decoration:none!important;color:#fff!important}
 }
 
 .demo-table-cell {
-
     display: table-cell;
-
     text-align: center;
-
     vertical-align: middle;
-
 }
 
 .demo-table-cell h1 {
         font-size: 56px;
 }
 
+.demo-table-cell .small {
+    margin:0;
+    font-family: proxima-nova;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: .2em;
+    line-height: 1.8em;
+    text-transform: uppercase;
+}
 
+.demo-table-cell blockquote {
+    margin-top:0;
+    font-family: brandon-grotesque;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em
+    letter-spacing: .075em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+
+.middle-align-block{
+    padding-top:6%;
+    padding-bottom:6%;
+}
 
 /* gap */
 
@@ -877,7 +897,7 @@ ximg {
 
 .img-container {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
     color: white;
 }

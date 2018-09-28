@@ -1,0 +1,22 @@
+<div class="jarallax jarallax-avd">
+  <div class="image">
+    <%= image_tag(artic.image, :class => "jarallax-img" ) %>
+  </div>
+</div> 
+<section class="section-nopadding">
+  <div style="height: 50px" class=""></div>
+</section>
+<div class="container article-content">
+  <div class="row" id="informasjon">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12">
+          <h2><%= artic.title %></h2>
+          <div class="">
+              <%= artic.content.html_safe %>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

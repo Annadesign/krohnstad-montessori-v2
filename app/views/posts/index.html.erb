@@ -14,34 +14,31 @@
     </section>
 
     <div class="">
+      <div class="container">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="team-single-member"> 
+                <%= image_tag('barnehagen-1-web.jpg', :class => "", :alt => "barnehagen") %>
 
-        <div class="container">
-
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="team-single-member"> 
-                  <%= image_tag('barnehagen-1-web.jpg', :class => "", :alt => "barnehagen") %>
-
-                  <div class="team-single-member-details margin-top">
-                    <h2><%= @article1.title %></h2>
-                    <p class="margin-top"><%= @article1.summary %></p>
-                    <a href="/barnehage" class="btn btn-md btn-outline-black margin-top">LES MER</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="team-single-member">
-                  <%= image_tag('barnehagen-2-web.jpg', :class => "", :alt => "barnehagen") %>
-                  <div class="team-single-member-details margin-top">
-                      <h2><%= @article2.title %></h2>
-                    <p class="margin-top"><%= @article2.summary %></p>
-                    <a href="/ommontessori" class="btn btn-md btn-outline-black margin-top">LES MER</a>
-                  </div>
+                <div class="team-single-member-details margin-top">
+                  <h2><%= @article1.title %></h2>
+                  <p class="margin-top"><%= @article1.summary %></p>
+                  <a href="/barnehage" class="btn btn-md btn-outline-black margin-top">LES MER</a>
                 </div>
               </div>
             </div>
-
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="team-single-member">
+                <%= image_tag('barnehagen-2-web.jpg', :class => "", :alt => "barnehagen") %>
+                <div class="team-single-member-details margin-top">
+                    <h2><%= @article2.title %></h2>
+                  <p class="margin-top"><%= @article2.summary %></p>
+                  <a href="/ommontessori" class="btn btn-md btn-outline-black margin-top">LES MER</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,28 +1,42 @@
-<% @barnehagen.each do |art| %>
+
 
 <div class="<%= art.imagestyle %>">
   <div class="image">
-    <%= image_tag(art.image, :class => "#{art.imagestyle}-img" ) %>
+    <%= image_tag(@barnehage1.image, :class => "#{art.imagestyle}-img" ) %>
   </div>
 </div> 
-<section class="section-nopadding">
-  <div style="height: 50px" class=""></div>
-</section>
-<div class="container">
-  <div class="ROW" id="informasjon">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12">
-          <h2><%= art.title %></h2>
-          <div class="">
-              <%= art.content.html_safe %>
-          </div>  
+
+<section>
+  <div class="">
+    <div class="container">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="team-single-member"> 
+              <%= image_tag(@barnehage12.image, :class => "", :alt => "barnehagen") %>
+              <div class="team-single-member-details margin-top">
+                <h2><%= @barnehage12.title %></h2>
+                <p class="margin-top"><%= @barnehage12.summary %></p>
+                <%= link_to "LES MER", barnehage_url(@barnehage12.id), :class => "btn btn-md btn-outline-black margin-top" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="team-single-member"> 
+              <%= image_tag(@barnehage13.image, :class => "", :alt => "barnehagen") %>
+              <div class="team-single-member-details margin-top">
+                <h2><%= @barnehage13.title %></h2>
+                <p class="margin-top"><%= @barnehage13.summary %></p>
+                <%= link_to "LES MER", barnehage_url(@barnehage13.id), :class => "btn btn-md btn-outline-black margin-top" %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<% end %>
+</section>
+
 <div class="row demo-gap">
   <div class="col-md-12">
     <div class="row">

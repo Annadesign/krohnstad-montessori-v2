@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row" id="barnehage-<%= @barnehage.id%>">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12">
+          <h2><%= @barnehage.title %></h2>
+          <div class="">
+             <%= @barnehage.content.html_safe %>
+          </div>
+          <div style="height: 40px" class=""></div>  
+          <%= link_to 'Tilbake', barnehage_index_path, :class => "btn btn-md btn-blue" %>
+        </div>
+      </div>
+    </div>
+  </div>	
+</div>
+
+<div style="height: 90px" class=""></div>  
+
+<div class="row demo-gap">
+  <div class="col-md-12">
+    <div class="row">
+
+      <div class="img-container col-md-8 col-sm-12 col-xs-12">
+        <div class="image"><%= image_tag('ro-web.jpg', :class => "") %></div>
+      <div class="top-right"><h2 class="Index-gallery-item-content-heading">Ro</h2></div>
+      </div>
+      <div class="img-container col-md-4 col-sm-12 col-xs-12">
+        <div class="image"><%= image_tag('selvstendighet-web.jpg', :class => "") %></div>
+        <div class="top-right"><h2 class="Index-gallery-item-content-heading">Selvstendighet</h2></div>
+      </div>
+      <div class="img-container col-md-4 col-sm-12 col-xs-12">
+        <div class="image"><%= image_tag('kunnskap-web.jpg', :class => "") %></div>
+        <div class="top-right"><h2 class="Index-gallery-item-content-heading">Kunnskap</h2></div>
+      </div>
+      <div class="img-container col-md-6 col-sm-12 col-xs-12">
+        <div class="image"><%= image_tag('kreativitet-web.jpg', :class => "") %></div>
+        <div class="top-right"><h2 class="Index-gallery-item-content-heading">Kreativitet</h2></div>
+      </div>
+      <div class="img-container col-md-6 col-sm-12 col-xs-12">
+        <div class="image"><%= image_tag('samspill-web.jpg', :class => "") %></div>
+        <div class="top-right"><h2 class="Index-gallery-item-content-heading">Samspill</h2></div>
+      </div>
+                             
+    </div>
+  </div>
+</div>      

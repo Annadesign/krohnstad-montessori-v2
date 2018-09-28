@@ -1725,6 +1725,7 @@ $$1.extend($$1.summernote.lang, {
             image: 'Picture',
             insert: 'Insert Image',
             resizeFull: 'Resize Full',
+            resizeThreeQuarter: 'Resize Three Quarter',
             resizeHalf: 'Resize Half',
             resizeQuarter: 'Resize Quarter',
             floatLeft: 'Float Left',
@@ -5516,6 +5517,13 @@ var Buttons = /** @class */ (function () {
                 click: _this.context.createInvokeHandler('editor.resize', '1')
             }).render();
         });
+        this.context.memo('button.imageSize75', function () {
+            return _this.button({
+                contents: '<span class="note-fontsize-10">75%</span>',
+                tooltip: _this.lang.image.resizeThreeQuarter,
+                click: _this.context.createInvokeHandler('editor.resize', '0.75')
+            }).render();
+        });        
         this.context.memo('button.imageSize50', function () {
             return _this.button({
                 contents: '<span class="note-fontsize-10">50%</span>',

@@ -1013,6 +1013,25 @@ ximg {
     height: calc( 50px * 2 + 5px);
 }
 
+.article-content img.note-float-left{
+    padding-right:20px;
+}
+
+.article-content img.note-float-right{
+    padding-left:20px;
+}
+
+.table {
+    border:0;
+}
+
+.table > tbody > tr > th, .table > tbody > tr > td {
+    padding:4px 8px;
+    line-height: 1.42857;
+    vertical-align: top;
+    border: 0px solid #ddd;
+}
+
 /***********************************/
 
 

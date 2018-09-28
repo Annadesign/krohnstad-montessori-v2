@@ -5,7 +5,7 @@
     <%= image_tag(@barnehage1.image, :class => "#{@barnehage1.imagestyle}-img" ) %>
   </div>
 </div> 
-
+<div style="height: 90px" class=""></div>
 <section>
   <div class="">
     <div class="container">
@@ -16,7 +16,7 @@
               <%= image_tag(@barnehage12.image, :class => "", :alt => "barnehagen") %>
               <div class="team-single-member-details margin-top">
                 <h2><%= @barnehage12.title %></h2>
-                <p class="margin-top"><%= @barnehage12.summary %></p>
+                <p class="margin-top"><%= @barnehage12.summary.html_safe %></p>
                 <%= link_to "LES MER", barnehage_url(@barnehage12.id), :class => "btn btn-md btn-outline-black margin-top" %>
               </div>
             </div>
@@ -26,7 +26,7 @@
               <%= image_tag(@barnehage13.image, :class => "", :alt => "barnehagen") %>
               <div class="team-single-member-details margin-top">
                 <h2><%= @barnehage13.title %></h2>
-                <p class="margin-top"><%= @barnehage13.summary %></p>
+                <p class="margin-top"><%= @barnehage13.summary.html_safe %></p>
                 <%= link_to "LES MER", barnehage_url(@barnehage13.id), :class => "btn btn-md btn-outline-black margin-top" %>
               </div>
             </div>

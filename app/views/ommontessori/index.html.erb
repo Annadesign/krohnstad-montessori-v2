@@ -1,26 +1,6 @@
 <% @ommontessori.each do |art| %>
 
-<div class="<%= art.imagestyle %>">
-  <div class="image">
-    <%= image_tag(art.image, :class => "#{art.imagestyle}-img" ) %>
-  </div>
-</div> 
-<section class="section-nopadding">
-  <div style="height: 50px" class=""></div>
-</section>
-<div class="container article-content">
-  <div class="row" id="informasjon">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12">
-          <h2><%= art.title %></h2>
-          <div class="article-content">
-              <%= art.content.html_safe %>
-          </div> 
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <%= render art.imagestyle, artic: art %>
+
 <% end %>
-<div id="map" style="height: 50px" class=""></div>
+<div id="map" style="height: 150px" class=""></div>

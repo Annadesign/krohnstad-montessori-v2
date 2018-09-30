@@ -43,16 +43,16 @@
                         <i class="fa fa-user-lock"></i> Administratorer
                     <% end %>
                 </li>
-               <li class="<%= is_active_controller('admin/articles') %>">
-                    <%= link_to admin_articles_path do %>
-                        <i class="fa fa-file"></i> Sider
-                    <% end %>
-                </li>
                 <li class="<%= is_active_controller('admin/categories') %>">
                     <%= link_to admin_categories_path do %>
-                        <i class="fa fa-list"></i> Kategorier
+                        <i class="fa fa-list"></i> Hovedsider
                     <% end %>
-                </li>                                       
+                </li> 
+               <li class="<%= is_active_controller('admin/articles') %>">
+                    <%= link_to admin_articles_path do %>
+                        <i class="fa fa-file"></i> Seksjoner
+                    <% end %>
+                </li>                                                      
                 <li class="<%= is_active_controller('admin/photos') %>">
                     <%= link_to admin_photos_path do %>
                         <i class="fa fa-images"></i> Bilde bibliotek

@@ -1,14 +1,16 @@
+<section id="section-<%= artic.id %>" style="margin:60px 0;">	
 	<div class="jarallax jarallax-avd">        
 	    <div class="demo-table">
 	        <div class="demo-table-cell">
-	            <h1 style="color:<%= artic.titlecolor %>;"><%= artic.title %></h1>
-	            <h2 style="color:<%= artic.titlecolor %>;">
+	            <h2 style="color:<%= artic.titlecolor %>;"><%= artic.title %></h2>
+	            <h3 style="color:<%= artic.titlecolor %>;">
 	            	 <%= artic.summary.html_safe %>
-	            </2>
+	            </h3>
 
 	        </div>
 	    </div>
 	    <div>
 	    	<%= image_tag(artic.image, :class => "jarallax-img") %>
 	    </div>
-	</div>  
+	</div>
+</section>

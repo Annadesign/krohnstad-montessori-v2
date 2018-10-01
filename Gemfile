@@ -35,9 +35,14 @@ gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 
 gem 'fog'
 
+gem 'jquery-rails', '~> 4.3.1'
+
 gem 'responders', '~> 2.3'
 
 gem 'simple_calendar', '~> 2.0'
+
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+gem 'acts_as_list'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     resources :moderators, only: [:index, :new, :create, :edit, :update]
     resources :employees, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :categories, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :articles, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :articles do
+      collection do
+        patch :reorder
+      end
+    end
     resources :schools, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :departments, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :parents, only: [:index, :new, :create, :edit, :update, :destroy]

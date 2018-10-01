@@ -5,9 +5,18 @@ class Admin::ArticlesController < Admin::ApplicationController
   # GET /admin/articles.json
   def index
    # @articles = Article.where(:publish => :true)
-     @articles = Article.list
+    @articles = Article.where(:category_id => params[:cat]).order(:position)
+    @category = Category.find(params[:cat])
 
   end
+
+  def reorder
+    params[:article].each_with_index do |id, index|
+      Article.where(id: id).update_all(position: index + 1)
+    end
+
+    head :ok
+  end  
 
   def show
   

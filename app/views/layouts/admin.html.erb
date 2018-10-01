@@ -45,14 +45,45 @@
                 </li>
                 <li class="<%= is_active_controller('admin/categories') %>">
                     <%= link_to admin_categories_path do %>
-                        <i class="fa fa-list"></i> Hovedsider
+                        <i class="fa fa-list"></i> Kategorier
                     <% end %>
                 </li> 
-               <li class="<%= is_active_controller('admin/articles') %>">
-                    <%= link_to admin_articles_path do %>
-                        <i class="fa fa-file"></i> Seksjoner
-                    <% end %>
-                </li>                                                      
+
+                <li class="<%= is_active_controller('admin/articles') %>">
+                    <a href="#"><i class="zmdi zmdi-edit"></i> <span class="nav-label" data-i18n="nav.posts">Hovedsider</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse in">
+                        <li class="<%= is_active_controller('admin/articles') %>">
+                            <%= link_to admin_articles_path(:cat => '1') do %>
+                                <i class="zmdi zmdi-view-list"></i> Barnehage
+                            <% end %>
+                        </li>
+                        <li class="<%= is_active_controller('admin/articles') %>">
+                            <%= link_to admin_articles_path(:cat => '2') do %>
+                                <i class="zmdi zmdi-view-list"></i> Skole
+                            <% end %>
+                        </li>
+                        <li class="<%= is_active_controller('admin/articles') %>">
+                            <%= link_to admin_articles_path(:cat => '3') do %>
+                                <i class="zmdi zmdi-view-list"></i> Om Montessori
+                            <% end %>
+                        </li>
+                        <li class="<%= is_active_controller('admin/articles') %>">
+                           <%= link_to admin_articles_path(:cat => '4') do %>
+                                <i class="zmdi zmdi-view-list"></i> Om oss
+                            <% end %>   
+                        </li>
+                        <li class="<%= is_active_controller('admin/articles') %>">
+                           <%= link_to admin_articles_path(:cat => '5') do %>
+                                <i class="zmdi zmdi-view-list"></i> Kontakt
+                            <% end %>   
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+
                 <li class="<%= is_active_controller('admin/photos') %>">
                     <%= link_to admin_photos_path do %>
                         <i class="fa fa-images"></i> Bilde bibliotek

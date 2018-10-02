@@ -5,7 +5,9 @@
        <h2><%= @category.name %></h2>
        <div id="articles" class="list-group" data-url="<%= reorder_admin_articles_path %>">
         <% @articles.each do |article| %>
-          <%= link_to article.title, edit_admin_article_path(article), class: "list-group-item", id: dom_id(article) %>
+          <%= link_to article.title, edit_admin_article_path(article), id: dom_id(article), :class => "list-group-item" %>
+              
+
         <% end %>
       </div>
      

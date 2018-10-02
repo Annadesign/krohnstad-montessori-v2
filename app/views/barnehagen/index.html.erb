@@ -1,69 +1,7 @@
+<% @barnehagen.each do |art| %>
 
+  <%= render art.imagestyle, artic: art %>
 
-<div class="<%= @barnehage1.imagestyle %>">
-  <div class="image">
-    <%= image_tag(@barnehage1.image, :class => "#{@barnehage1.imagestyle}-img" ) %>
-  </div>
-</div> 
-<section class="section text-center margin-top margin-bottom">
-  <div class="container">
-      <h2 class="text-align-center">EN OASE FOR GLEDE OG VEKST</h2>   
-  </div>
-</section>
-<section>
-  <div class="">
-    <div class="container">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-6 col-sm-12 col-xs-12">
-            <div class="team-single-member"> 
-              <%= image_tag(@barnehage12.image, :class => "", :alt => "barnehagen") %>
-              <div class="team-single-member-details margin-top">
-                <h2><%= @barnehage12.title %></h2>
-                <p class="margin-top"><%= @barnehage12.summary.html_safe %></p>
-                <%= link_to "LES MER", barnehage_url(@barnehage12.id), :class => "btn btn-md btn-outline-black margin-top" %>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12 col-xs-12">
-            <div class="team-single-member"> 
-              <%= image_tag(@barnehage13.image, :class => "", :alt => "barnehagen") %>
-              <div class="team-single-member-details margin-top">
-                <h2><%= @barnehage13.title %></h2>
-                <p class="margin-top"><%= @barnehage13.summary.html_safe %></p>
-                <%= link_to "LES MER", barnehage_url(@barnehage13.id), :class => "btn btn-md btn-outline-black margin-top" %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<% end %>
 
-<div style="height: 150px" class=""></div>  
-
-<div class="row demo-gap">
-  <div class="col-md-12">
-    <div class="row">
-
-      <div class="img-container col-md-8 col-sm-12 col-xs-12">
-        <div class="image"><%= image_tag('ro-web.jpg', :class => "") %></div>
-      </div>
-      <div class="img-container col-md-4 col-sm-12 col-xs-12">
-        <div class="image"><%= image_tag('selvstendighet-web.jpg', :class => "") %></div>
-      </div>
-      <div class="img-container col-md-4 col-sm-12 col-xs-12">
-        <div class="image"><%= image_tag('kunnskap-web.jpg', :class => "") %></div>
-      </div>
-      <div class="img-container col-md-6 col-sm-12 col-xs-12">
-        <div class="image"><%= image_tag('kreativitet-web.jpg', :class => "") %></div>
-      </div>
-      <div class="img-container col-md-6 col-sm-12 col-xs-12">
-        <div class="image"><%= image_tag('samspill-web.jpg', :class => "") %></div>
-      </div>
-                             
-    </div>
-  </div>
-</div>      
-<div style="height: 150px" class=""></div>
+<div id="map" style="height: 150px" class=""></div>

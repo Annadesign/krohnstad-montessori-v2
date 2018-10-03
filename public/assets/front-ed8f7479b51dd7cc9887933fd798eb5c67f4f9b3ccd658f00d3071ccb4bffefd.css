@@ -372,7 +372,7 @@ a i{z-index:0!important}
 .navbar-transparent .nav-icon span{color:#fff!important;border-color:#fff!important}
 
 ul.navigation-symbol:before{content:'';width:50%;height:0px;background-color:#fff;display:block;position:relative;margin-bottom:24px;opacity:.1;margin-left:auto;margin-right:auto;float:none}
-ul.navbar-nav li{margin-right:20px}
+ul.navbar-nav li{margin-right:25px}
 ul.navbar-nav li a{color:#000;-moz-transition:.2s;-o-transition:.2s;-webkit-transition:.2s;transition:.2s;font-size:16px;font-weight:400}
 ul.navbar-nav li a:hover{color:#000000;text-decoration:none}
 .navbar-fixed{background-color:#131313;position:fixed;top:0;right:0;z-index:999;width:100%;padding:0 20px;animation:fadeInDown .5s;-webkit-animation:fadeInDown .5s}
@@ -1500,8 +1500,8 @@ img.mfp-img{width:auto;max-width:100%;height:auto;display:block;line-height:0;-w
 
 @media (min-width: 1200px){
     .container {width:1000px!important;}
+    blockquote {padding:0 220px;}
 }
-
 
 .navbar {
     margin-top: 25px;
@@ -1514,7 +1514,13 @@ img.mfp-img{width:auto;max-width:100%;height:auto;display:block;line-height:0;-w
 .nav {
     margin:30px 30px;
 }
-
+.navbar-nav li a.active {
+    font-weight:600;
+    color:#777!important;
+    padding-bottom: 0;
+    border-bottom: 1px solid #777;
+   /* color: red!important;*/
+}
 /*************NAV***************/
 
 #nav-icon3 {
@@ -1993,7 +1999,7 @@ h5 {
 
 .simple-calendar .day div {
     text-align: left;
-  font-size: 1em
+    font-size: 1em
 }
 
 .simple-calendar .day div:before {
@@ -2320,15 +2326,15 @@ p.avd2 {
 
 
 .yellow {
-    background-color: #fff6ad;
+    background-color: #fff9b3;
 }
 
 .blue {
-    background-color: #a8d4f3;
+    background-color: #b0d3f2;
 }
 
 .pink {
-    background-color: #e7bbd5;
+    background-color: #e1bcd4;
 }
 
 /* MINSIDE-MENY */
@@ -2575,7 +2581,7 @@ ximg {
     padding:4px 8px;
     line-height: 1.42857;
     vertical-align: top;
-    border: 0px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 /***********************************/

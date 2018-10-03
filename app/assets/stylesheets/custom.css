@@ -3,8 +3,6 @@
     blockquote {padding:0 220px;}
 }
 
-
-
 .navbar {
     margin-top: 25px;
 }
@@ -18,7 +16,9 @@
 }
 .navbar-nav li a.active {
     font-weight:600;
-    text-decoration: underline;
+    color:#777!important;
+    padding-bottom: 0;
+    border-bottom: 1px solid #555;
    /* color: red!important;*/
 }
 /*************NAV***************/
@@ -499,7 +499,7 @@ h5 {
 
 .simple-calendar .day div {
     text-align: left;
-  font-size: 1em
+    font-size: 1em
 }
 
 .simple-calendar .day div:before {
@@ -826,15 +826,15 @@ p.avd2 {
 
 
 .yellow {
-    background-color: #fff6ad;
+    background-color: #fff9b3;
 }
 
 .blue {
-    background-color: #a8d4f3;
+    background-color: #b0d3f2;
 }
 
 .pink {
-    background-color: #e7bbd5;
+    background-color: #e1bcd4;
 }
 
 /* MINSIDE-MENY */
@@ -1081,7 +1081,7 @@ ximg {
     padding:4px 8px;
     line-height: 1.42857;
     vertical-align: top;
-    border: 0px solid #ddd;
+    border: 1px solid #ddd;
 }
 
 /***********************************/

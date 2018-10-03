@@ -28,6 +28,10 @@ module ApplicationHelper
         params[:cat] == action_name ? "active" : nil
     end
 
+    def is_active_menu(menu_name)
+        params[:id] == menu_name ? "active" : nil
+    end    
+
     def current_class?(test_path)
     return 'active' if request.path == test_path
     ''

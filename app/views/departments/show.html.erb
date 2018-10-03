@@ -31,7 +31,7 @@
 			           Min side <span class="badge"><i class="fa fa-angle-right"></i></span>
 			        </a>
 			        <% @parent.children.by_name_and_age.each do |d| %>
-			        	<a href="/avdeling/<%=d.department.id%>" class="list-group-item <%= is_active_action(d.department.id.to_s) %>">
+			        	<a href="/avdeling/<%=d.department.id%>" class="list-group-item <%= is_active_menu(d.department.id.to_s) %>">
 			            	<%= d.firstname %> <span class="badge"><i class="fa fa-angle-right"></i></span>
 			        	</a>
 			        <% end %>

@@ -47,7 +47,7 @@ class Admin::ArticlesController < Admin::ApplicationController
   end
 
   def update
-    
+
     if @article.update(article_params)
       redirect_to edit_admin_article_url(@article), notice: 'Artikkelen: ' + article_params[:title] + ' ble oppdatert!'
     else
@@ -71,6 +71,6 @@ class Admin::ArticlesController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :summary, :content, :image, :imagetext, :publish, :category_id, :moderator_id, :imagestyle, :titlecolor)
+      params.require(:article).permit(:title, :summary, :content, :image, :imagetext, :publish, :category_id, :moderator_id, :imagestyle, :titlecolor, :remove_image)
     end
 end

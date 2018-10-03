@@ -83,9 +83,15 @@
         Hovedbilde
       </div>
       <div class="panel-body">
+        <% if @article.image? %>
         <div class="img-responsive" id="image-holder">
-          <%= image_tag @article.image_url(:thumb) if @article.image? %>
+          <%= image_tag @article.image_url(:thumb)%>
         </div>
+        <div class="checkbox checkbox-primary">
+          <%= f.check_box :remove_image, :class => "" %>
+          <%= f.label :remove_image, 'Fjern bildet' %>
+        </div>
+        <% end %>
       </div>
       <div class="panel-footer">
         <%= f.label :image, :class => "btn btn-info btn-block" do %>

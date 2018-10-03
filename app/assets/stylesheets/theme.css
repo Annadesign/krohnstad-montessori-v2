@@ -310,7 +310,7 @@ a i{z-index:0!important}
 .navbar-transparent .nav-icon span{color:#fff!important;border-color:#fff!important}
 
 ul.navigation-symbol:before{content:'';width:50%;height:0px;background-color:#fff;display:block;position:relative;margin-bottom:24px;opacity:.1;margin-left:auto;margin-right:auto;float:none}
-ul.navbar-nav li{margin-right:20px}
+ul.navbar-nav li{margin-right:25px}
 ul.navbar-nav li a{color:#000;-moz-transition:.2s;-o-transition:.2s;-webkit-transition:.2s;transition:.2s;font-size:16px;font-weight:400}
 ul.navbar-nav li a:hover{color:#000000;text-decoration:none}
 .navbar-fixed{background-color:#131313;position:fixed;top:0;right:0;z-index:999;width:100%;padding:0 20px;animation:fadeInDown .5s;-webkit-animation:fadeInDown .5s}

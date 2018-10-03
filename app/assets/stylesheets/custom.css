@@ -18,6 +18,7 @@
 }
 .navbar-nav li a.active {
     font-weight:600;
+    text-decoration: underline;
    /* color: red!important;*/
 }
 /*************NAV***************/

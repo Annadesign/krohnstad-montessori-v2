@@ -47,11 +47,28 @@
         <%= f.label :description, 'Beskrivelse' %><br>
         <%= f.text_area :description, :class => "summernote" %>
       </div>
-      <div class="actions">
-        <%= f.submit 'Lagre avdelingen', :class => "btn btn-primary" %>
-      </div>
     </div>
     <div class="col-md-4"> 
+
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= f.submit 'Lagre', :class => "btn btn-primary btn-block" %>
+      </div>
+      <div class="panel-body">
+
+      </div>
+
+      <div class="panel-footer">
+        <span class="text-muted small">
+          Sist oppdatert: <%= @department.updated_at.to_s(:long) if @department.updated_at? %>
+        </span> 
+      </div>
+    </div>
+
+
+
 
       <div class="panel panel-default">
         <div class="panel-heading">Hovedbilde</div>

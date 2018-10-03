@@ -1,6 +1,8 @@
 @media (min-width: 1200px){
     .container {width:1000px!important;}
+    blockquote {padding:0 220px;}
 }
+
 
 
 .navbar {
@@ -14,7 +16,10 @@
 .nav {
     margin:30px 30px;
 }
-
+.navbar-nav li a.active {
+    font-weight:600;
+   /* color: red!important;*/
+}
 /*************NAV***************/
 
 #nav-icon3 {

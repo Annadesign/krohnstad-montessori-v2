@@ -50,31 +50,31 @@
                 </li> 
 
                 <li class="<%= is_active_controller('admin/articles') %>">
-                    <a href="#"><i class="zmdi zmdi-edit"></i> <span class="nav-label" data-i18n="nav.posts">Hovedsider</span><span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-file"></i> <span class="nav-label" data-i18n="nav.articles">Hovedsider</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse in">
-                        <li class="<%= is_active_controller('admin/articles') %>">
+                        <li class="<%= is_active_action('1') %>">
                             <%= link_to admin_articles_path(:cat => '1') do %>
-                                <i class="zmdi zmdi-view-list"></i> Barnehage
+                                <i class="fa fa-file"></i> Barnehage
                             <% end %>
                         </li>
-                        <li class="<%= is_active_controller('admin/articles') %>">
+                        <li class="<%= is_active_action('2') %>">
                             <%= link_to admin_articles_path(:cat => '2') do %>
-                                <i class="zmdi zmdi-view-list"></i> Skole
+                                <i class="fa fa-file"></i> Skole
                             <% end %>
                         </li>
-                        <li class="<%= is_active_controller('admin/articles') %>">
+                        <li class="<%= is_active_action('3') %>">
                             <%= link_to admin_articles_path(:cat => '3') do %>
-                                <i class="zmdi zmdi-view-list"></i> Om Montessori
+                                <i class="fa fa-file"></i> Om Montessori
                             <% end %>
                         </li>
-                        <li class="<%= is_active_controller('admin/articles') %>">
+                        <li class="<%= is_active_action('4') %>">
                            <%= link_to admin_articles_path(:cat => '4') do %>
-                                <i class="zmdi zmdi-view-list"></i> Om oss
+                                <i class="fa fa-file"></i> Om oss
                             <% end %>   
                         </li>
-                        <li class="<%= is_active_controller('admin/articles') %>">
+                        <li class="<%= is_active_action('5') %>">
                            <%= link_to admin_articles_path(:cat => '5') do %>
-                                <i class="zmdi zmdi-view-list"></i> Kontakt
+                                <i class="fa fa-file"></i> Kontakt
                             <% end %>   
                         </li>
                     </ul>

@@ -34,10 +34,10 @@ class Admin::ArticlesController < Admin::ApplicationController
 
   def create
     @article = Article.new(article_params)
-     @article.moderator_id = current_moderator.id
+    @article.moderator_id = current_moderator.id
     respond_to do |format|
       if @article.save
-        format.html { redirect_to admin_articles_url, notice: 'Article was successfully created.' }
+        format.html { redirect_to admin_articles_url(:cat => @article.category_id), notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -58,6 +58,7 @@ class Admin::ArticlesController < Admin::ApplicationController
   end
 
   def destroy
+    @article = Article.find(params[:id])
     @article.destroy
     redirect_to admin_articles_url(cat: params[:category_id]), notice: 'Artikkelen ble slettet!'
   end

@@ -12,14 +12,12 @@
 
         <div class="collapse navbar-collapse center-block" style="margin-top:10px">
           <ul class="navbar-nav navigation-symbol">
-            <li> <a href="/barnehage">Barnehage</a></li>
-            <li> <a href="/skole">Skole</a></li>
-            <li> 
-              <%= link_to 'Om Montessori', ommontessori_index_path, :class => 'bg-hover-color' %>
-            </li>
-            <li> <a href="/omoss">Om oss</a></li>
+            <li> <a href="/barnehage" class="<%= is_active_controller('barnehagen') %>">Barnehage</a></li>
+            <li> <a href="/skole" class="<%= is_active_controller('skole') %>">Skole</a></li>
+            <li> <a href="/ommontessori" class="<%= is_active_controller('ommontessori') %>">Om Montessori</a></li>
+            <li> <a href="/omoss" class="<%= is_active_controller('satsingsomrade') %>">Om oss</a></li>
             
-            <li> <a href="/kontakt">Kontakt</a></li>
+            <li> <a href="/kontakt" class="<%= is_active_controller('informasjon') %>">Kontakt</a></li>
             <% if session[:current_parent_id] %>
               <%=  link_to parents_path, :class => "btn btn-md btn-blue" do %>
                 <%= @parent.name %>

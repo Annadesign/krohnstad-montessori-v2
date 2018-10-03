@@ -20,8 +20,12 @@ module ApplicationHelper
         params[:controller] == controller_name ? "active" : nil
     end
 
+    def is_in_controller(controller_name)
+        params[:controller] == controller_name ? "in" : nil
+    end    
+
     def is_active_action(action_name)
-        params[:id] == action_name ? "active" : nil
+        params[:cat] == action_name ? "active" : nil
     end
 
     def current_class?(test_path)

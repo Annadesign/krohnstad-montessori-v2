@@ -1,13 +1,16 @@
 <div class="ibox">
   <div class="ibox-content">
     <div class="panel-body">  
-       <p id="notice"><%= notice %></p>
-       <h2><%= @category.name %></h2>
-       <div id="articles" class="list-group" data-url="<%= reorder_admin_articles_path %>">
+      <p id="notice"><%= notice %></p>
+      <h2><%= @category.name %></h2>
+      <div id="articles" class="list-group" data-url="<%= reorder_admin_articles_path %>">
         <% @articles.each do |article| %>
-          <%= link_to article.title, edit_admin_article_path(article), id: dom_id(article), :class => "list-group-item" %>
-              
-
+          <div id="<%= dom_id(article) %>" class="list-group-item">
+            <%= link_to article.title, edit_admin_article_path(article) %>  
+            <span class="badge">
+                <%= link_to 'Slett', admin_article_path(article,:category_id => article.category_id), method: :delete, data: { confirm: 'Er du sikker?' } %>  
+            </span>
+          </div>
         <% end %>
       </div>
      

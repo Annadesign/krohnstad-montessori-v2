@@ -7,8 +7,8 @@
         <% @articles.each do |article| %>
           <div id="<%= dom_id(article) %>" class="list-group-item">
             <%= link_to article.title, edit_admin_article_path(article) %>  
-            <span class="badge">
-                <%= link_to 'Slett', admin_article_path(article,:category_id => article.category_id), method: :delete, data: { confirm: 'Er du sikker?' } %>  
+            <span class="badge badge-danger">
+                <%= link_to 'Slett', admin_article_path(article,:category_id => article.category_id), method: :delete, data: { confirm: 'Er du sikker?' }, :style => 'color:#fff;' %>  
             </span>
           </div>
         <% end %>

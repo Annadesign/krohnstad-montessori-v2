@@ -16,9 +16,9 @@
 }
 .navbar-nav li a.active {
     font-weight:600;
-    color:#777!important;
+    color:#666!important;
     padding-bottom: 0;
-    border-bottom: 1px solid #777;
+    border-bottom: 1px solid #666;
    /* color: red!important;*/
 }
 /*************NAV***************/
@@ -695,7 +695,7 @@ a.btn-outline-black:hover{text-decoration:none!important;color:#fff!important}
 /* gap */
 
 .demo-gap {
-    padding: 50px;
+    padding: 25px;
     overflow: hidden;
 }
 
@@ -1108,7 +1108,7 @@ ximg {
 
     .demo-content {
 
-        padding: 50px 30px;
+        padding: 25px 30px;
 
     }
    .table {

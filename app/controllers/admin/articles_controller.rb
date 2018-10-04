@@ -23,7 +23,7 @@ class Admin::ArticlesController < Admin::ApplicationController
   end
 
   def new
-    @article = Article.new
+    @article = Article.new(:category_id => params[:cat])
   end
 
   def edit

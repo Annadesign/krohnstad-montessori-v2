@@ -77,6 +77,11 @@
                                 <i class="fa fa-file"></i> Kontakt
                             <% end %>   
                         </li>
+                        <li class="<%= is_active_action('6') %>">
+                           <%= link_to admin_articles_path(:cat => '6') do %>
+                                <i class="fa fa-file"></i> Personvern
+                            <% end %>   
+                        </li>                        
                     </ul>
                 </li>
 

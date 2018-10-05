@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
+<div id="wrapper" class="<%= params[:controller] %>.<%= params[:action] %>">
     <% if session[:current_moderator_id] %>
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
@@ -35,7 +35,7 @@
 
                 <li class="<%= is_active_controller('admin/dashboard') %>">
                     <%= link_to admin_dashboard_index_path do %>
-                        <i class="fa fa-th"></i> Dashboard
+                        <i class="fa fa-th"></i> Oversikt
                     <% end %>
                 </li>
                 <li class="<%= is_active_controller('admin/moderators') %>">
@@ -84,10 +84,6 @@
                         </li>                        
                     </ul>
                 </li>
-
-
-
-
 
                 <li class="<%= is_active_controller('admin/photos') %>">
                     <%= link_to admin_photos_path do %>
@@ -139,17 +135,11 @@
         </div>
     </nav>
 
-        <div id="page-wrapper" class="gray-bg">
+    <div id="page-wrapper" class="gray-bg">
         <div class="row border-bottom">
         <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-<!--                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="zmdi zmdi-menu"></i></a>
-               <form role="search" class="navbar-form-custom" action="search_results.html">
-                    <div class="form-group">
-                        <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
-                    </div>
-                </form>
--->
+
             </div>
             
             <ul class="nav navbar-top-links navbar-right">
@@ -200,8 +190,8 @@
             </div>
         </div>
 
-        </div>
-        </div>
+    </div>
+</div>
 
  
 </body>

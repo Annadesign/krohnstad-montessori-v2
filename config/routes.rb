@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   resources :omoss, controller: 'satsingsomrade'
   resources :skole, controller: 'skole'
   resources :kontakt, controller: 'informasjon'
-  resources :personvern, controller: 'articles'
+  resources :personvern, controller: 'personvern'
     
   resources :galleries, only: [:show]
 

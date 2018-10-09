@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     resources :images, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :photos, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :documents, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :attachments, only: [:index, :new, :create, :edit, :update, :destroy]
   end  
 # === END ADMINISTRATOR ===
 

@@ -1,0 +1,36 @@
+<div class="ibox">
+  <div class="ibox-content">
+    <div class="panel-body">  
+      <p id="notice"><%= notice %></p>
+
+
+      <table class="table table-bordered table-hover" >
+        <thead>
+          <tr>
+            <th>Dokument</th>
+            <th>Beskrivelse</th>
+            <th>Avdeling</th>
+            <th colspan="2">Handlinger</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @dattachments.each do |doc| %>
+            <tr>
+              <td><%= doc.attachment %></td>
+              <td><%= doc.description %></td>
+              <td><%= doc.department.title %></td>
+              <td><%= link_to 'Redigere', edit_admin_attachment_path(doc) %></td>
+              <td><%= link_to 'Slett', admin_attachment_path(doc), method: :delete, data: { confirm: 'Er du sikker?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'Nytt dokument', new_admin_attachment_path %>
+
+    </div>
+  </div>
+</div>

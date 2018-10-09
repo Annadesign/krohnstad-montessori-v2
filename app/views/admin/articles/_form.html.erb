@@ -99,11 +99,25 @@
         <% end %>  
       </div>  
     </div>
+  <% end %>
+
+   <div class="panel panel-default">
+    <div class="panel-heading">
+      Vedlegg (pdf)
+    </div>
+    <div class="panel-body">
+ 
+    </div>
+    <div class="panel-footer">
+      <%= link_to 'Nytt dokument', new_admin_attachment_url(:article_id => @article.id)  , :class => 'btn btn-sm btn-warning btn-block' %>
+    </div>  
+  </div>
+
   </div>
   
 
 
-<% end %>
+
 
 <script type="text/javascript">
   $(function() {

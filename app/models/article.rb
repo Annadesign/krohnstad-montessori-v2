@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   belongs_to :category
   belongs_to :moderator
+  has_many :attachments
 
   validates :title, presence: true
 

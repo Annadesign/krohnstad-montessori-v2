@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181009070058) do
+ActiveRecord::Schema.define(version: 20181009201337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20181009070058) do
     t.integer "position"
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["moderator_id"], name: "index_articles_on_moderator_id"
+  end
+
+  create_table "attachments", force: :cascade do |t|
+    t.string "attachment"
+    t.string "description"
+    t.bigint "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_attachments_on_article_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -177,6 +186,7 @@ ActiveRecord::Schema.define(version: 20181009070058) do
 
   add_foreign_key "articles", "categories"
   add_foreign_key "articles", "moderators"
+  add_foreign_key "attachments", "articles"
   add_foreign_key "child_parents", "children"
   add_foreign_key "child_parents", "parents"
   add_foreign_key "children", "departments"

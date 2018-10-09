@@ -70,7 +70,16 @@
           var marker<%= school.id %> = new google.maps.Marker({
             map: map,
             position: {lat:<%= school.lat %>, lng:<%= school.lng %>},
-            title: '<%= school.name %>'
+            title: '<%= school.name %>',
+            icon: {
+              url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png",
+              labelOrigin: new google.maps.Point(20, 38),
+              size: new google.maps.Size(32,32),
+              anchor: new google.maps.Point(16,32)
+            },
+            label: {
+              text: "<%= school.name %>"
+            }
 
           });
           marker<%= school.id %>.addListener('click', function() {

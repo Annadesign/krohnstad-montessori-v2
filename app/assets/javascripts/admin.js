@@ -10,6 +10,7 @@
  *= require summernote-video-attributes
  *= require summernote.gallery
  *= require bootstrap
+ *= require inspinia
  *= require turbolinks
  *= require_self
  *= require_tree ./admin

@@ -11,7 +11,7 @@ class Article < ApplicationRecord
   scope :ommontessori, -> { where(publish: true, :category_id => '3').order(:position) }
   scope :satsingsomrade, -> { where(publish: true, :category_id => '4').order(:position) }
   scope :skole, -> { where(publish: true, :category_id => '2').order(:position) }
-  scope :informasjon, -> { where(publish: true, :category_id => '5') }
+  scope :informasjon, -> { where(publish: true, :category_id => '5').order(:position)  }
   scope :personvern, -> { where(publish: true, :category_id => '6').order(:position) }
   scope :list, -> { order(:category_id, :id) }
   

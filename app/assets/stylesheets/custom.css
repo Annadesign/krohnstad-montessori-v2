@@ -191,7 +191,7 @@ label {
 
 blockquote {
     margin:40px 0 10px 0;
-    color:#000;
+    
     padding-bottom: .5em;
     font-family: "brandon-grotesque", sans-serif;
     font-weight: 400;
@@ -225,7 +225,7 @@ figcaption .source {
     margin: 6px 0 4px;
     border: 1px solid #ccc;
     background: #fefefe;
-    color: #000;
+    color: #444;
     font-family: sans-serif;
     font-size: 12px;
     line-height: normal;
@@ -287,7 +287,7 @@ p ~ div {
 
 small {
     font-size: 75%;
-    color: #606060;
+    color: #444;
 }
 
 a, a:visited, a:hover, a:focus {
@@ -351,7 +351,7 @@ h5 {
     display: table;
     width: 100%;
     height: 500px;
-    color: #000;
+    color: #444;
 }
 
 .jarallax-table-cell {
@@ -364,14 +364,14 @@ h5 {
     display: table;
     width: 100%;
     height: 500px;
-    color: #000;
+    color: #444;
 }
 
 
 
 .telefonnummer {
     margin-top:1em;
-    color: black;
+    
     text-align: center;
     font-size: 2.3em;
     line-height: 0.5;
@@ -810,7 +810,7 @@ p.avd2 {
     border: 1px solid #ddd;
     border-radius: 6px;
     margin: 0;
-    color: black;
+    color: #444;
 }
 
 .viktig h2 {

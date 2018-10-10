@@ -54,9 +54,6 @@ en:
     - Torsdag
     - Fredag
     - Lørdag
-
-en:
-  date:
     month_names:
     - Januar
     - Februar
@@ -69,4 +66,5 @@ en:
     - September
     - Oktober
     - November
-    - Desember
+    - Desember    
+

@@ -83,21 +83,7 @@
           <% end %>
         </div>              
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">Bakgrunnsfarge</div>
-        <div class="panel-body">
-          <div class="style-toggle-body text-center">
-            <%= f.hidden_field :backgroundcolor, :id => 'backgroundcolor' %>
-            <ul class="colors list-inline">
-              <li class="yellow"></li>
-              <li class="blue"></li>
-              <li class="pink"></li>
-            </ul>
-          </div>
-
-
-        </div>
-      </div>
+ 
      <div class="panel panel-default">
       <div class="panel-heading">ANSATTE</div>
       <div class="panel-body">
@@ -151,23 +137,7 @@
       });
     });
   </script>
-  <script type="text/javascript">
-    $('.style-toggle-body .colors > .yellow').on('click', function() {
-      $("#bg-heading").addClass("yellow").removeClass("blue pink");
-      $("input:hidden#backgroundcolor").val("yellow");
-      return false;
-    });
 
-    $('.style-toggle-body .colors > .blue').on('click', function() {
-      $("input:hidden#backgroundcolor").val("blue");
-      return false;
-    });
-
-    $('.style-toggle-body .colors > .pink').on('click', function() {
-       $("input:hidden#backgroundcolor").val("pink");
-      return false;
-    });
-  </script>
   <script type="text/javascript">
     $(document).ready(function() {
       $("#department_image").on('change', function() {

@@ -1,8 +1,10 @@
 <section id="section-<%= artic.id %>" style="margin:0 0 60px 0;">	
 	<div class="jarallax">        
 	    <div class="demo-table">
-	        <div class="demo-table-cell" style="color:<%= artic.titlecolor %>;">
-	    	    <%= artic.content.html_safe %>
+	        <div class="demo-table-cell">
+	    	    <h2 style="color:<%= artic.titlecolor %>;">
+	    	    	<%= artic.content.html_safe %>
+	    	    </h2>
 	        </div>
 	    </div>
 	    <div>

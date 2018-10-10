@@ -54,3 +54,19 @@ en:
     - Torsdag
     - Fredag
     - Lørdag
+
+en:
+  date:
+    month_names:
+    - Januar
+    - Februar
+    - Mars
+    - April
+    - Mai
+    - Juni
+    - Juli
+    - August
+    - September
+    - Oktober
+    - November
+    - Desember

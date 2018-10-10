@@ -39,7 +39,7 @@ class Admin::AttachmentsController < Admin::ApplicationController
     @attachment = Attachment.find(params[:id])
 
     respond_to do |format|
-      if @image.update_attributes(image_params)
+      if @attachment.update_attributes(attachment_params)
         format.html { redirect_to admin_attachment_path(@attachment), notice: 'Attachment was successfully updated.' }
         format.json { head :no_content }
       else
@@ -64,6 +64,6 @@ class Admin::AttachmentsController < Admin::ApplicationController
   private
 
   def attachment_params
-    params.require(:attachment).permit(:title, :description, :attachment, :department_id)
+    params.require(:attachment).permit(:attachment, :description, :article_id)
   end
 end

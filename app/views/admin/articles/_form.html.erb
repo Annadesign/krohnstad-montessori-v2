@@ -26,10 +26,7 @@
         </div>           
       </div>        
     </div>      
-    <div class="form-group">
-      <%= f.label :category_id, 'Kategori', :class => "" %>
-      <%= f.select :category_id, Category.all.collect {|c| [c.name, c.id]}, {prompt: 'Velg kategori'}, :class => "form-control" %>
-    </div>
+
     <div class="field">
       <%= f.label :content, 'Brødtekst' %><br>
       <%= f.text_area :content, :class => "summernote" %>
@@ -59,6 +56,10 @@
         </span> 
       </div>
     </div>
+    <div class="form-group">
+      <%= f.label :category_id, 'Hovedside', :class => "" %>
+      <%= f.select :category_id, Category.all.collect {|c| [c.name, c.id]}, {prompt: 'Velg hovedside'}, :class => "form-control" %>
+    </div>    
     <div class="form-group">
       <%= f.label :imagestyle, 'Velg mal: ', :class => '' %>
       <%= f.select :imagestyle, 

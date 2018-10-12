@@ -9,7 +9,8 @@
       </ul>
     </div>
   <% end %>
- 
+<div class="row">
+  <div class="col-md-8">
  <div class="row">
     <div class="col-md-6">
       <div class="form-group">
@@ -36,12 +37,16 @@
     <div class="form-group">
       <%= f.label :parent_ids, 'Foresatte', :class => "" %>
       <%= f.select :parent_ids, Parent.all.collect {|t| [t.name, t.id]}, {prompt: ''}, multiple: :true, :class => "form-control chosen-select info" %>
-    </div>      
+    </div>
+  </div>
+  <div class="col-md-4">
   <div class="actions">
 
-    <%= f.submit 'Lagre', :class => 'btn btn-primary' %>
-    <%= link_to 'Tilbake', admin_children_path %>
+    <%= f.submit 'Oppdatere', :class => 'btn btn-primary btn-block' %>
+   
   </div>
+</div>
+</div>
 <% end %>
 
 <script type="text/javascript">

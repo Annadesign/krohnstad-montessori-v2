@@ -2,7 +2,8 @@
   <div class="ibox-content">
     <div class="panel-body">  
       <p id="notice"><%= notice %></p>
-      <h2><%= @category.name %></h2>
+      <h2>Hovedside: <%= @category.name %></h2>
+      <h4>Seksjoner</h4>
       <div id="articles" class="list-group" data-url="<%= reorder_admin_articles_path %>">
         <% @articles.each do |article| %>
           <div id="<%= dom_id(article) %>" class="list-group-item">

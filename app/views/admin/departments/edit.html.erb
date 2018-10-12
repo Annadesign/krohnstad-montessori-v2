@@ -1,12 +1,12 @@
 		<div class="col-sm-12">
 			<p>
-				<%= link_to new_admin_message_url(:department_id => @department.id), :class => 'btn btn-sm btn-warning' do %><i class="fa fa-plus-circle"></i> beskjed
+				<%= link_to new_admin_message_url(:department_id => @department.id), :class => 'btn btn-sm btn-warning' do %><i class="fa fa-plus-circle"></i> Beskjeder
 				<% end %>
 				<%= link_to new_admin_meeting_url(:department_id => @department.id), :class => 'btn btn-sm btn-info' do %><i class="fa fa-plus-circle"></i> Hendelse i kalender
 				<% end %>
-				<%= link_to new_admin_document_url(:department_id => @department.id)  , :class => 'btn btn-sm btn-danger' do %><i class="fa fa-plus-circle"></i> Dokument
+				<%= link_to new_admin_document_url(:department_id => @department.id)  , :class => 'btn btn-sm btn-danger' do %><i class="fa fa-plus-circle"></i> Dokumenter
 				<% end %>
-				<%= link_to new_admin_gallery_url(:department_id => @department.id) , :class => 'btn btn-sm btn-success' do %><i class="fa fa-plus-circle"></i> Galleri
+				<%= link_to new_admin_gallery_url(:department_id => @department.id) , :class => 'btn btn-sm btn-success' do %><i class="fa fa-plus-circle"></i> Bildegalleri
 				<% end %>				
 			</p>
 			<div class="ibox">
@@ -18,27 +18,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="ibox">
-        		<div class="ibox-content">
-        			<div class="panel-body">	
-        				<h3>Ukeplan / kalender</h3>
 
-						<%= week_calendar events: @department.meetings do |date, meetings| %>
-						  <strong><%= date.day %></strong>
 
-						  <% meetings.each do |meeting| %>
-						    <div>
-						      <%= meeting.name %>
-						    </div>
-						  <% end %>
-						<% end %>
-						<div class="row col-sm-12">
-							<%= link_to new_admin_meeting_url(:department_id => @department.id), :class => 'btn btn-sm btn-circle btn-info' do %><i class="fa fa-plus"></i>
-							<% end %>
-						</div>
-					</div>
-				</div>
-			</div>			
 			<div class="ibox">
         		<div class="ibox-content">
         			<div class="panel-body">	
@@ -66,6 +47,29 @@
 					</div>
 				</div>
 			</div>		
+			
+			<div class="ibox">
+        		<div class="ibox-content">
+        			<div class="panel-body">	
+        				<h3>Ukeplan / kalender</h3>
+
+						<%= week_calendar events: @department.meetings do |date, meetings| %>
+						  <strong><%= date.day %></strong>
+
+						  <% meetings.each do |meeting| %>
+						    <div>
+						      <%= meeting.name %>
+						    </div>
+						  <% end %>
+						<% end %>
+						<div class="row col-sm-12">
+							<%= link_to new_admin_meeting_url(:department_id => @department.id), :class => 'btn btn-sm btn-circle btn-info' do %><i class="fa fa-plus"></i>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>			
+
 
 
 			<div class="ibox">

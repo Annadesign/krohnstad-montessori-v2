@@ -20,7 +20,7 @@
       <div class="panel-body">  
 
         <div class="form-group">
-          <%= f.label :name, 'Barnehagens-/skolens navn', :class => "" %>
+          <%= f.label :name, 'Enhetens navn', :class => "" %>
           <%= f.text_field :name, :class => 'form-control', :placeholder => "Name" %>
         </div>
         <div class="form-group">
@@ -106,7 +106,7 @@
         });
 
         var infowindow = new google.maps.InfoWindow({
-          content: '<%= @school.description.html_safe %>'
+          content: '<%= @school.description.html_safe if @school.description? %>'
         });
 
         // Create a marker and set its position.

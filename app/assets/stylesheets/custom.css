@@ -389,7 +389,6 @@ h5 {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    padding:0 1.3em;
 }
 
 .demo-table-cell h1 {
@@ -398,6 +397,7 @@ h5 {
 
 .demo-table-cell h2 {
         font-size: 38px;
+         padding:0 2.4em;
 }
 
 .demo-table-cell h3 {

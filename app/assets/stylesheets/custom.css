@@ -419,14 +419,23 @@ h5 {
 }
 
 .demo-table-cell blockquote {
+    
+    font-family: brandon-grotesque;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: .075em;
+    line-height: 1.4em;
+}
+
+.demo-table-cell blockquote p {
     margin-top:0;
     font-family: brandon-grotesque;
     font-weight: 400;
     font-style: normal;
-    font-size: 1em
+    font-size: 32px;
     letter-spacing: .075em;
-    line-height: 1.2em;
-    text-transform: uppercase;
+    line-height: 1.4em;
 }
 
 .middle-align-block{

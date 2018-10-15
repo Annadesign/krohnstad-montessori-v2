@@ -143,25 +143,21 @@
 			</section>
 			<% end %>
 
-
 			<section class="employees">
 				<div class="" style="padding-bottom:25px;">
 					<h2>Ansatte på avdelingen</h2>
 				</div>
 				<div class="row">
-				 <% @department.employees.each do |emp| %>
-				  <div class="col-md-2 col-sm-3 col-xs-6">
-					<div class="card" style="width:100%;">
-						<%= image_tag(emp.image, :class => "card-img-top rounded img-thumbnail") if emp.image? %>	
-					  
-					  <div class="card-body">
-					    <div class="card-title"><%= emp.firstname %></div>
-					    <div class="card-text"><%= emp.position %></div>
-					    
-					  </div>
-					</div>	
-				  </div>
-				 <% end %>				
+				 	<% @department.employees.each do |emp| %>
+				  	<div class="col-md-2 col-sm-3 col-xs-6">
+						<div class="card" style="width:100%;">
+							<%= image_tag(emp.image, :class => "card-img-top rounded img-thumbnail") if emp.image? %>	
+					  		<div class="card-body">
+					    		<div class="card-title"><%= emp.firstname %></div>		    
+					  		</div>
+						</div>	
+				  	</div>
+				 	<% end %>				
 				</div>
 			</section>
 

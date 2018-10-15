@@ -26,7 +26,10 @@
         </div>           
       </div>        
     </div>      
-
+    <div class="form-group">
+      <%= f.label :summary, 'Ingress' %><br>
+      <%= f.text_area :summary, :class => "form-control" %>
+    </div>
     <div class="field">
       <%= f.label :content, 'Brødtekst' %><br>
       <%= f.text_area :content, :class => "summernote" %>
@@ -116,9 +119,6 @@
 
   </div>
   
-
-
-
 
 <script type="text/javascript">
   $(function() {

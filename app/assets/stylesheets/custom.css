@@ -392,16 +392,19 @@ h5 {
 }
 
 .demo-table-cell h1 {
-        font-size: 48px;
+    font-size: 48px;
 }
 
 .demo-table-cell h2 {
-        font-size: 38px;
-         padding:0 2.4em;
+    font-size: 38px
+}
+.demo-table-cell h2 p{
+    line-height: 1.8em;
 }
 
+
 .demo-table-cell h3 {
-        font-size: 24px;
+    font-size: 24px;
 }
 
 .small-title {

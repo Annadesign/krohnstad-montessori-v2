@@ -171,6 +171,9 @@ ul, menu, dir {
     text-align: justify; /* Optional */
 }
 
+h2.text-rainbow{
+    font-size:2.5em;
+}
 
 
 label {
@@ -1057,6 +1060,10 @@ ximg {
     /* ARTICLE GALLERY */
 /**********************************/
 
+.image-fit {
+    object-fit: cover;
+}
+
 .article-text ul, li {
     padding: 0;
     margin: 0;
@@ -1113,6 +1120,9 @@ ximg {
 
     .table {
         font-size: .45em;
+    }
+    h2.text-rainbow {
+        font-size: 1.2em;
     }
 
 }

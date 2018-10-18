@@ -38,14 +38,11 @@
 				</div>
 			</div>
 
-	       	<div class="panel-body">	
-				<div class="control-group">
-					<%= f.label :images, :class => "btn btn-info btn-sm btn-block" do %>
-					
-				  		<%= file_field_tag "images[]", type: :file, multiple: true, :class => 'hide' %>
-						Velg bilder
-					<% end %>
-				</div>
+     	<div class="panel-body">	
+		    <div class="control-group">
+          <%= file_field_tag "images[]", type: :file, multiple: true, :class => 'btn btn-xs btn-info' %>
+        </div>
+		  </div>
 				
 
 			</div>

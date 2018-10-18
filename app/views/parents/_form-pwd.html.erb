@@ -10,13 +10,18 @@
       </ul>
     </div>
   <% end %>
-
-
   <div class="form-group">
-    <%= f.label :password, 'Passord', :class => "" %>
-    <%= f.password_field :password, :class => 'form-control', :placeholder => 'Passord' %>
+    <%= f.label :password, 'Endre passord', :class => "" %>
+    <%= f.password_field :password, {:class => 'form-control', :placeholder => 'Passord', 'data-bv-identical' => 'true', 'data-bv-identical-field' => 'confirmPassword', 'data-bv-identical-message' => 'Passord er ikke det samme i begge felt' } %>
   </div>
-  <div class="form-group actions pull-right">
-    <%= link_to 'Lagre', "#", :onclick => "$('#form-parent').submit()", :class => 'contact-form-submit btn btn-blue' %>
+  <div class="form-group">
+    <label class="control-label">Gjenta passord</label>
+    <input type="password" class="form-control" name="confirmPassword"
+        data-bv-identical="true"
+        data-bv-identical-field="parent[password]"
+        data-bv-identical-message="Passord er ikke det samme i begge felt" />
+  </div>
+  <div class="form-group actions pull-left">
+    <%= link_to 'Oppdatere passord', "#", :onclick => "$('#form-parent').submit()", :class => 'contact-form-submit btn btn-blue' %>
   </div>
 <% end %>

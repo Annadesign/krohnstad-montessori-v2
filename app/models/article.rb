@@ -13,6 +13,7 @@ class Article < ApplicationRecord
   scope :skole, -> { where(publish: true, :category_id => '2').order(:position) }
   scope :informasjon, -> { where(publish: true, :category_id => '5').order(:position)  }
   scope :personvern, -> { where(publish: true, :category_id => '6').order(:position) }
+  scope :forside, -> { where(publish: true, :category_id => '7').order(:position) }
   scope :list, -> { order(:category_id, :id) }
   
   mount_uploader :image, ImageUploader

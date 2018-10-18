@@ -37,6 +37,11 @@
                     <a href="#"><i class="fa fa-file"></i> <span class="nav-label" data-i18n="nav.articles">Hovedsider</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse in">
                         <li class="<%= is_active_action('1') %>">
+                            <%= link_to admin_articles_path(:cat => '7') do %>
+                                <i class="fa fa-file"></i> Forside
+                            <% end %>
+                        </li>                        
+                        <li class="<%= is_active_action('1') %>">
                             <%= link_to admin_articles_path(:cat => '1') do %>
                                 <i class="fa fa-file"></i> Barnehage
                             <% end %>

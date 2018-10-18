@@ -26,4 +26,7 @@
    <div class="form-group actions pull-right">
     <%= link_to 'Lagre', "#", :onclick => "$('#form-parent').submit()", :class => 'contact-form-submit btn btn-blue' %>
   </div>
+  <%= link_to edit_parent_path(session[:current_parent_id], :form => 'pwd') do %>
+    <i class="fa fa-lock"></i> Endre passord
+  <% end %>
 <% end %>

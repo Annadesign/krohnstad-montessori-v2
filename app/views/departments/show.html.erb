@@ -92,19 +92,22 @@
 					<% end %>
 				</div>
 			</div>
+
 			<div id="gap" style="height: 60px" class=""></div>
 			</section>
 
 			<% if @department.documents.present? %>
 			<section id="documents">
 				<div class="row">
-					<h2>Dokumenter</h2>
-					<% @department.documents.each do |doc| %>
-						<div class="col-md-4 col-sm-6 col-xs-6"> 
-							<%= link_to doc.title, doc.document.url, :title => doc.document , :target => 'blank' %>
-							<p><%= doc.description %></p>
-						</div>
-					<% end %>
+					<div class="col-md-12">
+						<h2>Dokumenter</h2>
+						<% @department.documents.each do |doc| %>
+							<div class="col-md-4 col-sm-6 col-xs-6"> 
+								<%= link_to doc.title, doc.document.url, :title => doc.document , :target => 'blank' %>
+								<p><%= doc.description %></p>
+							</div>
+						<% end %>
+					</div>
 				</div>
 				<div id="gap" style="height: 60px" class=""></div>
 			</section>	

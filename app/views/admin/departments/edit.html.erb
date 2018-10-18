@@ -6,7 +6,7 @@
 				<% end %>
 				<%= link_to new_admin_document_url(:department_id => @department.id)  , :class => 'btn btn-sm btn-danger' do %><i class="fa fa-plus-circle"></i> Dokumenter
 				<% end %>
-				<%= link_to new_admin_gallery_url(:department_id => @department.id) , :class => 'btn btn-sm btn-success' do %><i class="fa fa-plus-circle"></i> Bildegalleri
+				<%= link_to new_admin_gallery_url(:department_id => @department.id) , :class => 'btn btn-sm btn-success' do %><i class="fa fa-plus-circle"></i> Album
 				<% end %>				
 			</p>
 			<div class="ibox">
@@ -47,7 +47,7 @@
 					</div>
 				</div>
 			</div>		
-			
+
 			<div class="ibox">
         		<div class="ibox-content">
         			<div class="panel-body">	
@@ -107,7 +107,7 @@
 			<div class="ibox">
         		<div class="ibox-content">
         			<div class="panel-body">	
-        				<h3>Bildegalleri</h3>
+        				<h3>Album</h3>
 						<% @department.galleries.each do |gallery| %>
 							<% unless gallery.images.empty? %>
 							    <div class="file-box">

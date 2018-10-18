@@ -24,7 +24,7 @@ class Admin::DocumentsController < Admin::ApplicationController
 
     if @document.save
       respond_to do |format|
-        format.html { redirect_to admin_documents_url, notice: 'Dokumentet ble lastet opp' }
+        format.html { redirect_to edit_admin_department_url(@document.department.id), notice: 'Dokumentet ble lastet opp' }
       end
     else
       render :json => [{:error => "custom_failure"}], :status => 304

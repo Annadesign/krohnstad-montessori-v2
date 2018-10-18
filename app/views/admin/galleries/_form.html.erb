@@ -15,8 +15,8 @@
 			      <%= f.select :department_id, Department.all.collect {|c| [c.name, c.id]}, {prompt: 'Velg avdeling'}, :class => "form-control" %>
 			    </div>
 				<div class="form-group">
-					<%= f.label :name, 'Galleri tittel', :class => "" %>
-					<%= f.text_field :name, :class => 'form-control', :placeholder => "Tittel" %>
+					<%= f.label :name, 'Album tittel', :class => "" %>
+					<%= f.text_field :name, :class => 'form-control', :placeholder => "Album tittel" %>
 				</div>	
 				<div class="form-group">
 					<%= f.label :description, 'Beskrivelse', :class => "" %>

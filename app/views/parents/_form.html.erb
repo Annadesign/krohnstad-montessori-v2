@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="form-group">
     <%= f.label :name, 'Navn:', :class => "" %>
     <%= f.text_field :name, :class => 'form-control', :placeholder => "Foresattes navn" %>
@@ -23,6 +22,15 @@
     <%= f.label :telephone, 'Telefon/mobilnr.:', :class => "" %>
     <%= f.text_field :telephone, :class => 'form-control', :placeholder => "Telefon" %>
   </div>
+  <div class="well">
+    <h4>Personvern</h4>
+    <div class="checkbox">
+      <%= f.label :isverified do %>
+        <%= f.check_box :isverified %>
+        <small>Jeg aksepterer at mine opplysninger er tilgjengelige for de andre foresatte på mine barns avdelinger.</small>
+      <% end %>
+    </div>
+  </div> 
    <div class="form-group actions pull-right">
     <%= link_to 'Lagre', "#", :onclick => "$('#form-parent').submit()", :class => 'contact-form-submit btn btn-blue' %>
   </div>

@@ -11,27 +11,50 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :name, 'Foresattes navn', :class => "" %>
-    <%= f.text_field :name, :class => 'form-control', :placeholder => "Foresattes navn" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :email, 'Epost', :class => "" %>
-    <%= f.text_field :email, :class => 'form-control', :placeholder => "Epost" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :telephone, 'Telefon/mobil', :class => "" %>
-    <%= f.text_field :telephone, :class => 'form-control', :placeholder => "Telefon" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password, 'Passord', :class => "" %>
-    <%= f.password_field :password, :class => 'form-control' %>
-  </div>    
-  <div class="form-group actions">
-    <%= f.submit 'Lagre foresatt', :class => 'btn btn-primary' %>
-  </div>
 
-  <div class="form-group">
-    <%= link_to 'Tilbake', admin_parents_path, :class => 'btn btn-primary' %>
-  </div>
+
+    <div class="col-sm-8">
+      <div class="ibox">
+        <div class="ibox-content">
+          <div class="panel-body">
+            <div class="form-group">
+              <%= f.label :name, 'Foresattes navn', :class => "" %>
+              <%= f.text_field :name, :class => 'form-control', :placeholder => "Foresattes navn" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :email, 'Epost', :class => "" %>
+              <%= f.text_field :email, :class => 'form-control', :placeholder => "Epost" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :telephone, 'Telefon/mobil', :class => "" %>
+              <%= f.text_field :telephone, :class => 'form-control', :placeholder => "Telefon" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :password, 'Passord', :class => "" %>
+              <%= f.password_field :password, :class => 'form-control' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= f.submit 'Lagre', :class => "btn btn-primary btn-block" %>
+        </div>
+        <div class="panel-body">
+          <div class="checkbox checkbox-primary">
+            <%= f.check_box :isverified, :class => "" %>
+            <%= f.label :isverified, 'Foresatt har gitt tillatelse til å vise sin kontaktinfo.' %>
+          </div>
+        </div>
+
+        <div class="panel-footer">
+          <span class="text-muted small">
+            Foresatte kan selv slå av og på tillatelse til vise kontakt info på "min side".
+          </span> 
+        </div>
+      </div> 
+    </div>
 <% end %>

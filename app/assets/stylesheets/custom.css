@@ -180,6 +180,9 @@ label {
     font-weight: 400;
 }
 
+.red {color:red;}
+.green {color:green;}
+
 .text-block p {
     margin:20px auto;
     font-family: "proxima-nova", sans-serif;

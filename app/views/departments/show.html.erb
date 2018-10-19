@@ -164,6 +164,41 @@
 				</div>
 			</section>
 
+
+			<section>
+				<h2>Oversikt over barn og foresatte</h2>
+				<p>Informasjonen nedenfor samtykket av foresatte.</p>
+				<div class="row col-md-12">
+					<div class="accordion">						
+					<% @department.children.each do |child| %>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle collapsed" data-toggle="collapse" href="#child-<%= child.id %>"><h4><%= child.firstname + ' ' + child.lastname %></h4></a>
+							</div>
+							<div id="child-<%= child.id %>" class="accordion-body in collapse" style="height: auto;">
+								<div class="accordion-inner">
+									<table class="table table-condensed">
+									<tbody>
+									<% child.parents.each do |parent| %>
+										<tr>
+										<% if parent.isverified? %>
+										<td scope="row" style="width:33%"><%= parent.name %></td>
+										<td scope="row" style="width:33%"><%= parent.email %></td>
+										<td scope="row" style="width:33%"><%= parent.telephone %></td>
+										</tr>
+										<% end %>
+									<% end %>
+									</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+					<% end %>
+					</div>
+				</div>
+			</section>
+
 		</div>
 	</div>
 

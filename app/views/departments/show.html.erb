@@ -101,12 +101,15 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h2>Dokumenter</h2>
+						<ul style="list-style: none;margin:0;padding:0;">
 						<% @department.documents.each do |doc| %>
-							<div class="col-md-4 col-sm-6 col-xs-6"> 
-								<%= link_to doc.title, doc.document.url, :title => doc.document , :target => 'blank' %>
-								<p><%= doc.description %></p>
-							</div>
+							<li> 
+								<%= link_to doc.document.url, :title => doc.description , :target => 'blank' do %>
+									<h4><i class="fa fa-file"></i> <%= doc.title %></h4>
+								<% end %>
+							</li>
 						<% end %>
+						</ul>
 					</div>
 				</div>
 				<div id="gap" style="height: 60px" class=""></div>
@@ -173,11 +176,11 @@
 					<% @department.children.each do |child| %>
 						<div class="accordion-group">
 							<div class="accordion-heading">
-								<a class="accordion-toggle collapsed" data-toggle="collapse" href="#child-<%= child.id %>"><h4><%= child.firstname + ' ' + child.lastname %></h4></a>
+								<a class="accordion-toggle collapsed" data-toggle="collapse" href="#child-<%= child.id %>"><h3><%= child.firstname + ' ' + child.lastname + ', ' + child.birthdate %></h3></a>
 							</div>
 							<div id="child-<%= child.id %>" class="accordion-body in collapse" style="height: auto;">
 								<div class="accordion-inner">
-									<table class="table table-condensed">
+									<table class="table table-responsive-md">
 									<tbody>
 									<% child.parents.each do |parent| %>
 										<tr>

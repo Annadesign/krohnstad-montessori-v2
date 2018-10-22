@@ -17,7 +17,8 @@ class Admin::ParentsController < Admin::ApplicationController
     	@parent = Parent.new(parent_params)
     	respond_to do |format|
       		if @parent.save
-        		format.html { redirect_to admin_parents_url, notice: 'Foresatt' + parent_params[:name] + 'ble opprettet.' }
+      			ParentNotifierMailer.send_signup_email(@parent).deliver
+        		format.html { redirect_to admin_parents_url, notice: 'Foresatt ' + parent_params[:name] + ' ble opprettet.' }
         		format.json { render :show, status: :created, location: @parent }
       		else
        			format.html { render :new }
@@ -38,6 +39,15 @@ class Admin::ParentsController < Admin::ApplicationController
 		end
 
 	end
+
+	def destroy
+		@parent = Parent.find(params[:id])
+	    @parent.destroy
+	    respond_to do |format|
+	      format.html { redirect_to admin_parents_url, notice: 'Foresatte er slettet.' }
+	      format.json { head :no_content }
+	    end
+	  end	
 
 	private
 		def parent_params

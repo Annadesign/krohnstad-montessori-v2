@@ -51,4 +51,5 @@ module ApplicationHelper
   	def current_image_style(img_style)
   		return "#{img_style}-img"
   	end
+
 end

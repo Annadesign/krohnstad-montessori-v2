@@ -44,6 +44,8 @@ gem 'simple_calendar', '~> 2.0'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 gem 'acts_as_list'
 
+gem 'sendgrid-ruby'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

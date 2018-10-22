@@ -124,7 +124,7 @@
 				</div>
 		
 				<div class="row bilder">
-				<% @department.galleries.each do |gallery| %>
+				<% @department.galleries.order(id: :desc).each do |gallery| %>
 					<% unless gallery.images.empty? %>
 
 					 <div class="col-md-4 col-sm-6 col-xs-6"> 

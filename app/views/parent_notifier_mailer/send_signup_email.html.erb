@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hei <%= @parent.name %>,</p>
+    <p>du er nå registrert som bruker hos krohnstad.no</p>
+    <p>Her er pålogginsinformasjonen til din side:</p>
+    <p>Brukernavn: <%= @parent.email %></p>
+    <p>Passord: <%= @parent.password %></p>
+    <p>Gå til <a href="https://krohnstad.no">din side</a> for å finne informasjon om ditt/dine barn.</p>
+    <p>&nbsp;</p>
+    <p>Vennlig hilsen oss i Krohnstad Montessori</p>
+  </body>
+</html>

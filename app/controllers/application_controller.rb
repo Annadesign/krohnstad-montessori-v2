@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
 	def authorize
 		unless current_parent
-				#redirect_to login_url
+				#redirect_to logginn_url
 		end
 	end
 

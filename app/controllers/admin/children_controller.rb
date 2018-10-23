@@ -53,7 +53,7 @@ class Admin::ChildrenController < Admin::ApplicationController
     @child = Child.find(params[:id])
     @child.destroy
     respond_to do |format|
-      format.html { redirect_to admin_childs_url, notice: 'Barnets informasjon er slettet fra databasen.' }
+      format.html { redirect_to admin_children_url, notice: 'Barnets informasjon er slettet fra databasen.' }
       format.json { head :no_content }
     end
   end

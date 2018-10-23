@@ -1,6 +1,6 @@
 class Child < ApplicationRecord
  	has_many :child_parents, dependent: :destroy
-	has_many :parents, through: :child_parents
+	has_many :parents, through: :child_parents, dependent: :destroy
   	belongs_to :department
 
   	scope :by_name_and_age, -> { order(lastname: :asc, birthdate: :asc) }

@@ -20,14 +20,16 @@
            <%= label_tag :password, 'Passord' %><br>
            <%= password_field_tag :password, "", :class  => "form-control" %>
           </div>
+          <div class="form-group pull-right">
+            <%= submit_tag 'Logg inn', class: "btn btn-logginn btn-md" %>
+          </div>
 
-          <%= submit_tag 'Logg inn', :class => "btn btn-blue float-right" %>
         <% end %>
       </div>
     </div>
     <div class="row">
       <div class="col-md-4 col-md-offset-4 text-block">
-        <%= link_to 'Glemt passord?', '#' %>
+     
       </div>
     </div>
   <section class="section-nopadding">

@@ -1,24 +1,17 @@
 class Admin::DocumentsController < Admin::ApplicationController
   
   def index
-
     @documents = Document.all
-
   end
 
-
-  def new
-  
+  def new  
     @document = Document.new(:department_id => params[:department_id])
-
   end
 
   def edit
     @document = Document.find(params[:id])
   end
 
-  # POST /images
-  # POST /images.json
   def create
     @document = Document.new(document_params)
 
@@ -33,11 +26,7 @@ class Admin::DocumentsController < Admin::ApplicationController
 
  
   def update
-
-  
-
     @document = Document.find(params[:id])
-
     respond_to do |format|
       if @image.update_attributes(image_params)
         format.html { redirect_to admin_document_path(@document), notice: 'Picture was successfully updated.' }
@@ -50,10 +39,8 @@ class Admin::DocumentsController < Admin::ApplicationController
   end
 
   def destroy
-
     @document = Document.find(params[:id])
     @document.destroy
-
     respond_to do |format|
       format.html { redirect_to admin_documents_path }
       format.js

@@ -1,7 +1,4 @@
 class Admin::MessagesController < Admin::ApplicationController
- #before_action :set_message, only: [:destroy]
-
-  #respond_to :html, :json  
 
   def index
     @messages = Message.order(id: :asc)
@@ -24,8 +21,6 @@ class Admin::MessagesController < Admin::ApplicationController
     @message = Message.find(params[:id])
   end
 
-  # POST /admin/categories
-  # POST /admin/categories.json
   def create
     @message = Message.new(message_params)
 
@@ -40,8 +35,6 @@ class Admin::MessagesController < Admin::ApplicationController
     end
   end
 
-  # PATCH/PUT /admin/categories/1
-  # PATCH/PUT /admin/categories/1.json
   def update
     @message = Message.find(params[:id])
     respond_to do |format|
@@ -65,8 +58,6 @@ class Admin::MessagesController < Admin::ApplicationController
   end
 
   private 
-
-
     def message_params
       params.require(:message).permit(:title, :content, :color, :department_id)
     end

@@ -1,13 +1,9 @@
 class Admin::ImagesController < Admin::ApplicationController
-  # GET /images
-  # GET /images.json
+
   def index
 
     @gallery = Gallery.find(params[:gallery_id])
-
     @images = @gallery.images
-
-    #@images = Image.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,8 +16,6 @@ class Admin::ImagesController < Admin::ApplicationController
     render :layout => "gallery" 
   end
 
-  # GET /images/1
-  # GET /images/1.json
   def show
     @image = Image.find(params[:id])
 
@@ -31,8 +25,6 @@ class Admin::ImagesController < Admin::ApplicationController
     end
   end
 
-  # GET /images/new
-  # GET /images/new.json
   def new
     @gallery = Gallery.find(params[:gallery_id])
     @image = @gallery.images.build
@@ -43,17 +35,12 @@ class Admin::ImagesController < Admin::ApplicationController
     end
   end
 
-  # GET /images/1/edit
-  def edit
-    #@gallery = Gallery.find(params[:gallery_id])
 
+  def edit
     @image = Image.find(params[:id])
     @image = @gallery.images.build
-    
   end
 
-  # POST /images
-  # POST /images.json
   def create
     @image = Image.new(params[:image])
 
@@ -90,7 +77,6 @@ class Admin::ImagesController < Admin::ApplicationController
     end
   end
 
- 
   def destroy  
     @image = Image.find(params[:id])
     @image.destroy

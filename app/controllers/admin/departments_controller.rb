@@ -5,7 +5,6 @@ class Admin::DepartmentsController < Admin::ApplicationController
     @departments = Department.order(id: :asc)
   end
 
- 
   def show
 
   end
@@ -18,8 +17,6 @@ class Admin::DepartmentsController < Admin::ApplicationController
     @department = Department.find(params[:id])
   end
 
-  # POST /admin/categories
-  # POST /admin/categories.json
   def create
     @department = Department.new(department_params)
 
@@ -34,8 +31,6 @@ class Admin::DepartmentsController < Admin::ApplicationController
     end
   end
 
-  # PATCH/PUT /admin/categories/1
-  # PATCH/PUT /admin/categories/1.json
   def update
     @department = Department.find(params[:id])
     respond_to do |format|

@@ -1,3 +1,4 @@
+  <!-- Template fixed-image-top  -->
   <section id="section-<%= artic.id %>" style="margin:40px 0;padding:20px 0;">
     <% if artic.image.present? %>
       <div class="<%= artic.imagestyle %>">
@@ -5,22 +6,18 @@
           <%= image_tag(artic.image, :class => "#{artic.imagestyle}-img" ) if artic.image? %>
         </div>
       </div> 
-      <section class="section-nopadding">
-        <div style="height: 50px" class=""></div>
-      </section>
+      <div style="height: 50px" class=""></div>    
     <% end %>
-    <div class="container article-content">
-      <div class="row">
-        <div class="col-md-12">
+    <div class="container">
+
           <div class="row">
-            <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12">
+            <div class="col-md-10 col-md-offset-1 col-xs-12 col-sm-12">
               <h2><%= artic.title %></h2>
               <div class="article-content">
                   <%= artic.content.html_safe %>
               </div> 
             </div>
           </div>
-        </div>
-      </div>
+
     </div>
   </section>

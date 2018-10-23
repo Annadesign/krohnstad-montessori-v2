@@ -576,6 +576,26 @@ h5 {
 
 }
 
+.btn-logginn {
+    background: #009de0!important;
+    color: #fff!important;
+    font-family: "brandon-grotesque", sans-serif;
+    font-weight: 400;
+    font-size: 16px !important;
+    letter-spacing: .02em;
+    padding: .6em 1em !important;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+
+}
+
 .btn-pink {
     font-family: "brandon-grotesque", sans-serif;
     font-weight: 400;

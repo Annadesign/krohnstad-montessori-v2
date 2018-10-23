@@ -1,70 +1,60 @@
 
 
-          <div class="ibox">
-              <div class="ibox-title">
-                  <h2><i class="fa fa-th"></i> Oversikt</h2>
-                  <div class="ibox-tools">
+<div class="ibox">
+  <div class="ibox-title">
+      <h2><i class="fa fa-th"></i> Oversikt</h2>
+      <div class="ibox-tools">
 
+      </div>
+  </div>
+</div>
+  <div class="ibox-content">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><i class="fa fa-shapes"></i> Avdelinger</div>
+        <div class="panel-body">
+          <% @schools.each do |cat| %>
+          <div class="row">
+            <div class="col-md-12">
+            <h4><%= cat.name %></h4>
+            <% cat.departments.each do |dep| %>
+            
+              
+            
+              <%= link_to edit_admin_department_path(dep.id), :class => 'btn btn-primary btn-lg' do %>
+                 <i class="fa fa-shapes"></i><br><%= dep.name %>
+              <% end %>
+           
+             
+            <% end %>
+             </div>
+          </div> 
+          <% end %>
+        </div>
+      </div> 
+
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+              <h3 class="panel-title">
+                <span class="fa fa-link"></span> Snarveier
+              </h3>
+          </div>
+          <div class="panel-body">
+              <div class="row">
+                  <div class="col-xs-6 col-md-6">
+                    <a href="children/new" class="btn btn-danger btn-lg" role="button"><i class="fa fa-child"></i> <br/>Nytt barn</a>
+                    <a href="parents/new" class="btn btn-warning btn-lg" role="button"><i class="fa fa-user"></i> <br/>Ny foresatt</a>
+                  </div>
+                  <div class="col-xs-6 col-md-6">                        
+                    <a href="employees/new" class="btn btn-success btn-lg" role="button"><i class="fa fa-id-card"></i> <br/>Ny ansatt</a>
+                    <a href="photos/new" class="btn btn-primary btn-lg" role="button"><i class="fa fa-images"></i> <br/>Nytt bilde</a>
+                    <a href="departments/new" class="btn btn-info btn-lg" role="button"><i class="fa fa-shapes"></i> <br/>Ny avdeling</a>                            
+                    <a href="schools/new" class="btn btn-warning btn-lg" role="button"><i class="fa fa-home"></i> <br/>Ny enhet</a>
                   </div>
               </div>
-              <div class="ibox-content">
-                <div class="panel panel-primary">
-                  <div class="panel-heading"><i class="fa fa-shapes"></i> Avdelinger</div>
-                    <div class="panel-body">
-                      <% @schools.each do |cat| %>
-                      <div class="row">
-                        <div class="col-md-12">
-                        <h4><%= cat.name %></h4>
-                        <% cat.departments.each do |dep| %>
-                        
-                          
-                        
-                          <%= link_to edit_admin_department_path(dep.id), :class => 'btn btn-primary btn-lg' do %>
-                             <i class="fa fa-shapes"></i><br><%= dep.name %>
-                          <% end %>
-                       
-                         
-                        <% end %>
-                         </div>
-                      </div> 
-                      <% end %>
-                    </div>
-                  </div>  
-                </div>
-                
+          </div>
+          <div class="pamnel-footer">
 
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                      <span class="fa fa-link"></span> Snarveier
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-xs-6 col-md-6">
-                          <a href="children/new" class="btn btn-danger btn-lg" role="button"><i class="fa fa-child"></i> <br/>Nytt barn</a>
-                          <a href="parents/new" class="btn btn-warning btn-lg" role="button"><i class="fa fa-user"></i> <br/>Ny foresatt</a>
-                        </div>
-                        <div class="col-xs-6 col-md-6">                        
-                          <a href="employees/new" class="btn btn-success btn-lg" role="button"><i class="fa fa-id-card"></i> <br/>Ny ansatt</a>
-                          <a href="photos/new" class="btn btn-primary btn-lg" role="button"><i class="fa fa-images"></i> <br/>Nytt bilde</a>
-                          <a href="departments/new" class="btn btn-info btn-lg" role="button"><i class="fa fa-shapes"></i> <br/>Ny avdeling</a>                            
-                          <a href="schools/new" class="btn btn-warning btn-lg" role="button"><i class="fa fa-home"></i> <br/>Ny enhet</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="pamnel-footer">
- 
-                </div>
-            </div>
-        </div>
+          </div>
+      </div>
     </div>
-</div>
-
-
-            </div>
-
+                

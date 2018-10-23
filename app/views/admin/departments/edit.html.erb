@@ -147,18 +147,39 @@
         			<div class="panel-body">	
         				<h3>Barn på avdelingen</h3>
 
-				          <% @department.children.each do |cat| %>
-				          
-				              <p><%= cat.firstname + ' ' + cat.lastname %>, <%= cat.birthdate %></p>
-				              <p></p>
-
-				              
-
-				          <% end %>
+					<div class="accordion">						
+					<% @department.children.each do |child| %>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle collapsed" data-toggle="collapse" href="#child-<%= child.id %>"><strong><%= child.firstname + ' ' + child.lastname + ', ' + child.birthdate %></strong></a>
+							</div>
+							<div id="child-<%= child.id %>" class="accordion-body in collapse" style="height: auto;">
+								<div class="accordion-inner">
+									<table class="table table-responsive-md">
+									<tbody>
+									<% child.parents.each do |parent| %>
+										<tr>
+										<% if parent.isverified? %>
+										<td scope="row" style="width:33%"><%= parent.name %></td>
+										<td scope="row" style="width:33%"><%= parent.email %></td>
+										<td scope="row" style="width:33%"><%= parent.telephone %></td>
+										</tr>
+										<% end %>
+									<% end %>
+									</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						
+					<% end %>
+					</div>
 
 					</div>
 				</div>
-			</div>						
+			</div>	
+
+
 		</div>
 
 

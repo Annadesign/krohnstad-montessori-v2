@@ -10,19 +10,19 @@
           <tr>
             <th>Navn</th>
             <th>Avdeling</th>
-            <th colspan="2">Handlinger</th>
+            <th colspan="2">Slette</th>
           </tr>
         </thead>
 
         <tbody>
           <% @employees.each do |employee| %>
             <tr>
-              <td><%= employee.lastname %>, <%= employee.firstname %></td>
+              <td><%= link_to employee.lastname + ', ' + employee.firstname, edit_admin_employee_path(employee) %></td>
 
               <td><%= employee.department.name %></td>
               
-              <td><%= link_to 'Redigere', edit_admin_employee_path(employee), :class => 'btn btn-info btn-xs' %></td>
-              <td><%= link_to 'Slette', admin_employee_url(employee), :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+              <td><%= link_to 'Slette', admin_employee_url(employee), :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Er du sikker på at du vil slette?' } %></td>
             </tr>
           <% end %>
         </tbody>

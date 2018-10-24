@@ -31,10 +31,10 @@ class Admin::ParentsController < Admin::ApplicationController
 		@parent = Parent.find(params[:id])
 
 		if 	@parent.update(parent_params)
-			flash[:notice] = "parent was successfully updated."
+			flash[:notice] = "Foresatt er oppdatert."
 			redirect_to admin_parents_url
 		else
-			flash[:alert] = "There was a problem updating parent."
+			flash[:alert] = "Det oppstod et problem."
 			render 'edit'
 		end
 

@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 <div class="ibox">
-  <div class="ibox-title"><h2><i class="fa fa-child"></i> Barn</h2></div>
+  <div class="ibox-title">
+    <h2><i class="fa fa-child"></i> Barn</h2>
+    <div class="ibox-tools">
+      <%= link_to 'Registrere nytt barn', new_admin_child_path, :class => 'btn btn-primary' %>
+    </div>
+  </div>
   <div class="ibox-content">
-    <div class="panel-body"> 
-      <%= link_to 'Registrere nytt barn', new_admin_child_path, :class => 'btn btn-primary pull-right' %>
+    <div class="panel-body">      
       <table class="table table-bordered table-hover" >
         <thead>
           <tr>
@@ -11,18 +15,17 @@
             <th>Fødselsdato</th>
              <th>Avdeling</th>
           
-            <th colspan="2">Handlinger</th>
+            <th colspan="2">Slette</th>
           </tr>
         </thead>
 
         <tbody>
           <% @children.by_name_and_age.each do |cat| %>
             <tr>
-              <td><%= cat.lastname %>, <%= cat.firstname %></td>
+              <td><%= link_to cat.lastname + ', ' + cat.firstname, edit_admin_child_path(cat) %></td>
               <td><%= cat.birthdate %></td>
               <td><%= cat.department.name %></td>
               
-              <td><%= link_to 'Redigere', edit_admin_child_path(cat), :class => 'btn btn-info btn-xs' %></td>
               <td><%= link_to 'Slette', admin_child_path(cat), :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Er du sikker?' } %></td>
             </tr>
           <% end %>

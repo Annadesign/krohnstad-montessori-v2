@@ -1,28 +1,38 @@
 <div class="ibox">
-  <div class="ibox-title"><h2><i class="fa fa-users"></i> Foresatte</h2></div>
+  <div class="ibox-title"><h2><i class="fa fa-users"></i> Foresatte</h2>
+    <div class="ibox-tools">
+      <%= link_to 'Registrere ny foresatt', new_admin_parent_path, :class => 'btn btn-primary' %>
+    </div>
+  </div>
   <div class="ibox-content">
-    <div class="panel-body">  
-      <p id="notice"><%= notice %></p>
-
-      <%= link_to 'Registrere ny foresatt', new_admin_parent_path, :class => 'btn btn-primary pull-right' %>
+    <div class="panel-body">
       <table class="table table-bordered table-hover" >
         <thead>
           <tr>
-            <th>Foresatt</th>
+            <th>Navn</th>
             <th>Telefon</th>
-          
-            <th colspan="2">Handlinger</th>
+            <th>Epost</th>
+            <th>Synlig</th>
+            <th>Slette</th>
           </tr>
         </thead>
 
         <tbody>
           <% @parents.each do |cat| %>
             <tr>
-              <td><%= cat.name %></td>
+              <td><%= link_to cat.name, edit_admin_parent_path(cat) %></td>
               <td><%= cat.telephone %></td>
+              <td><%= cat.email %></td>
+
+              <td align="center">
+                <% if cat.isverified %>
+                  <i class="fa fa-check" style="color:#1ab394;"></i>
+                <% else %>
+                  <i class="fa fa-times" style="color:#ed5565;"></i>
+                <% end %>
+              </td>
               
-              <td><%= link_to 'Redigere', edit_admin_parent_path(cat), :class => 'btn btn-info btn-xs' %></td>
-              <td><%= link_to 'Slette', admin_parent_path(cat), :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Er du sikker?' } %></td>
+              <td align="center"><%= link_to 'Slette', admin_parent_path(cat), :class => 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Er du sikker?' } %></td>
             </tr>
           <% end %>
         </tbody>

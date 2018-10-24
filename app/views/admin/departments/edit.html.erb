@@ -179,6 +179,30 @@
 				</div>
 			</div>	
 
+			<div class="ibox">
+        		<div class="ibox-content">
+        			<div class="panel-body">	
+        				<h3>Ansatte på <%= @department.name %></h3>
+						<div class="row">
+						 	<% @department.employees.each do |emp| %>
+						  	<div class="col-md-2 col-sm-3 col-xs-6">
+								<div class="card" style="width:100%;">
+									<%= image_tag(emp.image, :class => "card-img-top rounded-circle img-thumbnail") if emp.image? %>	
+							  		<div class="card-body">
+							    		<div class="card-title" style="min-height:50px;">
+							    			<%= link_to emp.firstname + ' ' + emp.lastname, edit_admin_employee_path(emp), :class => '' %>	
+							    		</div>		    
+							  		</div>
+								</div>	
+						  	</div>
+						 	<% end %>				
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
 
 		</div>
 

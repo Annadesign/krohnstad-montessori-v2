@@ -83,30 +83,12 @@
           <% end %>
         </div>              
       </div>
- 
-     <div class="panel panel-default">
-      <div class="panel-heading">Ansatte</div>
-      <div class="panel-body">
-        <ul>
-          <% @department.employees.each do |emp| %>
-            <li>
-              <div class="">
-                <%= link_to emp.firstname + ', ' + emp.lastname, edit_admin_employee_path(emp), :class => '' %>
-                
-          
 
-              </div>
-            </li>
-          <% end %>
-        </ul>     
-      </div>
-       
-    </div>
   
 
 
 
-</div>
+  </div>
 
 </div>
 <% end %>

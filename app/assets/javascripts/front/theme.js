@@ -20,7 +20,7 @@ jQuery(document).ready(function( $ ) {
 	});
 
 
-	$('.close-icon').on('click', function(){
+	$('.xclose-icon').on('click', function(){
 		$( "#scroll-nav").addClass("animation");
 	});
 
@@ -31,10 +31,12 @@ jQuery(document).ready(function( $ ) {
 	$(".toggle-menu").on('click', function() {
 		TweenMax.staggerTo(".cbp-spmenu ul.nav li", 0.3, {opacity:1, x:0,ease: Quart.easeOut}, 0.2);
 		TweenMax.staggerTo(".cbp-spmenu img", 0.3, {opacity:1, x:0,y:0}, 0.2);
+		$( "#nav-icon3").toggleClass("open");
 	});
-	$(".xclose-menu").on('click', function() {
+	$(".close-menu").on('click', function() {
 		TweenMax.staggerTo(".cbp-spmenu ul.nav li", 0.3, {delay:.2,opacity:0, x:-50,ease:Quart.easeOut}, 0.2);
 		TweenMax.staggerTo(".cbp-spmenu img", 0.1, {opacity:0, x:-50,y:0}, 0.2);
+
 	});
 	// Dropdown expands
 	$('.expander').simpleexpand();

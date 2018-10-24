@@ -17918,6 +17918,7 @@ MIT Licence: https://raw.github.com/redhotsly/simple-expand/master/licence-mit.t
     if(o.closeOnClickInside) {
        $(document).click(function() {
           jPushMenu.close();
+          $( "#nav-icon3").toggleClass("open");
          TweenMax.staggerTo(".cbp-spmenu ul.nav li", 0.1, {opacity:0, x:-50,ease:Quart.easeOut}, 0.1);
         });
 

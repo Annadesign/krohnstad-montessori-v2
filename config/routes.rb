@@ -23,8 +23,12 @@ Rails.application.routes.draw do
     end
     resources :schools, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :departments, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :parents, only: [:index, :new, :create, :edit, :update, :destroy]
-  	resources :children, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :parents do
+      collection { post :import }
+    end
+  	resources :children do
+      collection { post :import }
+    end
   	resources :messages, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :meetings, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :galleries, only: [:index, :new, :create, :show, :edit, :update, :destroy] 

@@ -3,6 +3,12 @@
     <div class="ibox-tools">
       <%= link_to 'Registrere ny foresatt', new_admin_parent_path, :class => 'btn btn-primary' %>
     </div>
+    <div class="form">
+      <%= form_tag import_admin_parents_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Importere Excel-fil", :class => 'btn btn-success' %>
+      <% end %>
+    </div>        
   </div>
   <div class="ibox-content">
     <div class="panel-body">

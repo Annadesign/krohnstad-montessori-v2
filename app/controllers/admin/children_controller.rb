@@ -5,6 +5,12 @@ class Admin::ChildrenController < Admin::ApplicationController
     @children = Child.order(lastname: :asc, birthdate: :asc)
   end
 
+
+ def import
+    Child.import(params[:file])
+    redirect_to admin_children_url, notice: "Barn er lagt til databasen."
+  end  
+
  
   def show
 

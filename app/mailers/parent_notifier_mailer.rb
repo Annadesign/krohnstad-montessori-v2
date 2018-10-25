@@ -1,5 +1,5 @@
 class ParentNotifierMailer < ApplicationMailer
-	 default :from => 'Krohnstad Montessori <ikkesvar@krohnstad.no>'
+	 default :from => 'Krohnstad Montessori <enetta@krohnstad.no>'
 
   # send a signup email to the user, pass in the user object that   contains the user's email address
   def send_signup_email(parent)

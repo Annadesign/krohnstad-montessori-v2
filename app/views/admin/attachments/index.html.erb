@@ -9,7 +9,6 @@
           <tr>
             <th>Dokument</th>
             <th>Beskrivelse</th>
-            <th>Avdeling</th>
             <th colspan="2">Handlinger</th>
           </tr>
         </thead>
@@ -18,8 +17,7 @@
           <% @attachments.each do |doc| %>
             <tr>
               <td><%= doc.attachment %></td>
-              <td><%= doc.description %></td>
-              <td><%= doc.department.title %></td>
+              <td><%= doc.description %></td>  
               <td><%= link_to 'Redigere', edit_admin_attachment_path(doc) %></td>
               <td><%= link_to 'Slett', admin_attachment_path(doc), method: :delete, data: { confirm: 'Er du sikker?' } %></td>
             </tr>

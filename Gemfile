@@ -35,6 +35,8 @@ gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 
 gem 'fog'
 
+gem 'roo'
+
 gem 'jquery-rails', '~> 4.3.1'
 
 gem 'responders', '~> 2.3'

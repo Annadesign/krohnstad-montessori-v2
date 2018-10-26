@@ -22,7 +22,7 @@ class Admin::ParentsController < Admin::ApplicationController
     	@parent = Parent.new(parent_params)
     	respond_to do |format|
       		if @parent.save
-      			#ParentNotifierMailer.send_signup_email(@parent).deliver
+      			ParentNotifierMailer.send_signup_email(@parent).deliver
         		format.html { redirect_to admin_parents_url, notice: 'Foresatt ' + parent_params[:name] + ' ble opprettet.' }
         		format.json { render :show, status: :created, location: @parent }
       		else

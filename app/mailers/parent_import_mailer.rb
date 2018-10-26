@@ -1,11 +1,13 @@
-class ParentNotifierMailer < ApplicationMailer
+class ParentImportMailer < ApplicationMailer
 	 default :from => 'Krohnstad Montessori <enetta@krohnstad.no>'
 
   # send a signup email to the user, pass in the user object that   contains the user's email address
-  def send_signup_email(parent)
-    @parent = parent
+  def send_import_email(parentname, parentemail, parentpassword)
+    @parentname = parentname
+    @parentemail = parentemail
+    @parentpassword = parentpassword
     attachments.inline["logo-email.png"] = File.read("#{Rails.root}/app/assets/images/logo-email.png")
-    mail( :to => @parent.email,
+    mail( :to => @parentemail,
     :subject => 'Registrering til din side' )
-  end  
+  end	
 end

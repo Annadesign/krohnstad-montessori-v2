@@ -16,6 +16,7 @@ class Parent < ApplicationRecord
       header = spreadsheet.row 1
       (2..spreadsheet.last_row).each do |i|       
         row = [header, spreadsheet.row(i)].transpose.to_h
+        ParentImportMailer.send_import_email(spreadsheet.cell('A', i), spreadsheet.cell('B', i), spreadsheet.cell('D', i)).deliver
         create! row
       end
     end	

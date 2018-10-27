@@ -3,13 +3,12 @@
     <h2><i class="fa fa-child"></i> Barn</h2>
     <div class="ibox-tools">
       <%= link_to 'Registrere nytt barn', new_admin_child_path, :class => 'btn btn-primary' %>
+      <div class="btn btn-success">
+        <%= form_tag import_admin_children_path, :id => 'excel', multipart: true do %>
+          <%= file_field_tag :file , :id => 'upload' %>     
+        <% end %>
+      </div>       
     </div>
-    <div class="form">
-      <%= form_tag import_admin_children_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Importere Excel-fil", :class => 'btn btn-success' %>
-      <% end %>
-    </div>    
   </div>
   <div class="ibox-content">
     <div class="panel-body">      
@@ -18,8 +17,7 @@
           <tr>
             <th>Navn</th>
             <th>Fødselsdato</th>
-             <th>Avdeling</th>
-          
+             <th>Avdeling</th>          
             <th colspan="2">Slette</th>
           </tr>
         </thead>
@@ -41,3 +39,11 @@
     </div>
   </div>
 </div>
+<script type="">
+  $("document").ready(function(){    
+    $("#upload").change(function() {
+      alert('Fil er valgt og klar for import');
+      $("form#excel").submit();
+    });    
+  });
+</script>

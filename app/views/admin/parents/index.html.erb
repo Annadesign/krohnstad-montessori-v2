@@ -2,13 +2,12 @@
   <div class="ibox-title"><h2><i class="fa fa-users"></i> Foresatte</h2>
     <div class="ibox-tools">
       <%= link_to 'Registrere ny foresatt', new_admin_parent_path, :class => 'btn btn-primary' %>
+      <div class="btn btn-success">
+        <%= form_tag import_admin_parents_path, :id => 'excel', multipart: true do %>
+          <%= file_field_tag :file, :id => 'upload' %>     
+        <% end %>
+      </div> 
     </div>
-    <div class="form">
-      <%= form_tag import_admin_parents_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Importere Excel-fil", :class => 'btn btn-success' %>
-      <% end %>
-    </div>        
   </div>
   <div class="ibox-content">
     <div class="panel-body">
@@ -43,11 +42,15 @@
           <% end %>
         </tbody>
       </table>
-
       <br>
-
-      
-
     </div>
   </div>
 </div>
+<script type="">
+  $("document").ready(function(){    
+    $("#upload").change(function() {
+      alert('Fil er valgt og klar for import');
+      $("form#excel").submit();
+    });    
+  });
+</script>

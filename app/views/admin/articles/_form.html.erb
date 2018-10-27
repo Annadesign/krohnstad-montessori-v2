@@ -119,14 +119,15 @@
       Vedlegg (pdf)
     </div>
     <div class="panel-body">
+        <table>
           <% @article.attachments.each do |doc| %>
             <tr>
-              <td><%= doc.attachment %></td>
-              <td><%= doc.description %></td>  
+              <td><%= link_to doc.description, doc.attachment.url, :target => 'blank' %></td> 
               <td><%= link_to 'Redigere', edit_admin_attachment_path(doc) %></td>
               <td><%= link_to 'Slett', admin_attachment_path(doc), method: :delete, data: { confirm: 'Er du sikker?' } %></td>
             </tr>
           <% end %> 
+        </table>
     </div>
     <div class="panel-footer">
       <%= link_to 'Nytt dokument', new_admin_attachment_url(:article_id => @article.id)  , :class => 'btn btn-sm btn-warning btn-block' %>

@@ -8,6 +8,6 @@ class ParentImportMailer < ApplicationMailer
     @parentpassword = parentpassword
     attachments.inline["logo-email.png"] = File.read("#{Rails.root}/app/assets/images/logo-email.png")
     mail( :to => @parentemail,
-    :subject => 'Registrering til din side' )
+    :subject => 'Innlogging til nye kronhstad.no' )
   end	
 end

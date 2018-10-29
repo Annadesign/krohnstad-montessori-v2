@@ -6,6 +6,6 @@ class ParentNotifierMailer < ApplicationMailer
     @parent = parent
     attachments.inline["logo-email.png"] = File.read("#{Rails.root}/app/assets/images/logo-email.png")
     mail( :to => @parent.email,
-    :subject => 'Registrering til din side' )
+    :subject => 'Innlogging til nye kronhstad.no' )
   end  
 end

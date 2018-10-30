@@ -16,6 +16,13 @@
               <div class="article-content">
                   <%= artic.content.html_safe %>
               </div> 
+              <div class="attachments">
+               
+                <% artic.attachments.each do |d| %>
+                  <p><%= link_to d.description, d.attachment.url, :target => 'blank' %></p>
+                <% end %>
+               
+              </div>
             </div>
           </div>
 

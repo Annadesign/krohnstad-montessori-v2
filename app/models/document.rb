@@ -5,6 +5,6 @@ class Document < ApplicationRecord
   validates :description, presence: true
   validates :document, presence: true
 
-  mount_uploader :attachment, DocumentUploader
+  mount_uploader :document, DocumentUploader
   
 end

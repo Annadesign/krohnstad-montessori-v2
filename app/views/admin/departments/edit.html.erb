@@ -52,7 +52,7 @@
         		<div class="ibox-content">
         			<div class="panel-body">	
         				<h3>Ukeplan / kalender</h3>
-
+        				<%= link_to 'Redigere', admin_meetings_url(:department_id => @department.id) %>
 						<%= week_calendar events: @department.meetings do |date, meetings| %>
 						  <strong><%= date.day %></strong>
 

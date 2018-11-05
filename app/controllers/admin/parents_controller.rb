@@ -56,6 +56,6 @@ class Admin::ParentsController < Admin::ApplicationController
 
 	private
 		def parent_params
-			params.require(:parent).permit(:id, :name, :email, :telephone, :password, :isverified)
+			params.require(:parent).permit(:id, :name, :email, :telephone, :password, :isverified, :auth_token)
 		end
 end

@@ -29,6 +29,6 @@
 
 	private
 		def parent_params
-			params.require(:parent).permit(:id, :name, :email, :telephone, :password, :isverified)
+			params.require(:parent).permit(:id, :name, :email, :telephone, :password, :isverified, :auth_token, :password_reset_token, :password_reset_sent_at)
 		end
 end

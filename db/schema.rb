@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181018182600) do
+ActiveRecord::Schema.define(version: 20181105102310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,6 +128,12 @@ ActiveRecord::Schema.define(version: 20181018182600) do
     t.index ["gallery_id"], name: "index_images_on_gallery_id"
   end
 
+  create_table "infos", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "meetings", force: :cascade do |t|
     t.string "name"
     t.datetime "start_time"
@@ -164,6 +170,9 @@ ActiveRecord::Schema.define(version: 20181018182600) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "isverified"
+    t.string "auth_token"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   create_table "photos", force: :cascade do |t|

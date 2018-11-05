@@ -21,8 +21,8 @@
               <td><%= meeting.department.name %></td>
               
               <td>
-                <%= link_to 'Redigere', edit_admin_meeting_path(meeting) %> | 
-                <%= link_to "Slette", admin_meeting_path(meeting),
+                <%= link_to 'Redigere', edit_admin_meeting_path(meeting, meeting.department.id) %> | 
+                <%= link_to "Slette", admin_meeting_path(meeting, meeting.department.id),
                 :data => { :confirm => "Er du sikker på at du vil slette denne hendelsen?" },
                 :method => :delete%>
                 </td>

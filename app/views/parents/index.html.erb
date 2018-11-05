@@ -39,10 +39,10 @@
 				<h4>Personvern</h4>
 				<% if @parent.isverified %>
 				<p><i class="fa fa-check green"></i> <small>Jeg har akseptert og forstått at mine opplysninger er tilgjengelige for de andre foresatte på mine barns avdelinger.</small></p>
-				<%= link_to 'Endre instillinger', edit_parent_path(session[:current_parent_id]), :class => 'contact-form-submit btn btn-xs btn-blue' %>
+				<%= link_to 'Endre instillinger', edit_parent_path(@parent.id), :class => 'contact-form-submit btn btn-xs btn-blue' %>
 				<% else %>
 				<p><i class="fa fa-times red"></i> <small>Mine opplysninger er ikke tilgjengelige for de andre foresatte på mine barns avdelinger.</small></p>
-				<%= link_to 'Endre innstillinger', edit_parent_path(session[:current_parent_id]), :class => 'contact-form-submit btn btn-xs btn-blue' %>
+				<%= link_to 'Endre innstillinger', edit_parent_path(@parent.id), :class => 'contact-form-submit btn btn-xs btn-blue' %>
 								
 				<% end %>
 				</div>

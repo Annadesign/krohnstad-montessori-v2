@@ -4,8 +4,12 @@ class ApplicationController < ActionController::Base
   	layout 'application'
 	before_action :authorize
 
+	#def current_parent
+	#	@parent ||= Parent.find(session[:current_parent_id]) if session[:current_parent_id]
+	#end
+
 	def current_parent
-		@parent ||= Parent.find(session[:current_parent_id]) if session[:current_parent_id]
+  		@parent ||= Parent.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
 	end
 
 	def authorize

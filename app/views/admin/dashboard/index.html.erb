@@ -12,23 +12,34 @@
     <div class="panel panel-primary">
       <div class="panel-heading"><i class="fa fa-shapes"></i> Avdelinger</div>
         <div class="panel-body">
-          <% @schools.each do |cat| %>
+
           <div class="row">
-            <div class="col-md-12">
-            <h4><%= cat.name %></h4>
-            <% cat.departments.each do |dep| %>
-            
-              
-            
-              <%= link_to edit_admin_department_path(dep.id), :class => 'btn btn-primary btn-lg' do %>
-                 <i class="fa fa-shapes"></i><br><%= dep.name %>
+            <div class="col-md-8">
+
+
+              <% @schools.each do |cat| %>
+              <div class="row">
+                <div class="col-md-12">
+                  <h4><%= cat.name %></h4>
+                  <% cat.departments.each do |dep| %>
+                    <%= link_to edit_admin_department_path(dep.id), :class => 'btn btn-primary btn-lg' do %>
+                     <i class="fa fa-shapes"></i><br><%= dep.name %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div> 
               <% end %>
-           
-             
-            <% end %>
-             </div>
-          </div> 
-          <% end %>
+
+            </div>
+            <div class="col-md-4">
+              <h4>Felles funksjoner</h4>
+               
+                    <%= link_to new_admin_info_path(), :class => 'btn btn-primary btn-lg' do %>
+                      Felles info<br><small>Vises på alle avd.</small>
+                    <% end %>
+            </div>
+          </div>
+
         </div>
       </div> 
 

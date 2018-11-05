@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
   root to: 'posts#index'
  
  # === ADMINISTRATOR ===
@@ -30,6 +32,7 @@ Rails.application.routes.draw do
       collection { post :import }
     end
   	resources :messages, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :infos, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :meetings, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :galleries, only: [:index, :new, :create, :show, :edit, :update, :destroy] 
       
@@ -44,6 +47,8 @@ Rails.application.routes.draw do
   get '/forum' => 'sessions#new'
   get '/logginn' => 'sessions#index'
   get '/loggut' => 'sessions#destroy'
+
+  resources :password_resets
 
   resources :sessions, only: [:index, :create, :destroy]
   resources :parents, only: [:index, :edit, :update, :destroy]

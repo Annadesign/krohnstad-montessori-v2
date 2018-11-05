@@ -7,6 +7,9 @@ class DepartmentsController < ApplicationController
 
 	def show
 		@department = Department.find(params[:id])
+		if Info.any?
+			@info = Info.first
+		end
 	end
 	
 end

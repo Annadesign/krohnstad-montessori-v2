@@ -3,6 +3,7 @@ class Admin::MeetingsController < Admin::ApplicationController
 
   def index
     @meetings = Meeting.all
+    #@meetings = Meeting.where(:department_id => params[:department_id])
   end
 
 
@@ -45,10 +46,9 @@ class Admin::MeetingsController < Admin::ApplicationController
 
   def destroy
     @meeting.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_meetings_url, notice: 'Hendelsen er slettet.' }
-      format.json { head :no_content }
-    end
+   
+    redirect_to admin_meetings_url(@meeting.department.id), notice: 'Hendelsen er slettet.'
+  
   end
 
   private

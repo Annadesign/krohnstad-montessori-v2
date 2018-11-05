@@ -1,0 +1,29 @@
+<div class="avdeling-blue" style="padding:80px 0;">
+
+	<div class="container">
+
+		<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+
+
+			<%= form_tag password_resets_path, :method => :post do %>
+			  <div class="field">
+			    <%= label_tag :email, 'Din epostadresse' %>
+			    <%= text_field_tag :email, params[:email], :class => 'form-control', :placeholder => "Epost" %>
+			  </div>
+			  <div class="form-group" style="margin-top: 10px;">
+			  	<%= submit_tag "Oppdatere passord", :class => "btn btn-logginn btn-sm" %>
+			  </div>
+			<% end %>
+
+		</div>
+		</div>
+		<div class="gap" style="margin-top:20px;"></div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				Når du sender dette skjemaet vil du få tilsendt en epost med en informasjon om hvordan du lager et nytt passord.
+			</div>
+		</div>
+
+	</div>
+</div>

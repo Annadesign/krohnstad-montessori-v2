@@ -6,14 +6,20 @@ class SessionsController < ApplicationController
   end
 
   def index
-    @parent = Parent.find_by(name: params[session[:current_parent_id]])
+    @parent = Parent.find_by(name: cookies[:auth_token])
   end
 
   def create
     @parent = Parent.find_by(email: params[:email]).try(:authenticate, params[:password])
+
     if @parent
-      
-      session[:current_parent_id] = @parent.id
+      #session[:current_parent_id] = @parent.id
+      if params[:remember_me]
+        cookies.permanent[:auth_token] = @parent.auth_token
+      else
+        cookies[:auth_token] = @parent.auth_token
+      end
+
       redirect_to forum_url
     
     else
@@ -26,6 +32,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    cookies.delete(:auth_token)
     session[:current_parent_id] = nil
     redirect_to root_url
   end

@@ -69,11 +69,12 @@
 			<div class="gap" style="height: 60px" class=""></div>
 			<% end %>
 
-			<% if @department.description.present? %>
+			<% if @department.description.present? || @info.content.present? %>
 			<section class="text">
 				<div class="row">
 					<div class="col-md-12">
 						<h2>Diverse informasjon</h2>
+						<%= @info.content.html_safe %>
 						<%= @department.description.html_safe %>		
 					</div>
 				</div>
@@ -85,7 +86,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h2>Ukeplan</h2>
-					<%= week_calendar events: @department.meetings do |date, meetings| %>
+						<%= week_calendar events: @department.meetings do |date, meetings| %>
 						<%= date.day %>
 						<% meetings.each do |meeting| %>
 							<div>
@@ -179,18 +180,18 @@
 					<% @department.children.each do |child| %>
 						<div class="accordion-group">
 							<div class="accordion-heading">
-								<a class="accordion-toggle collapsed" data-toggle="collapse" href="#child-<%= child.id %>"><h3><%= child.firstname + ' ' + child.lastname + ', ' + child.birthdate %></h3></a>
+								<p><%= child.firstname + ' ' + child.lastname + ', ' + child.birthdate %></p>
 							</div>
 							<div id="child-<%= child.id %>" class="accordion-body in collapse" style="height: auto;">
 								<div class="accordion-inner">
-									<table class="table table-responsive-md">
+									<table class="table table-responsive-md" style="border:0;font-size:14px;">
 									<tbody>
 									<% child.parents.each do |parent| %>
 										<tr>
 										<% if parent.isverified? %>
-										<td scope="row" style="width:33%"><%= parent.name %></td>
-										<td scope="row" style="width:33%"><%= parent.email %></td>
-										<td scope="row" style="width:33%"><%= parent.telephone %></td>
+										<td scope="row" style="width:50%"><%= parent.name %></td>
+										<td scope="row" style="width:25%"><%= parent.email %></td>
+										<td scope="row" style="width:25%"><%= parent.telephone %></td>
 										</tr>
 										<% end %>
 									<% end %>

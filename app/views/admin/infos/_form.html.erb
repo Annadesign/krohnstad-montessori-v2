@@ -1,0 +1,42 @@
+<%= form_for [:admin, @info] do |f| %>
+
+<div class="tabs-container">
+	<ul class="nav nav-tabs">
+	    <li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true"> <i class="fa fa-shapes"></i></a></li>
+	</ul>
+	<div class="tab-content">
+	    <div id="tab-1" class="tab-pane active">
+	        <div class="panel-body">
+
+
+            <div class="form-group">
+              <%= f.label :content, 'Felles informasjon' %><br>
+               <%= f.text_area :content, :class => "summernote" %>
+            </div>
+								
+	        </div>
+	    </div>
+	</div>
+
+</div>
+<p></p>
+<div class="form-group"><%= f.submit 'Lagre informasjon', :class => 'btn btn-md btn-primary' %></div>
+<% end %>
+<script type="text/javascript">
+  $(function() {
+    $('.summernote').summernote({
+      height: 250,
+      tabsize: 4,
+      toolbar: [
+                 ["style", ["style"]],
+                 ["style", ["bold", "italic", "underline", "clear"]],
+                 ["table", ["table"]],
+ 
+                 ["color", ["color"]],
+                 ["para", ["ul", "ol", "paragraph"]],
+                 ['insert', ['link', 'picture', 'videoAttributes']],  
+                 ['insert', ['hr', 'fullscreen']]
+             ]
+      });
+    });
+  </script>

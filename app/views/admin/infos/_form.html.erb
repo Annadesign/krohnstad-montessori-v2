@@ -25,18 +25,27 @@
 <script type="text/javascript">
   $(function() {
     $('.summernote').summernote({
-      height: 250,
+      height: 400,
       tabsize: 4,
       toolbar: [
                  ["style", ["style"]],
                  ["style", ["bold", "italic", "underline", "clear"]],
                  ["table", ["table"]],
- 
-                 ["color", ["color"]],
                  ["para", ["ul", "ol", "paragraph"]],
-                 ['insert', ['link', 'picture', 'videoAttributes']],  
-                 ['insert', ['hr', 'fullscreen']]
-             ]
+                 ['extensions', ['gallery']],
+                 ['insert', ['videoAttributes']],  
+                 ['insert', ['link']],  
+                 ['insert', ['hr']]
+                 
+             ],
+        callbacks :{
+             onInit: function() {
+                $(this).data('image_dialog_images_url', '<%= admin_photos_list_url %>');
+                $(this).data('image_dialog_title', "Bilde galleri");
+                $(this).data('image_dialog_close_btn_text', "Lukk");
+                $(this).data('image_dialog_ok_btn_text', "Ok");
+            }
+        }             
       });
     });
   </script>

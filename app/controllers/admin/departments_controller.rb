@@ -3,10 +3,13 @@ class Admin::DepartmentsController < Admin::ApplicationController
 
   def index
     @departments = Department.order(id: :asc)
+    if Info.any?
+      @info = Info.first
+    end    
   end
 
   def show
-
+ 
   end
 
   def new
@@ -15,6 +18,9 @@ class Admin::DepartmentsController < Admin::ApplicationController
 
   def edit
     @department = Department.find(params[:id])
+    if Info.any?
+      @info = Info.first
+    end
   end
 
   def create

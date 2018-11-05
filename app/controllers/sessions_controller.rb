@@ -21,6 +21,8 @@ class SessionsController < ApplicationController
       end
 
       redirect_to forum_url
+
+      flash[:notice] = 'Velkommen, du er nå logget inn på din side.'
     
     else
       

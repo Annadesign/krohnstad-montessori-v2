@@ -108,7 +108,7 @@
 						<ul style="list-style: none;margin:0;padding:0;">
 						<% @department.documents.each do |doc| %>
 							<li> 
-								<%= link_to doc.document.url, :title => doc.description , :target => 'blank' do %>
+								<%= link_to doc.document.url(), :title => doc.description , :target => 'blank' do %>
 									<h4><i class="fa fa-file"></i> <%= doc.title %></h4>
 								<% end %>
 							</li>

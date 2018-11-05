@@ -23,13 +23,18 @@
               </ul>
             </div>
           <% end %>
-          <div class="field">
-            <%= f.label :password, 'Nytt passord' %>
-            <%= f.password_field :password, {:class => 'form-control', :placeholder => 'Passord', 'data-bv-notempty' => 'true', 'data-bv-notempty-message' =>'Passord kreves og kan ikke være tom','data-bv-identical' => 'true', 'data-bv-identical-field' => 'password_confirmation', 'data-bv-identical-message' => 'Passord er ikke det samme i begge felt' } %>
+          <div class="form-group">
+            <%= f.label :password, 'Nytt passord', :class => "" %>
+            <%= f.password_field :password, {:class => 'form-control', :placeholder => 'Passord', 'data-bv-notempty' => 'true', 'data-bv-notempty-message' =>'Passord kreves og kan ikke være tom','data-bv-identical' => 'true', 'data-bv-identical-field' => 'confirmPassword', 'data-bv-identical-message' => 'Passord er ikke det samme i begge felt' } %>
           </div>
-          <div class="field">
-            <%= f.label :password_confirmation, 'Gjenta passord' %>
-            <%= f.password_field :password_confirmation, {:name => 'password_confirmation', :class => 'form-control', :placeholder => 'Passord', 'data-bv-notempty' => 'true', 'data-bv-notempty-message' =>'Passord kreves og kan ikke være tom','data-bv-identical' => 'true', 'data-bv-identical-field' => 'password', 'data-bv-identical-message' => 'Passord er ikke det samme i begge felt' }  %>
+          <div class="form-group">
+            <label class="control-label">Gjenta passord</label>
+            <input type="password" placeholder="Gjenta passord" class="form-control" name="confirmPassword"
+                data-bv-notempty="true" 
+                data-bv-notempty-message="Passord kreves og kan ikke være tom"
+                data-bv-identical="true"
+                data-bv-identical-field="parent[password]"
+                data-bv-identical-message="Passord er ikke det samme i begge felt" />
           </div>
           <div class="form-group actions pull-left">
             <%= f.submit 'Oppdatere passord', :class => 'contact-form-submit btn-md' %>

@@ -15,12 +15,15 @@
 		@parent = Parent.find(params[:id])
 	end
 
-
 	def update
 		@parent = Parent.find(params[:id])
 		if 	@parent.update(parent_params)
 			flash[:notice] = "Dine opplysninger er oppdaterte."
-			redirect_to edit_parent_url(@parent)
+			unless current_parent
+				redirect_to logginn_url
+			else
+				redirect_to edit_parent_url(@parent)
+			end
 		else
 			flash[:alert] = "En feil oppstod."
 			render 'edit'

@@ -4,6 +4,7 @@ class Department < ApplicationRecord
   has_many :children
   has_many :messages, dependent: :destroy
   has_many :meetings, dependent: :destroy
+  has_many :events, dependent: :destroy
   has_many :galleries, dependent: :destroy
   has_many :documents, dependent: :destroy
 

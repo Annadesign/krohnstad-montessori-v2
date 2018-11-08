@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/500", :to => "errors#internal_server_error", :via => :all
+
   get 'password_resets/new'
 
   root to: 'posts#index'
@@ -24,7 +27,10 @@ Rails.application.routes.draw do
       end
     end
     resources :schools, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :departments, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :departments do
+      #resources :events
+    end
+    resources :events
     resources :parents do
       collection { post :import }
     end
@@ -33,9 +39,8 @@ Rails.application.routes.draw do
     end
   	resources :messages, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :infos, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :meetings, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :galleries, only: [:index, :new, :create, :show, :edit, :update, :destroy] 
-      
+    #resources :meetings, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :galleries, only: [:index, :new, :create, :show, :edit, :update, :destroy]       
     resources :images, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :photos, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :documents, only: [:index, :new, :create, :edit, :update, :destroy]
@@ -52,7 +57,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:index, :create, :destroy]
   resources :parents, only: [:index, :edit, :update, :destroy]
-  
+  resources :events, only: [:index]
 
   resources :avdeling, controller: 'departments'
 

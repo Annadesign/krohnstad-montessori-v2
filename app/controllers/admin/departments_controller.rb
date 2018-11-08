@@ -5,7 +5,8 @@ class Admin::DepartmentsController < Admin::ApplicationController
     @departments = Department.order(id: :asc)
     if Info.any?
       @info = Info.first
-    end    
+    end   
+    @events = Event.where(start: params[:start]..params[:end], :department_id => params[:id]) 
   end
 
   def show

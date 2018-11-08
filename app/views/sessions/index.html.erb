@@ -20,11 +20,7 @@
            <%= label_tag :password, 'Passord' %><br>
            <%= password_field_tag :password, "", :class  => "form-control" %>
           </div>
-          <p><%= link_to "Glemt passord?", new_password_reset_path %></p>
-          <div class="field">
-            <%= check_box_tag :remember_me, 1, params[:remember_me] %>
-            <%= label_tag :remember_me, 'Husk meg!' %>
-          </div>          
+          <p><%= link_to "Glemt passord?", new_password_reset_path %></p>      
           <div class="form-group pull-right">
             <%= submit_tag 'Logg inn', :class => "btn btn-logginn btn-md" %>
           </div>

@@ -1,0 +1,38 @@
+<div class="ibox">
+  <div class="ibox-content">
+    <div class="panel-body">  
+      <p id="notice"><%= notice %></p>
+
+
+      <table class="table table-bordered table-hover" >
+        <thead>
+          <tr>
+            <th>Tittel</th>
+            <th>Avdeling</th>
+             <th>Dato</th>
+          
+            <th colspan="2">Handlinger</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @infos.each do |info| %>
+            <tr>
+              <td><%= info.co %></td>
+              <td><%= cat.department.name %></td>
+              <td><%= cat.department.created_at %></td>
+              
+              <td><%= link_to 'Redigere', edit_admin_message_path(cat) %></td>
+              <td><%= link_to 'Slette', admin_message_path(cat), method: :delete, data: { confirm: 'Er du sikker?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'Ny gul lapp', new_admin_message_path %>
+
+    </div>
+  </div>
+</div>

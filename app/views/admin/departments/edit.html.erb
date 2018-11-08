@@ -1,8 +1,8 @@
+
+
 		<div class="col-sm-12">
 			<p>
 				<%= link_to new_admin_message_url(:department_id => @department.id), :class => 'btn btn-sm btn-warning' do %><i class="fa fa-plus-circle"></i> Beskjeder
-				<% end %>
-				<%= link_to new_admin_meeting_url(:department_id => @department.id), :class => 'btn btn-sm btn-info' do %><i class="fa fa-plus-circle"></i> Hendelse i kalender
 				<% end %>
 				<%= link_to new_admin_document_url(:department_id => @department.id)  , :class => 'btn btn-sm btn-danger' do %><i class="fa fa-plus-circle"></i> Dokumenter
 				<% end %>
@@ -62,24 +62,10 @@
         		<div class="ibox-content">
         			<div class="panel-body">	
         				<h3>Ukeplan / kalender</h3>
-        				<%= link_to 'Redigere', admin_meetings_url(:department_id => @department.id) %>
-						<%= week_calendar events: @department.meetings do |date, meetings| %>
-						  <strong><%= date.day %></strong>
-
-						  <% meetings.each do |meeting| %>
-						    <div>
-						      <%= meeting.name %>
-						    </div>
-						  <% end %>
-						<% end %>
-						<div class="row col-sm-12">
-							<%= link_to new_admin_meeting_url(:department_id => @department.id), :class => 'btn btn-sm btn-circle btn-info' do %><i class="fa fa-plus"></i>
-							<% end %>
-						</div>
-					</div>
-				</div>
-			</div>			
-
+			 			<div class='calendar'></div>
+			 		</div>
+			 	</div>
+			</div>
 
 
 			<div class="ibox">
@@ -211,12 +197,104 @@
 				</div>
 			</div>
 
-
-
-
 		</div>
 
+<script type="text/javascript">
+var date_range_picker;
+date_range_picker = function() {
+  $('.date-range-picker').each(function(){
+    $(this).daterangepicker({
+        timePicker: true,
+        timePickerIncrement: 30,
+        alwaysShowCalendars: true
+    }, function(start, end, label) {
+      $('.start_hidden').val(start.format('YYYY-MM-DD HH:mm'));
+      $('.end_hidden').val(end.format('YYYY-MM-DD HH:mm'));
+    });
+  })
+};
+$(document).on('turbolinks:load', date_range_picker);
 
+</script>
+<script type="text/javascript">
+var initialize_calendar;
+initialize_calendar = function() {
+  $('.calendar').each(function(){
+    var calendar = $(this);
+    calendar.fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      defaultView: 'agendaWeek',
+      fixedWeekCount: false,
+      minTime: "06:00:00",
+      maxTime: "20:00:00",
+      allDaySlot: false,
+      weekends: false,
+      weekNumbers: true,
+      selectable: true,
+      selectHelper: true,
+      editable: true,
+      eventLimit: true,
+      eventSources: [
+        '/admin/events.json?department_id=<%= @department.id %>',
+      ],
+      select: function(start, end) {
+        $.getScript('/admin/events/new?department_id=<%= @department.id %>', function() {
+          $('#event_date_range').val(moment(start).format("MM/DD/YYYY HH:mm") + ' - ' + moment(end).format("MM/DD/YYYY HH:mm"))
+          date_range_picker();
+          $('.start_hidden').val(moment(start).format('YYYY-MM-DD HH:mm'));
+          $('.end_hidden').val(moment(end).format('YYYY-MM-DD HH:mm'));
+        });
+
+        calendar.fullCalendar('unselect');
+      },
+
+      eventDrop: function(event, delta, revertFunc) {
+        event_data = { 
+          event: {
+            id: event.id,
+            start: event.start.format(),
+            end: event.end.format()
+          }
+        };
+        $.ajax({
+            url: '/admin/events/' + event.id,
+            data: event_data,
+            type: 'PATCH'
+        });
+      },
+
+      eventResize: function(event, delta, revertFunc) {
+        event_data = { 
+          event: {
+            id: event.id,
+            start: event.start.format(),
+            end: event.end.format()
+          }
+        };
+        $.ajax({
+            url: '/admin/events/' + event.id,
+            data: event_data,
+            type: 'PATCH'
+        });
+      },      
+      
+      eventClick: function(event, jsEvent, view) {
+        $.getScript(event.edit_url, function() {
+          $('#event_date_range').val(moment(event.start).format("MM/DD/YYYY HH:mm") + ' - ' + moment(event.end).format("MM/DD/YYYY HH:mm"))
+          date_range_picker();
+          $('.start_hidden').val(moment(event.start).format('YYYY-MM-DD HH:mm'));
+          $('.end_hidden').val(moment(event.end).format('YYYY-MM-DD HH:mm'));
+        });
+      }
+    });
+  })
+};
+$(document).on('turbolinks:load', initialize_calendar);
+</script>
 
 
 

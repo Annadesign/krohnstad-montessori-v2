@@ -1,0 +1,50 @@
+<%= form_for [:admin, @event], remote: true do |f| %>
+
+<input type="hidden" name="event[department_id]" id="event_department_id" value="<%= params[:department_id] %>" />
+  <div class="form-inputs">
+    <div class="form-group">
+      <%= f.label :title, 'Tittel', :class => "" %>
+      <%= f.text_field :title, :class => 'form-control', :placeholder => "Tittel" %>
+    </div>
+    <%= f.hidden_field :date_range, :class => 'form-control input-sm date-range-picker' %>
+    <%= f.hidden_field :start, value: Date.today, class: 'form-control input-sm start_hidden' %>
+    <%= f.hidden_field :end, value: Date.today, class: 'form-control input-sm end_hidden' %>
+    <div class="form-group">
+      <%= f.label :color, 'Farge:', :class => '' %>
+      <select name="event[color]" id="colorselector">
+        <option value="#A0522D" data-color="#A0522D">sienna</option>
+        <option value="#CD5C5C" data-color="#CD5C5C">indianred</option>
+        <option value="#FF4500" data-color="#FF4500">orangered</option>
+        <option value="#008B8B" data-color="#008B8B">darkcyan</option>
+        <option value="#B8860B" data-color="#B8860B">darkgoldenrod</option>
+        <option value="#32CD32" data-color="#32CD32">limegreen</option>
+        <option value="#FFD700" data-color="#FFD700">gold</option>
+        <option value="#48D1CC" data-color="#48D1CC">mediumturquoise</option>
+        <option value="#87CEEB" data-color="#87CEEB">skyblue</option>
+        <option value="#FF69B4" data-color="#FF69B4">hotpink</option>
+        <option value="#87CEFA" data-color="#87CEFA">lightskyblue</option>
+        <option value="#6495ED" data-color="#6495ED">cornflowerblue</option>
+        <option value="#DC143C" data-color="#DC143C">crimson</option>
+        <option value="#FF8C00" data-color="#FF8C00">darkorange</option>
+        <option value="#C71585" data-color="#C71585">mediumvioletred</option>
+        <option value="#000000" data-color="#000000">black</option>
+      </select>
+    </div>  
+  </div>
+  <div class="form-actions">
+    <%= f.submit 'Lagre', :class => "btn btn-primary btn-block" %>
+    <br>
+    <%= link_to 'Slett', 
+                admin_event_path, 
+                method: :delete, 
+                class: 'btn btn-danger', 
+                data: { confirm: 'Er du sikker på at du vil slette?' }, 
+                remote: true unless @event.new_record? %>
+  </div>
+<% end %>
+
+<script>
+$(function() {
+    $('#colorselector').colorselector();
+});
+</script>

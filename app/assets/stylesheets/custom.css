@@ -103,6 +103,40 @@
     margin-top:-6px;
 }
 
+
+/* Fullcalendar */
+.calendar .fc-view-container {
+    background-color: #ffffff;
+}
+
+.calendar .fc .fc-content {
+    color:#ffffff;
+}
+
+ .fc-widget-header {
+    font-weight:400;
+    font-size: .95em
+ }
+
+ .fc-axis {
+    font-size: .95em
+ }
+
+ .fc-center h2 {
+    font-size: 18px;
+ }
+
+a .fc-time {
+    color:#ffffff!important;
+    font-size:.85em;
+}
+
+a .fc-title {
+    color:#ffffff!important;
+    font-size:.85em;
+}
+
+
 /*******************************/
 /* 2 kolonner */
 

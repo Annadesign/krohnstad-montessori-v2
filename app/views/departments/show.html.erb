@@ -1,4 +1,31 @@
 	 
+<script type="text/javascript">
+var initialize_calendar;
+initialize_calendar = function() {
+  $('.calendar').each(function(){
+    var calendar = $(this);
+    calendar.fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      allDaySlot: false,
+      defaultView: 'agendaWeek',
+      fixedWeekCount: false,
+      minTime: "06:00:00",
+      maxTime: "20:00:00",
+      weekends: false,
+      weekNumbers: true,
+      eventLimit: true,
+      eventSources: [
+        '/events.json?department_id=<%= @department.id %>',
+      ],
+    });
+  })
+};
+$(document).on('turbolinks:load', initialize_calendar);
+</script>
 
 <div class="avdeling-blue">
 	<div class="jarallax jarallax-avd">        
@@ -18,15 +45,9 @@
 	    </div>
 	</div>  
 
-	
 	<div class="gap" style="height: 100px" class=""></div>
 	
-
 	<div class="container">
-		<div>
-			<%= Date.today.beginning_of_week %>
-			<%= Date.today.end_of_week %>
-		</div>
 		<div class="col-md-4">
 			<div class="bs-list">
 			    <div class="list-group">
@@ -38,9 +59,9 @@
 			            	<%= d.firstname %> <span class="badge"><i class="fa fa-angle-right"></i></span>
 			        	</a>
 			        <% end %>
-			        <a href="/parents/<%= session[:current_parent_id] %>/edit" class="list-group-item">
-			           Endre innstillinger<span class="badge"><i class="fa fa-angle-right"></i></span>
-			        </a>			        
+					<%= link_to edit_parent_path(@parent.id), :class => 'list-group-item' do %>
+						Endre innstillinger<span class="badge"><i class="fa fa-angle-right"></i></span>	
+					<% end %>			        			        
 			        <a href="/loggut" class="list-group-item">
 			            Logg ut <span class="badge"><i class="fa fa-angle-right"></i></span>
 			        </a>
@@ -85,15 +106,8 @@
 			<section class="kalender">
 			<div class="row">
 				<div class="col-md-12">
-					<h2>Ukeplan</h2>
-						<%= week_calendar events: @department.meetings do |date, meetings| %>
-						<%= date.day %>
-						<% meetings.each do |meeting| %>
-							<div>
-								<%= meeting.name %>
-							</div>
-						<% end %>
-					<% end %>
+					<h2>Ukeplan / kalender</h2>
+					<div class='calendar'></div>
 				</div>
 			</div>
 
@@ -214,3 +228,5 @@
 	  <div id="gap" style="height: 100px" class=""></div>
 	</section>
 </div>
+
+

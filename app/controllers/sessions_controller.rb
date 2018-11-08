@@ -14,12 +14,9 @@ class SessionsController < ApplicationController
 
     if @parent
       #session[:current_parent_id] = @parent.id
-      if params[:remember_me]
-        cookies.permanent[:auth_token] = @parent.auth_token
-      else
-        cookies[:auth_token] = @parent.auth_token
-      end
 
+      cookies[:auth_token] = @parent.auth_token
+     
       redirect_to forum_url
 
       flash[:notice] = 'Velkommen, du er nå logget inn på din side.'

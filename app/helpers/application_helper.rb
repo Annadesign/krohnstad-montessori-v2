@@ -1,12 +1,7 @@
 module ApplicationHelper
 
   def check_has_children(dept, person)
-
-    #@me ||= Child.where(:parent_id => person, :department_id => dept) if session[:current_parent_id]
-
-    #@mes ||= Child.where(:department_id => dept).joins(:child_parents).where(:parent_id => person) if session[:current_parent_id]
-    @mes ||= Child.where(:department_id => dept).joins(:child_parents, :parents) if session[:current_parent_id]
-    
+    @mes ||= Child.joins(:child_parents).where("child_parents.parent_id" => person, :department_id => dept)
   end
 
 

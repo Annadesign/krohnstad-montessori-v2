@@ -6,14 +6,16 @@ class SessionsController < ApplicationController
   end
 
   def index
-    @parent = Parent.find_by(name: cookies[:auth_token])
+    #@parent = Parent.find_by(name: cookies[:auth_token])
+    @parent = Parent.find_by(name: session[:current_parent_id])
   end
 
   def create
     @parent = Parent.find_by(email: params[:email]).try(:authenticate, params[:password])
 
     if @parent
-      #session[:current_parent_id] = @parent.id
+      
+      session[:current_parent_id] = @parent.id
 
       cookies[:auth_token] = @parent.auth_token
      

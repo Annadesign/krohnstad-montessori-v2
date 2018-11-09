@@ -26,7 +26,7 @@ initialize_calendar = function() {
 };
 $(document).on('turbolinks:load', initialize_calendar);
 </script>
-
+<% if @department.children.present? %>
 <div class="avdeling-blue">
 	<div class="jarallax jarallax-avd">        
 	    <div class="demo-table">
@@ -228,5 +228,14 @@ $(document).on('turbolinks:load', initialize_calendar);
 	  <div id="gap" style="height: 100px" class=""></div>
 	</section>
 </div>
-
+<%else%>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12" style="color:red;text-align: center;">
+				<h3>Opps!</h3>
+				<p>Du har ingen barn på denne avdelingen.</p>
+			</div>
+		</div>
+	</div>
+<% end %>
 

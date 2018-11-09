@@ -1,4 +1,5 @@
-	class ParentsController < ApplicationController
+class ParentsController < ApplicationController
+
 
 	def index
 		@parents = Parent.all
@@ -12,11 +13,13 @@
 	end
 
 	def edit
-		@parent = Parent.find(params[:id])
+		
+		@parent = Parent.find(session[:current_parent_id])
+
 	end
 
 	def update
-		@parent = Parent.find(params[:id])
+		@parent = Parent.find(session[:current_parent_id])
 		if 	@parent.update(parent_params)
 			flash[:notice] = "Dine opplysninger er oppdaterte."
 			unless current_parent

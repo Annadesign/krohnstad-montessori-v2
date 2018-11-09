@@ -14,8 +14,10 @@ class ApplicationController < ActionController::Base
 
 	def authorize
 		unless current_parent
-			
-			#redirect_to logginn_url
+			unless request_uri = "/password_resets/new"
+
+				redirect_to logginn_url
+			end
 			
 		end
 	end

@@ -26,7 +26,7 @@ initialize_calendar = function() {
 };
 $(document).on('turbolinks:load', initialize_calendar);
 </script>
-<% if @department.children.present? %>
+<% if @parent.children.present? %>
 <div class="avdeling-blue">
 	<div class="jarallax jarallax-avd">        
 	    <div class="demo-table">

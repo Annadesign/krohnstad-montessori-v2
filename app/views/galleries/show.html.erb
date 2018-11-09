@@ -7,7 +7,7 @@
 
 <div class="container">
 
-
+<% if check_has_children(@gallery.department_id, session[:current_parent_id]).present? %>
     <div class="row bilder col-md-8 col-md-offset-2">
        <a href="javascript:history.back()"><i class="fa fa-angle-left"></i> Tilbake</a>
       <h2><%= @gallery.name%></h2>
@@ -25,7 +25,12 @@
     <% end %>
   </div>
 
-
+<% else %>
+  <div class="row bilder col-md-8 col-md-offset-2" style="color:red;text-align:center;">
+    <h3>Opps!</h3>
+    <p>Du har ikke adgang til dette galleriet.</p>
+  </div>
+<% end %>
 </div>
 
 

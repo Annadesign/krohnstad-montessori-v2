@@ -59,6 +59,7 @@ Rails.application.routes.draw do
   resources :parents, only: [:index, :edit, :update, :destroy]
   resources :events, only: [:index]
 
+  resources :foreldre, controller: 'parents'
   resources :avdeling, controller: 'departments'
 
   resources :barnehage, controller: 'barnehagen'

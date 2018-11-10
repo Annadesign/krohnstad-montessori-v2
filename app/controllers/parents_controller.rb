@@ -25,7 +25,7 @@ class ParentsController < ApplicationController
 			unless current_parent
 				redirect_to logginn_url
 			else
-				redirect_to edit_parent_url(@parent)
+				redirect_to edit_foreldre_url(@parent)
 			end
 		else
 			flash[:alert] = "En feil oppstod."

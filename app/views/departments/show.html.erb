@@ -53,7 +53,7 @@ $(document).on('turbolinks:load', initialize_calendar);
 		<div class="col-md-4">
 			<div class="bs-list">
 			    <div class="list-group">
-			        <a href="/parents" class="list-group-item">
+			        <a href="/foreldre" class="list-group-item">
 			           Min side <span class="badge"><i class="fa fa-angle-right"></i></span>
 			        </a>
 			        <% @parent.children.by_name_and_age.each do |d| %>
@@ -61,7 +61,7 @@ $(document).on('turbolinks:load', initialize_calendar);
 			            	<%= d.firstname %> <span class="badge"><i class="fa fa-angle-right"></i></span>
 			        	</a>
 			        <% end %>
-					<%= link_to edit_parent_path(@parent.id), :class => 'list-group-item' do %>
+					<%= link_to edit_foreldre_path(@parent.id), :class => 'list-group-item' do %>
 						Endre innstillinger<span class="badge"><i class="fa fa-angle-right"></i></span>	
 					<% end %>			        			        
 			        <a href="/loggut" class="list-group-item">
@@ -113,7 +113,7 @@ $(document).on('turbolinks:load', initialize_calendar);
 						<% @department.documents.each do |doc| %>
 							<li> 
 								<%= link_to doc.document.url, :title => doc.description , :target => 'blank' do %>
-									<h4><i class="fa fa-file"></i> <%= doc.title %></h4>
+									<h4><i class="fa fa-file" style="color:#ED5565;"></i> <%= doc.title %></h4>
 								<% end %>
 							</li>
 						<% end %>

@@ -19,7 +19,7 @@
             
             <li> <a href="/kontakt" class="<%= is_active_controller('informasjon') %>">Kontakt</a></li>
             <% if cookies[:auth_token] %>
-              <%=  link_to parents_path, :class => "btn btn-md btn-blue" do %>
+              <%=  link_to foreldre_index_path, :class => "btn btn-md btn-blue" do %>
                 <%= @parent.name %>
               <% end %>               
             <% else %>  
@@ -42,7 +42,7 @@
             <li> <a href="/kontakt">Kontakt</a></li>
             <li>
             <% if cookies[:auth_token] %>
-              <%=  link_to parents_path, :class => "btn btn-md btn-blue" do %>
+              <%=  link_to foreldre_index_path, :class => "btn btn-md btn-blue" do %>
                 <%= @parent.name %>
               <% end %>               
             <% else %>  

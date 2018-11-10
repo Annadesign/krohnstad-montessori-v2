@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   before_action :authorize, except: [:index, :create]
 
   def new
-    redirect_to parents_url if current_parent
+    redirect_to foreldre_index_url if current_parent
   end
 
   def index

@@ -104,23 +104,11 @@ $(document).on('turbolinks:load', initialize_calendar);
 				<div class="gap" style="height: 60px" class=""></div>
 			</section>
 			<% end %>
-						
-			<section class="kalender">
-			<div class="row">
-				<div class="col-md-12">
-					<h2>Ukeplan / kalender</h2>
-					<div class='calendar'></div>
-				</div>
-			</div>
-
-			<div class="gap" style="height: 60px" class=""></div>
-			</section>
 
 			<% if @department.documents.present? %>
 			<section id="documents">
 				<div class="row">
 					<div class="col-md-12">
-						<h2>Dokumenter</h2>
 						<ul style="list-style: none;margin:0;padding:0;">
 						<% @department.documents.each do |doc| %>
 							<li> 
@@ -136,6 +124,17 @@ $(document).on('turbolinks:load', initialize_calendar);
 			</section>	
 			<% end %>
 
+						
+			<section class="kalender">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Ukeplan / kalender</h2>
+					<div class='calendar'></div>
+				</div>
+			</div>
+
+			<div class="gap" style="height: 60px" class=""></div>
+			</section>
 
 			<% if @department.galleries.present? %>
 			<section class="gallery">

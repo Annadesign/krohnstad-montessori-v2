@@ -20,12 +20,12 @@ class ParentsController < ApplicationController
 
 	def update
 		@parent = Parent.find(session[:current_parent_id])
-		if 	@parent.update(parent_params)
+		if @parent.update(parent_params)
 			flash[:notice] = "Dine opplysninger er oppdaterte."
 			unless current_parent
 				redirect_to logginn_url
 			else
-				redirect_to edit_foreldre_url(@parent)
+				redirect_to edit_parent_url(@parent)
 			end
 		else
 			flash[:alert] = "En feil oppstod."

@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       
       session[:current_parent_id] = @parent.id
 
-      cookies[:auth_token] = @parent.auth_token
+      #cookies[:auth_token] = @parent.auth_token
      
       redirect_to forum_url
 
@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    cookies.delete(:auth_token)
+    #cookies.delete(:auth_token)
     session[:current_parent_id] = nil
     redirect_to root_url
   end

@@ -19,7 +19,8 @@ class ParentsController < ApplicationController
 	end
 
 	def update
-		@parent = Parent.find(session[:current_parent_id])
+		#@parent = Parent.find(session[:current_parent_id])
+		@parent = Parent.find(params[:id])
 		if @parent.update(parent_params)
 			flash[:notice] = "Dine opplysninger er oppdaterte."
 			unless current_parent

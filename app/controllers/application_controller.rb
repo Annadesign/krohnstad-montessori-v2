@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
 		@parent ||= Parent.find(session[:current_parent_id]) if session[:current_parent_id]
 	end
 
-	def Xcurrent_parent
-  		@parent ||= Parent.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
-	end
-
 	def authorize
 		unless current_parent
 			unless request_uri = "/password_resets/new"
@@ -21,7 +17,6 @@ class ApplicationController < ActionController::Base
 			
 		end
 	end
-
 
 	def to_bool string
 		ActiveRecord::Type::Boolean.new.type_cast_from_user(string)

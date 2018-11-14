@@ -18,7 +18,7 @@
             <li> <a href="/omoss" class="<%= is_active_controller('satsingsomrade') %>">Om oss</a></li>
             
             <li> <a href="/kontakt" class="<%= is_active_controller('informasjon') %>">Kontakt</a></li>
-            <% if cookies[:auth_token] %>
+            <% if session[:current_parent_id] %>
               <%=  link_to foreldre_index_path, :class => "btn btn-md btn-blue" do %>
                 <%= @parent.name %>
               <% end %>               
@@ -41,7 +41,7 @@
             
             <li> <a href="/kontakt">Kontakt</a></li>
             <li>
-            <% if cookies[:auth_token] %>
+            <% if session[:current_parent_id] %>
               <%=  link_to foreldre_index_path, :class => "btn btn-md btn-blue" do %>
                 <%= @parent.name %>
               <% end %>               

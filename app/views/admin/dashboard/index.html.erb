@@ -22,7 +22,7 @@
                 <div class="col-md-12">
                   <h4><%= cat.name %></h4>
                   <% cat.departments.each do |dep| %>
-                    <%= link_to edit_admin_department_path(dep.id), :class => 'btn btn-primary btn-lg' do %>
+                    <%= link_to edit_admin_department_path(dep.id), :class => 'btn btn-success btn-lg' do %>
                      <i class="fa fa-shapes"></i><br><%= dep.name %>
                     <% end %>
                   <% end %>
@@ -33,10 +33,12 @@
             </div>
             <div class="col-md-4">
               <h4>Felles funksjoner</h4>                    
-                    <%= link_to new_admin_info_path(), :class => 'btn btn-primary btn-lg' do %>
+                    <%= link_to new_admin_info_path(), :class => 'btn btn-info btn-lg' do %>
                       Felles info
                       <% if @info.present? %>
-                        <span class="badge badge-danger" style="background-color:#ed5565;color:#ffffff;">1</span>
+                        <span class="badge badge-danger" style="background-color:#ed5565;color:#ffffff;">
+                          <i class="fa fa-check"></i>
+                        </span>
                       <% end %> 
                       <br><small>Vises på alle avd.</small>                     
                     <% end %>

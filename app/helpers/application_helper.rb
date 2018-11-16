@@ -13,6 +13,13 @@ module ApplicationHelper
 		end
 	end
 
+  def count_active_parents
+    @count_parents = Parent.all.count
+    @count_active = Parent.where(:isverified => true).count
+
+    "#{@count_active} av #{@count_parents}"
+  end
+
 	def time_ago time
 		"#{time_ago_in_words(time)} ago"
 	end

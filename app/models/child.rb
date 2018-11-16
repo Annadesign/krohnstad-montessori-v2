@@ -1,7 +1,7 @@
 class Child < ApplicationRecord
  	has_many :child_parents, dependent: :destroy
 	has_many :parents, through: :child_parents, dependent: :destroy
-  	belongs_to :department
+  belongs_to :department
 
   	attr_accessor :file
 

@@ -32,10 +32,13 @@
 
             </div>
             <div class="col-md-4">
-              <h4>Felles funksjoner</h4>
-               
+              <h4>Felles funksjoner</h4>                    
                     <%= link_to new_admin_info_path(), :class => 'btn btn-primary btn-lg' do %>
-                      Felles info<br><small>Vises på alle avd.</small>
+                      Felles info
+                      <% if @info.present? %>
+                        <span class="badge badge-danger" style="background-color:#ed5565;color:#ffffff;">1</span>
+                      <% end %> 
+                      <br><small>Vises på alle avd.</small>                     
                     <% end %>
             </div>
           </div>

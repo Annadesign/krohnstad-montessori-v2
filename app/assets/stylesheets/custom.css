@@ -97,6 +97,11 @@
   visibility:hidden;
 }
 
+footer a, p {
+    font-size: 16px;
+    border-bottom:1px solid #666!important;
+}
+
 /* PAGE TEMPLATES DETAILS */
 .page-half-text-details{position:relative;background-color:none;padding:0;padding-bottom:24px!important}
 .page-half-text-details h2{

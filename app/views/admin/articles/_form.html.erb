@@ -100,6 +100,7 @@
         <div class="img-responsive" id="image-holder">
           <%= image_tag @article.image_url(:thumb) if @article.image?%>
         </div>
+
         <div class="checkbox checkbox-primary">
           <%= f.check_box :remove_image, :class => "" %>
           <%= f.label :remove_image, 'Fjern bildet' %>
@@ -110,10 +111,12 @@
         <%= f.label :image, :class => "btn btn-info btn-block" do %>
           <%= f.file_field :image, :class => 'hide'%>Velg bilde
         <% end %>  
-      </div>  
+      </div> 
+    </div>
+    <div class="panel">
+      <input type="text" id="image-size" name="example_name" value="" />
     </div>
   <% end %>
-
    <div class="panel panel-default">
     <div class="panel-heading">
       Vedlegg (pdf)
@@ -136,7 +139,13 @@
 
   </div>
   
-
+<script type="text/javascript">
+        $("#image-size").ionRangeSlider({
+          min: 100,
+          max: 1000,
+          from: 550
+      });
+      </script>
 <script type="text/javascript">
   $(function() {
     $('.summernote').summernote({
